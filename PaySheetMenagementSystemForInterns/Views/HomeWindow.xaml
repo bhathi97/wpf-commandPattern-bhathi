@@ -1,0 +1,88 @@
+﻿<Window x:Class="PaySheetMenagementSystemForInterns.Views.HomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PaySheetMenagementSystemForInterns.Views"
+        xmlns:f="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        
+        
+    >
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--2 parts-->
+        <StackPanel Orientation="Vertical" Grid.Row="0">
+            <Grid Height="30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="30" />
+                </Grid.ColumnDefinitions>
+                <!--" Image Source="/Resourses/logo .png" -->
+                <f:IconImage Icon="MoneyBillTransfer" Margin="5" Foreground="#780101"/>
+                <Menu x:Name="Menu" Grid.Column="1" Background="#780101" Foreground="White">
+                    <!--menu-->
+                    <MenuItem Header="Home" Click="MenuItemHome_Click" Padding="6">
+                        
+                    </MenuItem>
+                    <!--add new intern to tables-->
+                    <MenuItem Header="Newbie" Click="MenuItemNewbie_Click" Padding="6"/>
+                    <!--setting-->
+                    <MenuItem Header="Setting" Click="MenuItemSetting_Click" Padding="6"/>
+                </Menu>
+                <!--close button-->
+                <Button x:Name="CloseButton" 
+                        Grid.Column="4" 
+                        Click="CloseButton_Click"
+                        Style="{StaticResource ButtonStyle1}">
+                    <f:IconImage Icon="x" Margin="7" Foreground="White" />
+                </Button>
+                <!--maximize button-->
+                <Button x:Name="MaximizeButton" 
+                        Grid.Column="3"
+                        Click="MaximizeButton_Click"
+                        Style="{StaticResource ButtonStyle2}">
+                    <f:IconImage Icon="WindowMaximize" Margin="7" Foreground="White" />
+                </Button>
+                <!--minimize button-->
+                <Button x:Name="MinimizeButton"
+                        Grid.Column="2"
+                        Click="MinimizeButton_Click"
+                        Style="{StaticResource ButtonStyle2}">
+                    <f:IconImage Icon="WindowMinimize" Margin="7" Foreground="White" />
+                </Button>
+            </Grid>
+
+
+
+
+
+
+
+
+        </StackPanel>
+        <ContentControl Grid.Row="1" x:Name="UserControlLoader1">
+            
+        </ContentControl>   
+            
+            
+        
+    </Grid>
+</Window>
+    
+    
+
+
