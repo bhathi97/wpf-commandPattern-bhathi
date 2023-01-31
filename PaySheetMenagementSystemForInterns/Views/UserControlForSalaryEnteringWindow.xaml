@@ -8,26 +8,26 @@
              xmlns:f="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
              
              Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=local:HomeWindow}}"
-             Height="710"
+             Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=local:HomeWindow}}"
              
              >
     <!--Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=local:HomeWindow}}"-->
     
-    <Grid Background="DarkRed">
+    <Grid Background="#FF8E0000">
         <Grid.ColumnDefinitions >
             <!--data entering textboxes-->
-            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="300"/>
             <!--show data grid view-->
             <ColumnDefinition Width="*"/>
             <!--control buttons-->
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="250"/>
         </Grid.ColumnDefinitions>
         
         <!--data entering textboxes-->
         <Border CornerRadius="5" BorderThickness="1" Grid.Column="0" BorderBrush="Black">
             <StackPanel Orientation="Vertical" Margin="5">
                 <!--id-->
-                <Border BorderBrush="white"
+                <Border BorderBrush="LightGray"
                             BorderThickness="1"
                             CornerRadius="3">
                     <StackPanel Orientation="Horizontal">
@@ -35,7 +35,7 @@
                         <TextBox Height="30"
                                 Background="white"
                                 Margin="5"
-                                Width="200"
+                                Width="100"
                                 Name="InternID" KeyDown="InternID_KeyDown" SelectionChanged="InternID_SelectionChanged"/>
                     </StackPanel>
                 </Border>
@@ -48,11 +48,12 @@
 
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Name" Width="100" FontFamily="Segoe UI Symbol" Foreground="White"/>
-                        <TextBox Height="30"
+                        <TextBox TextWrapping="Wrap"
+                                 MinHeight="30"
                                  Background="white"
                                  Margin="5" 
                                  Name="InternName"
-                                 Width="260"/>
+                                 Width="170"/>
                     </StackPanel>
                 </Border>
                 
@@ -64,11 +65,12 @@
 
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Bank Account" Width="100" FontFamily="Segoe UI Symbol" Foreground="White"/>
-                        <TextBox Height="30"
+                        <TextBox TextWrapping="Wrap"
+                                 MinHeight="30"
                                  Background="white"
                                  Margin="5" 
                                  Name="InternBankAccNo"
-                                 Width="260"/>
+                                 Width="170"/>
                     </StackPanel>
                 </Border>
                 
@@ -80,11 +82,12 @@
 
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Bank Name" Width="100" FontFamily="Segoe UI Symbol" Foreground="White"/>
-                        <TextBox Height="30"
+                        <TextBox TextWrapping="Wrap"
+                                 MinHeight="30"
                                  Background="white"
                                  Margin="5" 
                                  Name="InternBankName"
-                                 Width="260"/>
+                                 Width="170"/>
                     </StackPanel>
                 </Border>
                 
@@ -96,11 +99,12 @@
 
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Bank Code" Width="100" FontFamily="Segoe UI Symbol" Foreground="White"/>
-                        <TextBox Height="30"
+                        <TextBox TextWrapping="Wrap"
+                                 MinHeight="30"
                                  Background="white"
                                  Margin="5" 
                                  Name="InternBankCode"
-                                 Width="260"/>
+                                 Width="170"/>
                     </StackPanel>
                 </Border>
                 
@@ -112,11 +116,12 @@
 
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Branch Name" Width="100" FontFamily="Segoe UI Symbol" Foreground="White"/>
-                        <TextBox Height="30"
+                        <TextBox TextWrapping="Wrap"
+                                 MinHeight="30"
                                  Background="white"
                                  Margin="5" 
                                  Name="InternBranchName" 
-                                 Width="260"/>
+                                 Width="170"/>
                     </StackPanel>
                 </Border>
                 
@@ -128,11 +133,12 @@
 
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Branch Code" Width="100"  FontFamily="Segoe UI Symbol" Foreground="White"/>
-                        <TextBox Height="30"
+                        <TextBox TextWrapping="Wrap"
+                                 MinHeight="30"
                                  Background="white"
                                  Margin="5" 
                                  Name="InternBranchCode"
-                                 Width="260"/>
+                                 Width="170"/>
                     </StackPanel>
                 </Border>
                 
@@ -148,7 +154,7 @@
                                  Background="white"
                                  Margin="5" 
                                  Name="InternSalaryPerDay"
-                                 Width="200" TextChanged="InternSalaryPerDay_TextChanged"/>
+                                 Width="150" TextChanged="InternSalaryPerDay_TextChanged"/>
                     </StackPanel>
                 </Border>
 
@@ -164,7 +170,7 @@
                                 Background="white"
                                 Margin="5" 
                                 Name="AddingYear" 
-                                Width="250"/>
+                                Width="150"/>
                     </StackPanel>
                 </Border>
 
@@ -180,7 +186,7 @@
                                 Background="white"
                                 Margin="5" 
                                 Name="AddingMonth"
-                                Width="250"/>
+                                Width="150"/>
                     </StackPanel>
                 </Border>
 
@@ -245,7 +251,7 @@
                                 Background="white"
                                 Margin="5" 
                                 Name="ShowTotalSalary"
-                                Width="200"/>
+                                Width="150"/>
                     </StackPanel>
                 </Border>
 
@@ -258,7 +264,10 @@
         
         
         <!--data grid view -->
-        <StackPanel Grid.Column="1" Margin="10">
+        <StackPanel Grid.Column="1" Margin="10,0,10,10">
+            <Label x:Name="sayToClickEyeButtonLbl"
+                   Content="Click EYE button to see the content >>"/>
+
             <DataGrid x:Name="dataShowingTable" SelectionChanged="dataShowingTable_SelectionChanged">
                 
             </DataGrid>
@@ -267,7 +276,9 @@
         
         
         <!--for buttons-->
-        <Border Grid.Column="2" BorderBrush="Black" BorderThickness="2">
+        <Border Grid.Column="2" BorderBrush="White" 
+                BorderThickness="1"
+                CornerRadius="3">
 
             <StackPanel Orientation="Vertical">
                 <Label Content="Home" 
@@ -297,7 +308,7 @@
                      <!--add data to button-->
                     <Border  Margin="5,0,0,5"
                             Height="40"
-                            Width="150"
+                            Width="200"
                             HorizontalAlignment="Left">
                         <Button x:Name="SendToTable"
                                 Style="{StaticResource ButtonStyle3}" Click="SendToTable_Click"
@@ -317,7 +328,7 @@
                     <!--add new data-->
                     <Border  Margin="5,0,0,5"
                             Height="40"
-                            Width="150"
+                            Width="200"
                             HorizontalAlignment="Left">
                         <Button x:Name="AddNewRecord"
                                 Style="{StaticResource ButtonStyle3}" Click="AddNewRecord_Click"
@@ -325,7 +336,28 @@
                             <StackPanel Orientation="Horizontal">
                                 <f:IconImage Icon="Pen" Height="20"/>
                                 <TextBlock Text="Add New" VerticalAlignment="Center" 
-                                               Margin="10,0,30,0"
+                                               Margin="20,0,20,0"
+                                               FontSize="12"
+                                               FontFamily="Segoe UI Symbol"/>
+
+                            </StackPanel>
+                        </Button>
+
+                    </Border>
+                    
+                    
+                    <!--update data-->
+                    <Border  Margin="5,0,0,5"
+                            Height="40"
+                            Width="200"
+                            HorizontalAlignment="Left">
+                        <Button x:Name="UpdateExistingRecord"
+                                Style="{StaticResource ButtonStyle3}" Click="UpdateExistingRecord_Click"
+                                >
+                            <StackPanel Orientation="Horizontal">
+                                <f:IconImage Icon="Refresh" Height="20"/>
+                                <TextBlock Text="Update" VerticalAlignment="Center" 
+                                               Margin="20,0,30,0"
                                                FontSize="12"
                                                FontFamily="Segoe UI Symbol"/>
 
@@ -334,8 +366,84 @@
 
                     </Border>
 
+                    <!--delete data-->
+                    <Border  Margin="5,0,0,5"
+                            Height="40"
+                            Width="200"
+                            HorizontalAlignment="Left">
+                        <Button x:Name="DeleteExistingRecord"
+                                Style="{StaticResource ButtonStyle3}" Click="DeleteExistingRecord_Click"
+                                >
+                            <StackPanel Orientation="Horizontal">
+                                <f:IconImage Icon="Trash" Height="20"/>
+                                <TextBlock Text="Delete" VerticalAlignment="Center" 
+                                               Margin="30,0,30,0"
+                                               FontSize="12"
+                                               FontFamily="Segoe UI Symbol"/>
+
+                            </StackPanel>
+                        </Button>
+
+                    </Border>
+                    
+                    
+                    <!---->
+                    <Border BorderBrush="White"
+                            BorderThickness="1"
+                            CornerRadius="3"
+                            Padding="0,0,5,5"
+                            Width="210"
+                            Margin="0,0,30,0">
 
 
+                        <!--search bar for find-->
+                        <StackPanel Orientation="Vertical">
+
+                            <StackPanel Orientation="Horizontal" Margin="5,0,0,5">
+                                <Label Content="ID" 
+                               Foreground="White"
+                               Width="25"
+                               VerticalAlignment="Top"
+                               Margin="0,2,0,0"/>
+
+                                <TextBox x:Name="IDforSearch"
+                                 Width="118"
+                                 Height="30"/>
+
+                                <Border  Margin="10,8,0,0"
+                                 Height="40"
+                                 Width="40"
+                                 HorizontalAlignment="Center"
+                            >
+                                    <Button x:Name="SearchIsIDInGridView"
+                                Style="{StaticResource ButtonStyle3}" Click="SearchIsIDInGridView_Click"
+                                Width="40">
+                                        <f:IconImage Icon="Search" Height="20"/>
+
+
+                                    </Button>
+
+                                </Border>
+
+                            </StackPanel>
+
+                            <!--grid for show search results-->
+                            <StackPanel HorizontalAlignment="Left"
+                                    Margin="8,5,5,5">
+                                <DataGrid x:Name="SearchResultOfTemperaryDataTableGridView"
+                                  Width="195"
+                                  Height="100"/>
+                            </StackPanel>
+
+
+
+                        </StackPanel>
+
+                    </Border>
+
+                    
+                    
+                    
 
 
                 </StackPanel>

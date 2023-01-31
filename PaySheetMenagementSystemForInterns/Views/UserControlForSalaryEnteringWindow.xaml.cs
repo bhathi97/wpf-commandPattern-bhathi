@@ -29,6 +29,7 @@ namespace PaySheetMenagementSystemForInterns.Views
             InternID.Focus();
             months = new string[] { "january", "february", "march", "april", "may", "june", "july", "august", "september", "octomber", "november", "december" };
             years = new int[] { 2022, 2023, 2024, 2025, 2026 };
+           
             
             //fill combo boxes
             AddingYear.ItemsSource = years;
@@ -52,7 +53,16 @@ namespace PaySheetMenagementSystemForInterns.Views
         //button click event to see remaining data of temperary data table
         private void seeTableData_Click(object sender, RoutedEventArgs e)
         {
-            dataSeeBtnClickCommand1.DataseeButtonClick(dataShowingTable, connection);   
+            try
+            {
+                dataSeeBtnClickCommand1.DataseeButtonClick(dataShowingTable, connection,this);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
+             
         }
         
         //when datagrid view data select, autofill textboxes -> if update need to use
@@ -85,24 +95,79 @@ namespace PaySheetMenagementSystemForInterns.Views
         //button click event to sent data to the temperary table/monthly table
         private void SendToTable_Click(object sender, RoutedEventArgs e)
         {
-            yearAndMonthIsInRangeCheckCommand1.validateYearAndMonth(this, connection);
-            if(yearAndMonthIsInRangeCheckCommand1.flag == 1)
+            try
             {
-                dataSendToTemperoryTableCommand1.dataSendAfterValidate(this, connection);
-                dataSeeBtnClickCommand1.DataseeButtonClick(dataShowingTable, connection);
-            }
-            else if(yearAndMonthIsInRangeCheckCommand1.flag == 0)
-            {
-                MessageBox.Show("Entered month or year is out of bound", "Error", MessageBoxButton.OKCancel, MessageBoxImage.Error);
-            }            
+                yearAndMonthIsInRangeCheckCommand1.validateYearAndMonth(this, connection);
+                if (yearAndMonthIsInRangeCheckCommand1.flag == 1)
+                {
+                    dataSendToTemperoryTableCommand1.dataSendAfterValidate(this, connection);
+                    dataSeeBtnClickCommand1.DataseeButtonClick(dataShowingTable, connection,this);
+                }
+                else if (yearAndMonthIsInRangeCheckCommand1.flag == 0)
+                {
+                    MessageBox.Show("Entered month or year is out of bound", "Error", MessageBoxButton.OKCancel, MessageBoxImage.Error);
+                }
+
+            }catch (Exception ex){}
+             
         }
 
 
         //add new record - clrear all fields for add new
         private void AddNewRecord_Click(object sender, RoutedEventArgs e)
         {
-            cleanFieldsToAddNewDataCommand1.cleanFieldsToAddNewData(this,connection);
+            try
+            {
+                cleanFieldsToAddNewDataCommand1.cleanFieldsToAddNewData(this, connection);
+
+            }catch (Exception ex) { }
         }
+
+
+        //update existing data of the data grid view 
+        private void UpdateExistingRecord_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                yearAndMonthIsInRangeCheckCommand1.validateYearAndMonth(this, connection);
+                if (yearAndMonthIsInRangeCheckCommand1.flag == 1)
+                {
+                    selectedGridDataUpdateCommand1.dataUpdateAndSaveTotheTable(this, connection);
+                    dataSeeBtnClickCommand1.DataseeButtonClick(dataShowingTable, connection, this);
+                }
+                else if (yearAndMonthIsInRangeCheckCommand1.flag == 0)
+                {
+                    MessageBox.Show("Entered month or year is out of bound", "Error", MessageBoxButton.OKCancel, MessageBoxImage.Error);
+                }
+
+            }
+            catch (Exception ex) { }
+        }
+
+
+        //delete selected data from the dataGrid
+        private void DeleteExistingRecord_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                deleteSelectedDataFromTemperarydataTableCommand1.deleteDataFromTemperaryDataTablePermenently(this, connection);
+                dataSeeBtnClickCommand1.DataseeButtonClick(dataShowingTable, connection, this);
+            }
+            catch(Exception ex) { }
+
+        }
+
+        //serchbox ID search btn click
+        private void SearchIsIDInGridView_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                searchBarButtonInUCforSalaryEnteringCommand1.searchedIDIsCheckIfThereIsOrIsNot(this, connection);
+            }
+            catch(Exception ex) { }
+            
+        }
+
 
 
 
@@ -125,6 +190,13 @@ namespace PaySheetMenagementSystemForInterns.Views
         DataSendToTemperoryTableCommand dataSendToTemperoryTableCommand1 = new DataSendToTemperoryTableCommand();
         YearAndMonthIsInRangeCheckCommand yearAndMonthIsInRangeCheckCommand1 = new YearAndMonthIsInRangeCheckCommand();
         CleanFieldsToAddNewDataCommand cleanFieldsToAddNewDataCommand1 = new CleanFieldsToAddNewDataCommand();
+        SelectedGridDataUpdateCommand selectedGridDataUpdateCommand1 = new SelectedGridDataUpdateCommand();
+        DeleteSelectedDataFromTemperarydataTableCommand deleteSelectedDataFromTemperarydataTableCommand1 = new DeleteSelectedDataFromTemperarydataTableCommand();
+        SearchBarButtonInUCforSalaryEnteringCommand searchBarButtonInUCforSalaryEnteringCommand1 = new SearchBarButtonInUCforSalaryEnteringCommand();
+
+
+
+
 
 
 
