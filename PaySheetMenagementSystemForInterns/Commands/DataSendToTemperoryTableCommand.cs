@@ -41,7 +41,13 @@ namespace PaySheetMenagementSystemForInterns.Commands
                         dt3.AcceptChanges();
                         sda3.Fill(dt3);
 
-                        if (dt3.Rows[0][0].ToString() == "0")
+                        if(dt2.Rows[0][0].ToString() != "0")
+                        {
+                            MessageBox.Show("User is already added", " Error ", MessageBoxButton.OKCancel, MessageBoxImage.Error);
+                        }
+
+
+                        else if (dt3.Rows[0][0].ToString() == "0")
                         {
                             MessageBox.Show("User is Invalid", " Error ", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                         }

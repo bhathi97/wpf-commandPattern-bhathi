@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace PaySheetMenagementSystemForInterns.Commands
 {
@@ -43,11 +44,14 @@ namespace PaySheetMenagementSystemForInterns.Commands
                     }
                     else
                     {
-                        SqlCommand sqlcommandforsearch = new SqlCommand("SELECT Month,TotalSalaryAmount,AccountNo FROM TempararySalaryTable WHERE ID = '" + obj.IDforSearch.Text + "'", connection);
+                        SqlCommand sqlcommandforsearch = new SqlCommand("SELECT Month,TotalSalaryAmount,AccountNo,ID,Year,Month,FullWorkDays,HalfWorkDays FROM TempararySalaryTable WHERE ID = '" + obj.IDforSearch.Text + "'", connection);
                         SqlDataAdapter sda1 = new SqlDataAdapter(sqlcommandforsearch);
                         DataTable showdatatable = new DataTable();
+                        showdatatable.AcceptChanges();
                         sda1.Fill(showdatatable);
                         obj.SearchResultOfTemperaryDataTableGridView.ItemsSource = showdatatable.DefaultView;
+                        
+
                     }
                 }
                 catch (Exception ex)

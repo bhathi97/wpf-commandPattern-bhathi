@@ -12,7 +12,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
 {
     class DataGridViewSelectionAutofillCommand
     {
-        public void dataSelectionAutofill(UserControlForSalaryEnteringWindow obj, SqlConnection connection)
+        public void dataSelectionAutofill(UserControlForSalaryEnteringWindow obj)
         {
             DataGrid dataGrid = (DataGrid)obj.dataShowingTable;
             DataRowView rowView = dataGrid.SelectedItem as DataRowView;

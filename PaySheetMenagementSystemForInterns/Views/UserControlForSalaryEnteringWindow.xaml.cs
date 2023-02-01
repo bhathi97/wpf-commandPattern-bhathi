@@ -68,7 +68,7 @@ namespace PaySheetMenagementSystemForInterns.Views
         //when datagrid view data select, autofill textboxes -> if update need to use
         private void dataShowingTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            dataGridViewSelectionAutofillCommand1.dataSelectionAutofill(this,connection);
+            dataGridViewSelectionAutofillCommand1.dataSelectionAutofill(this);
         }
         //validate fulldays input
         private void AddingFullWorkDays_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -163,10 +163,27 @@ namespace PaySheetMenagementSystemForInterns.Views
             try
             {
                 searchBarButtonInUCforSalaryEnteringCommand1.searchedIDIsCheckIfThereIsOrIsNot(this, connection);
+                
             }
             catch(Exception ex) { }
             
         }
+
+        //autofill data enterings to help if there is some update > then can do easily
+        private void SearchResultOfTemperaryDataTableGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SearchDataGridViewDataAutoFillWhenclickOnCommand1.searchedResultDataSelectionAutofill(this);
+        }
+
+        //button for export temperary data to a text file as bank pay sheet style and save a selected loacation
+        private void dataExportToaTextFile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+
+
 
 
 
@@ -193,6 +210,10 @@ namespace PaySheetMenagementSystemForInterns.Views
         SelectedGridDataUpdateCommand selectedGridDataUpdateCommand1 = new SelectedGridDataUpdateCommand();
         DeleteSelectedDataFromTemperarydataTableCommand deleteSelectedDataFromTemperarydataTableCommand1 = new DeleteSelectedDataFromTemperarydataTableCommand();
         SearchBarButtonInUCforSalaryEnteringCommand searchBarButtonInUCforSalaryEnteringCommand1 = new SearchBarButtonInUCforSalaryEnteringCommand();
+        SearchDataGridViewDataAutoFillWhenclickOnCommand SearchDataGridViewDataAutoFillWhenclickOnCommand1 = new SearchDataGridViewDataAutoFillWhenclickOnCommand();
+
+        
+
 
 
 

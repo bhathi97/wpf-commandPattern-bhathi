@@ -26,6 +26,13 @@
         <!--data entering textboxes-->
         <Border CornerRadius="5" BorderThickness="1" Grid.Column="0" BorderBrush="Black">
             <StackPanel Orientation="Vertical" Margin="5">
+
+                <Label Height="25">
+                    <Viewbox>
+                        <f:IconImage Icon="UserPlus" Foreground="LightGray"/>
+                    </Viewbox>
+                </Label>
+                
                 <!--id-->
                 <Border BorderBrush="LightGray"
                             BorderThickness="1"
@@ -266,9 +273,11 @@
         <!--data grid view -->
         <StackPanel Grid.Column="1" Margin="10,0,10,10">
             <Label x:Name="sayToClickEyeButtonLbl"
-                   Content="Click EYE button to see the content >>"/>
+                   Content="Click EYE button to see the content >>"
+                   Foreground="LightGray"/>
 
-            <DataGrid x:Name="dataShowingTable" SelectionChanged="dataShowingTable_SelectionChanged">
+            <DataGrid x:Name="dataShowingTable" 
+                      SelectionChanged="dataShowingTable_SelectionChanged">
                 
             </DataGrid>
         </StackPanel>
@@ -281,11 +290,17 @@
                 CornerRadius="3">
 
             <StackPanel Orientation="Vertical">
-                <Label Content="Home" 
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    
+                    <Label Content="Control panal" 
                        FontFamily="Segoe UI Symbol" 
-                       Foreground="White" 
-                       HorizontalAlignment="Right"
-                       Padding="0,0,20,0"/>
+                       Foreground="LightGray" 
+                       VerticalAlignment="Center"
+                       Padding="0,5,20,0"/>
+
+                </StackPanel>
+                
 
                 <StackPanel Orientation="Vertical">
                     
@@ -297,6 +312,12 @@
                         <Button x:Name="seeTableData"
                                 Style="{StaticResource ButtonStyle3}" Click="seeTableData_Click"
                                 >
+
+                            <Button.ToolTip>
+                                <ToolTip Content="Click to open the information of the temperary data table, if there remain."/>
+                            </Button.ToolTip>
+
+
                             <StackPanel Orientation="Horizontal">
                                 <f:IconImage Icon="Eye" Height="20"/>
 
@@ -313,6 +334,10 @@
                         <Button x:Name="SendToTable"
                                 Style="{StaticResource ButtonStyle3}" Click="SendToTable_Click"
                                 >
+                            <Button.ToolTip>
+                                <ToolTip Content="Click to Add filled data to the temperary data table."/>
+                            </Button.ToolTip>
+                            
                             <StackPanel Orientation="Horizontal">
                                 <f:IconImage Icon="Table" Height="20" />
                                 <TextBlock Text="Add To Table" VerticalAlignment="Center" 
@@ -333,6 +358,11 @@
                         <Button x:Name="AddNewRecord"
                                 Style="{StaticResource ButtonStyle3}" Click="AddNewRecord_Click"
                                 >
+
+                            <Button.ToolTip>
+                                <ToolTip Content="Click to clear all input text boxes for add new user information."/>
+                            </Button.ToolTip>
+                            
                             <StackPanel Orientation="Horizontal">
                                 <f:IconImage Icon="Pen" Height="20"/>
                                 <TextBlock Text="Add New" VerticalAlignment="Center" 
@@ -354,6 +384,11 @@
                         <Button x:Name="UpdateExistingRecord"
                                 Style="{StaticResource ButtonStyle3}" Click="UpdateExistingRecord_Click"
                                 >
+
+                            <Button.ToolTip>
+                                <ToolTip Content="Click to update chahanged information and save to the temparary data table."/>
+                            </Button.ToolTip>
+
                             <StackPanel Orientation="Horizontal">
                                 <f:IconImage Icon="Refresh" Height="20"/>
                                 <TextBlock Text="Update" VerticalAlignment="Center" 
@@ -374,6 +409,12 @@
                         <Button x:Name="DeleteExistingRecord"
                                 Style="{StaticResource ButtonStyle3}" Click="DeleteExistingRecord_Click"
                                 >
+
+                            <Button.ToolTip>
+                                <ToolTip Content="Click to delete selected data permenently from temperary data table. "/>
+                            </Button.ToolTip>
+
+
                             <StackPanel Orientation="Horizontal">
                                 <f:IconImage Icon="Trash" Height="20"/>
                                 <TextBlock Text="Delete" VerticalAlignment="Center" 
@@ -416,9 +457,14 @@
                                  HorizontalAlignment="Center"
                             >
                                     <Button x:Name="SearchIsIDInGridView"
-                                Style="{StaticResource ButtonStyle3}" Click="SearchIsIDInGridView_Click"
-                                Width="40">
+                                            Style="{StaticResource ButtonStyle3}" 
+                                            Click="SearchIsIDInGridView_Click"
+                                            Width="40">
                                         <f:IconImage Icon="Search" Height="20"/>
+
+                                        <Button.ToolTip>
+                                            <ToolTip Content="Click to search the information is exist for entered ID"/>
+                                        </Button.ToolTip>
 
 
                                     </Button>
@@ -431,8 +477,9 @@
                             <StackPanel HorizontalAlignment="Left"
                                     Margin="8,5,5,5">
                                 <DataGrid x:Name="SearchResultOfTemperaryDataTableGridView"
-                                  Width="195"
-                                  Height="100"/>
+                                          Width="195"
+                                          Height="100" 
+                                          SelectionChanged="SearchResultOfTemperaryDataTableGridView_SelectionChanged"/>
                             </StackPanel>
 
 
@@ -441,9 +488,37 @@
 
                     </Border>
 
-                    
-                    
-                    
+
+
+                    <!--data export-->
+                    <Border  Margin="5,10,0,5"
+                            Height="40"
+                            Width="220"
+                            HorizontalAlignment="Left">
+                        <Button x:Name="dataExportToaTextFile"
+                                Style="{StaticResource ButtonStyle3}" Click="dataExportToaTextFile_Click"
+                                >
+                            <StackPanel Orientation="Horizontal">
+                                <f:IconImage Icon="FileExport" Height="20"/>
+                                <TextBlock Text="Export as .txt" VerticalAlignment="Center" 
+                                               Margin="10,0,10,0"
+                                               FontSize="12"
+                                               FontFamily="Segoe UI Symbol"/>
+
+                            </StackPanel>
+
+                            <Button.ToolTip>
+                                <ToolTip Content="Click to export temperary data table to a permenent table and save as .txt file (bank paysheet type)"/>
+                            </Button.ToolTip>
+
+
+                        </Button>
+
+                    </Border>
+
+
+
+
 
 
                 </StackPanel>
