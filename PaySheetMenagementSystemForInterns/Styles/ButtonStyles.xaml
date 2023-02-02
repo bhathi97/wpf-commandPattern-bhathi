@@ -41,16 +41,28 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Cursor" Value="Hand"/>
-                <Setter Property="Background" Value="SandyBrown"/>
+                <Setter Property="Background" Value="Gray"/>
             </Trigger>
         </Style.Triggers>
     </Style>
     
     <!--salary enteing page button style-->
 
+    <LinearGradientBrush x:Key="type1bt" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#B7B2B2" Offset="0"/>
+        <GradientStop Color="#8E8282" Offset="0.6"/>
+    </LinearGradientBrush>
+    
+    <!--when trigger-->
+    <LinearGradientBrush x:Key="type1at" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="CornflowerBlue" Offset="0.6"/>
+        <GradientStop Color="#125B6B" Offset="0"/>
+    </LinearGradientBrush>
+
 
     <Style x:Key="ButtonStyle3" TargetType="Button" >
-        <Setter Property="Background" Value="CadetBlue"/>
+        <Setter Property="Background" Value="{StaticResource type1bt}"/>
+
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -64,7 +76,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="CornflowerBlue"/>
+                <Setter Property="Background" Value="{StaticResource type1at}"/>
             </Trigger>
         </Style.Triggers>
     </Style>

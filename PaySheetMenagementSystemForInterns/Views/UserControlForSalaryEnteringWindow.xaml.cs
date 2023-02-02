@@ -36,6 +36,9 @@ namespace PaySheetMenagementSystemForInterns.Views
             AddingMonth.ItemsSource = months;
             this.DataContext = this;
 
+            //disable at the beginning
+            dataExportToaTextFile.IsEnabled= false;
+
         }
         
         
@@ -175,10 +178,26 @@ namespace PaySheetMenagementSystemForInterns.Views
             SearchDataGridViewDataAutoFillWhenclickOnCommand1.searchedResultDataSelectionAutofill(this);
         }
 
+
+        //export button enable
+        private void theFolderNameToSavePaySheet_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            dataExportToaTextFile.IsEnabled = true;
+        }
+
         //button for export temperary data to a text file as bank pay sheet style and save a selected loacation
         private void dataExportToaTextFile_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                exportTemperaryDataToATextFileAsBankPaySheetCommand1.exportDatatoSaaryTableAndSaveAsBankPaysheetTxtFile(this, connection);
+                theFolderNameToSavePaySheet.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Error popup | Saving process crashed | try again",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
+            
         }
 
 
@@ -211,8 +230,10 @@ namespace PaySheetMenagementSystemForInterns.Views
         DeleteSelectedDataFromTemperarydataTableCommand deleteSelectedDataFromTemperarydataTableCommand1 = new DeleteSelectedDataFromTemperarydataTableCommand();
         SearchBarButtonInUCforSalaryEnteringCommand searchBarButtonInUCforSalaryEnteringCommand1 = new SearchBarButtonInUCforSalaryEnteringCommand();
         SearchDataGridViewDataAutoFillWhenclickOnCommand SearchDataGridViewDataAutoFillWhenclickOnCommand1 = new SearchDataGridViewDataAutoFillWhenclickOnCommand();
+        ExportTemperaryDataToATextFileAsBankPaySheetCommand exportTemperaryDataToATextFileAsBankPaySheetCommand1 = new ExportTemperaryDataToATextFileAsBankPaySheetCommand();
 
         
+
 
 
 

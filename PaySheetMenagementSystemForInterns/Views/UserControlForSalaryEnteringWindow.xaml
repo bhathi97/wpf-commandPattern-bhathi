@@ -13,7 +13,7 @@
              >
     <!--Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=local:HomeWindow}}"-->
     
-    <Grid Background="#FF8E0000">
+    <Grid Background="Transparent">
         <Grid.ColumnDefinitions >
             <!--data entering textboxes-->
             <ColumnDefinition Width="300"/>
@@ -319,7 +319,7 @@
 
 
                             <StackPanel Orientation="Horizontal">
-                                <f:IconImage Icon="Eye" Height="20"/>
+                                <f:IconImage Icon="Eye" Height="20" Foreground="Red"/>
 
                             </StackPanel>
                         </Button>
@@ -339,7 +339,7 @@
                             </Button.ToolTip>
                             
                             <StackPanel Orientation="Horizontal">
-                                <f:IconImage Icon="Table" Height="20" />
+                                <f:IconImage Icon="Table" Height="20" Foreground="Black" />
                                 <TextBlock Text="Add To Table" VerticalAlignment="Center" 
                                                Margin="10"
                                                FontSize="12"
@@ -364,7 +364,7 @@
                             </Button.ToolTip>
                             
                             <StackPanel Orientation="Horizontal">
-                                <f:IconImage Icon="Pen" Height="20"/>
+                                <f:IconImage Icon="Pen" Height="20" Foreground="Black"/>
                                 <TextBlock Text="Add New" VerticalAlignment="Center" 
                                                Margin="20,0,20,0"
                                                FontSize="12"
@@ -390,7 +390,7 @@
                             </Button.ToolTip>
 
                             <StackPanel Orientation="Horizontal">
-                                <f:IconImage Icon="Refresh" Height="20"/>
+                                <f:IconImage Icon="Refresh" Height="20" Foreground="Black" />
                                 <TextBlock Text="Update" VerticalAlignment="Center" 
                                                Margin="20,0,30,0"
                                                FontSize="12"
@@ -416,7 +416,7 @@
 
 
                             <StackPanel Orientation="Horizontal">
-                                <f:IconImage Icon="Trash" Height="20"/>
+                                <f:IconImage Icon="Trash" Height="20" Foreground="Black" />
                                 <TextBlock Text="Delete" VerticalAlignment="Center" 
                                                Margin="30,0,30,0"
                                                FontSize="12"
@@ -460,7 +460,7 @@
                                             Style="{StaticResource ButtonStyle3}" 
                                             Click="SearchIsIDInGridView_Click"
                                             Width="40">
-                                        <f:IconImage Icon="Search" Height="20"/>
+                                        <f:IconImage Icon="Search" Height="20" Foreground="Black" />
 
                                         <Button.ToolTip>
                                             <ToolTip Content="Click to search the information is exist for entered ID"/>
@@ -491,7 +491,42 @@
 
 
                     <!--data export-->
-                    <Border  Margin="5,10,0,5"
+
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Left"
+                                Margin="5,10,0,0">
+
+                        <Label>
+                            <Viewbox>
+                                <f:IconImage Icon="FileAlt" Foreground="LightGray"
+                                             Height="40"/>
+                            </Viewbox>
+                        </Label>
+
+                        <StackPanel Orientation="Vertical">
+                            <Label Content="File Name :"
+                               FontFamily="Segoe UI Symbol" 
+                               Foreground="LightGray" 
+                               VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   
+                               />
+
+                            <TextBox x:Name="theFolderNameToSavePaySheet"
+                                    Width="178"
+                                    HorizontalAlignment="Left"
+                                    TextWrapping="Wrap" TextChanged="theFolderNameToSavePaySheet_TextChanged"/>
+
+
+                        </StackPanel>
+                        
+                    </StackPanel>
+                    
+
+
+               
+                    
+                    <Border  Margin="5,5,0,5"
                             Height="40"
                             Width="220"
                             HorizontalAlignment="Left">
@@ -499,7 +534,7 @@
                                 Style="{StaticResource ButtonStyle3}" Click="dataExportToaTextFile_Click"
                                 >
                             <StackPanel Orientation="Horizontal">
-                                <f:IconImage Icon="FileExport" Height="20"/>
+                                <f:IconImage Icon="FileExport" Height="20" Foreground="DarkRed" />
                                 <TextBlock Text="Export as .txt" VerticalAlignment="Center" 
                                                Margin="10,0,10,0"
                                                FontSize="12"
