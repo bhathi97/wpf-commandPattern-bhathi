@@ -13,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using PaySheetMenagementSystemForInterns.Commands;
+using System.Windows.Interop;
+using System.Windows.Threading;
+using System.Data.SqlClient;
 
 namespace PaySheetMenagementSystemForInterns.Views
 {
@@ -20,9 +23,12 @@ namespace PaySheetMenagementSystemForInterns.Views
     public partial class HomeWindow : Window
     {
         public WindowState _state;
-        
+        DispatcherTimer timer;
+        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-KHI8921;Initial Catalog=CPC_Interns_Salary_Management_System_Database;Integrated Security=True;TrustServerCertificate=True");
 
+        //commands as objects
         WindowCloseButtonCommand windowCloseButtonCommand1 = new WindowCloseButtonCommand();
+        ShowingDatabaseIsConennectedOrNotAtTheBeginningCommand ShowingDatabaseIsConennectedOrNotAtTheBeginningCommand1 = new ShowingDatabaseIsConennectedOrNotAtTheBeginningCommand();
 
         public WindowCloseButtonCommand WindowCloseButtonCommand1 { get => windowCloseButtonCommand1; set => windowCloseButtonCommand1 = value; }
 
@@ -30,6 +36,27 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             InitializeComponent();
             this.DataContext = this;
+            ShowingDatabaseIsConennectedOrNotAtTheBeginningCommand1.showISDAtaBAseConnecetAtTheBeginning(this, connection);
+
+            //show real time and date
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            realTimeDateShowingLable.Content = DateTime.Now.ToString("f");
+        }
+
+        //add windows system properties
+        [DllImport("user32.dll")]
+        public static extern IntPtr SendMessage(IntPtr hwnd, int wMsg, int wParam, int lParam);
+        private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            WindowInteropHelper helper = new WindowInteropHelper(this);
+            SendMessage(helper.Handle, 161, 2, 0);
         }
 
         private void MenuItemHome_Click(object sender, RoutedEventArgs e)
@@ -63,6 +90,9 @@ namespace PaySheetMenagementSystemForInterns.Views
             WindowCloseButtonCommand1.WindowMinimize(this);
         }
 
-        
+        internal void SetBinding(double actualHeight, Binding binding)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

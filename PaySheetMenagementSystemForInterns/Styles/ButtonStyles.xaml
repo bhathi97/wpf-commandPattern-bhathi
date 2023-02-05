@@ -3,8 +3,8 @@
     
     <!--button styles home/close,min,max-->
     <Style x:Key="ButtonStyle1" TargetType="Button" >
-        <Setter Property="Background" Value="#780101"/>
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="#d5daf0"/>
+        <Setter Property="Foreground" Value="Black"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -18,7 +18,7 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Cursor" Value="Hand"/>
-                <Setter Property="Background" Value="Red"/>
+                <Setter Property="Background" Value="White"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -26,8 +26,8 @@
 
     <!--button styles home/close,min,max-->
     <Style x:Key="ButtonStyle2" TargetType="Button" >
-        <Setter Property="Background" Value="#780101"/>
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="#d5daf0"/>
+        <Setter Property="Foreground" Value="Black"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -41,7 +41,7 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Cursor" Value="Hand"/>
-                <Setter Property="Background" Value="Gray"/>
+                <Setter Property="Background" Value="red"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -49,14 +49,20 @@
     <!--salary enteing page button style-->
 
     <LinearGradientBrush x:Key="type1bt" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="#B7B2B2" Offset="0"/>
-        <GradientStop Color="#8E8282" Offset="0.6"/>
+        <GradientStop Color="White" Offset="0"/>
+        <GradientStop Color="#c8cbe0" Offset="0.6"/>
     </LinearGradientBrush>
     
     <!--when trigger-->
     <LinearGradientBrush x:Key="type1at" StartPoint="0,0" EndPoint="0,1">
-        <GradientStop Color="CornflowerBlue" Offset="0.6"/>
-        <GradientStop Color="#125B6B" Offset="0"/>
+        <GradientStop Color="White" Offset="0.6"/>
+        <GradientStop Color="#c8cbe0" Offset="0"/>
+    </LinearGradientBrush>
+    
+    <!--borders-->
+    <LinearGradientBrush x:Key="borderButton1" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#a3a7b8" Offset="0"/>
+        <GradientStop Color="#a3a7b8" Offset="0.6"/>
     </LinearGradientBrush>
 
 
@@ -68,7 +74,29 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}"
-                            CornerRadius="3">
+                            CornerRadius="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource type1at}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <!--search btn-->
+    <Style x:Key="ButtonStyleSearch" TargetType="Button" >
+        <Setter Property="Background" Value="{StaticResource type1bt}"/>
+
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="20">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>

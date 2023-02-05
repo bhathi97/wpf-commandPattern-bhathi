@@ -4,9 +4,10 @@
              xmlns:local="clr-namespace:PaySheetMenagementSystemForInterns"
              >
     <Application.Resources>
-        <ResourceDictionary>
+        <ResourceDictionary >
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/ButtonStyles.xaml"/>
+                <ResourceDictionary Source="Styles/ColorStockResourseDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

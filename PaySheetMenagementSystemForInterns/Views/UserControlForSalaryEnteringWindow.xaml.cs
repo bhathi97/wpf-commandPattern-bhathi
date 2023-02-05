@@ -27,6 +27,7 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             InitializeComponent();
             InternID.Focus();
+            
             months = new string[] { "january", "february", "march", "april", "may", "june", "july", "august", "september", "octomber", "november", "december" };
             years = new int[] { 2022, 2023, 2024, 2025, 2026 };
            
@@ -34,6 +35,7 @@ namespace PaySheetMenagementSystemForInterns.Views
             //fill combo boxes
             AddingYear.ItemsSource = years;
             AddingMonth.ItemsSource = months;
+            
             this.DataContext = this;
 
             //disable at the beginning
@@ -105,6 +107,7 @@ namespace PaySheetMenagementSystemForInterns.Views
                 {
                     dataSendToTemperoryTableCommand1.dataSendAfterValidate(this, connection);
                     dataSeeBtnClickCommand1.DataseeButtonClick(dataShowingTable, connection,this);
+                    lastAddedIDShowingLable.Content = InternID.Text;
                 }
                 else if (yearAndMonthIsInRangeCheckCommand1.flag == 0)
                 {
@@ -201,13 +204,6 @@ namespace PaySheetMenagementSystemForInterns.Views
         }
 
 
-
-
-
-
-
-
-
         //---parameters to pass
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-KHI8921;Initial Catalog=CPC_Interns_Salary_Management_System_Database;Integrated Security=True;TrustServerCertificate=True");
         public string[] months { get; set; }
@@ -232,7 +228,12 @@ namespace PaySheetMenagementSystemForInterns.Views
         SearchDataGridViewDataAutoFillWhenclickOnCommand SearchDataGridViewDataAutoFillWhenclickOnCommand1 = new SearchDataGridViewDataAutoFillWhenclickOnCommand();
         ExportTemperaryDataToATextFileAsBankPaySheetCommand exportTemperaryDataToATextFileAsBankPaySheetCommand1 = new ExportTemperaryDataToATextFileAsBankPaySheetCommand();
 
-        
+        private void StackPanel_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        {
+
+        }
+
+
 
 
 

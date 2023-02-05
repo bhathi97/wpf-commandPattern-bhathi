@@ -8,95 +8,217 @@
         
         
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="1200"
+        Height="700" Width="1200"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
         
         
     >
 
+    <Border Margin="5" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            
+            <!--heading-->
+            <Border Padding="1" Grid.Row="0" Background="#d5daf0">
+                <StackPanel Grid.Row="0">
+                    <StackPanel Orientation="Vertical" Grid.Row="1">
+                        <Grid Height="35">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="30" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Background="{StaticResource staticPanalColor1}">
+                                <Image Source="/Resourses/logo.png" Height="35"/>
+                            </StackPanel>
 
-    <Grid>
+                            <!--heading-->
+                            <Label Content="Trainee Salary Management System | Ceylon Petroleum Corporation | Head Office" 
+                                   Grid.Column="1" 
+                                   Background="#d5daf0"
+                               />
 
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="0.2,0.4" StartPoint="0.5,0.1">
-                <GradientStop Color="Black"/>
-                <GradientStop Color="#FF6F0606" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <!--2 parts-->
-        <StackPanel Orientation="Vertical" Grid.Row="0">
-            <Grid Height="30">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30"/>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="30" />
-                    <ColumnDefinition Width="30" />
-                    <ColumnDefinition Width="30" />
-                </Grid.ColumnDefinitions>
-                <StackPanel Background="Black">
-                    <Image Source="/Resourses/logo .png" />
+                            <!--close button-->
+                            <Border 
+                            Height="30"
+                            CornerRadius="2"
+                            Grid.Column="4">
+
+                                <Button x:Name="CloseButton" 
+                                        Grid.Column="4" 
+                                        Click="CloseButton_Click"
+                                        Style="{StaticResource ButtonStyle2}">
+
+                                    <f:IconImage Icon="x" Margin="10"/>
+
+                                    <Button.ToolTip>
+                                        <ToolTip Content="Close"/>
+                                    </Button.ToolTip>
+                                    
+                                </Button>
+
+                            </Border>
+
+
+                            <!--maximize button-->
+                            <Border 
+                                CornerRadius="2"
+                                Grid.Column="3"
+                                Height="30">
+
+                                <Button x:Name="MaximizeButton" 
+                                    Grid.Column="3"
+                                    Click="MaximizeButton_Click"
+                                    Style="{StaticResource ButtonStyle1}">
+                                    <f:IconImage Icon="WindowMaximize" Margin="9" Foreground="Black"/>
+                                    
+                                    <Button.ToolTip>
+                                        <ToolTip Content="Restore"/>
+                                    </Button.ToolTip>
+
+                                </Button>
+
+                            </Border>
+
+
+                            <!--minimize button-->
+
+                            <Border 
+                                    CornerRadius="2"
+                                    Grid.Column="2"
+                                    Height="30">
+
+
+                                <Button x:Name="MinimizeButton"
+                                    Grid.Column="2"
+                                    Click="MinimizeButton_Click"
+                                    Style="{StaticResource ButtonStyle1}">
+                                    
+                                    <f:IconImage Icon="WindowMinimize" Margin="6" Foreground="Black"/>
+                                    <Button.ToolTip>
+                                        <ToolTip Content="Minimize"/>
+                                    </Button.ToolTip>
+                                </Button>
+
+                            </Border>
+
+
+                        </Grid>
+
+
+
+
+
+
+
+
+                    </StackPanel>
+
                 </StackPanel>
+            </Border>
+            
+            
+            
+            <!--2 parts-->
+            <StackPanel Orientation="Vertical" Grid.Row="1">
+                <Grid Height="30">
+            
+                    <!--f:IconImage Icon="MoneyBillTransfer" Margin="5" Foreground="#780101"-->
+                    <Menu x:Name="Menu" 
+                          
+                          >
+                        <Menu.Background>
+                            <SolidColorBrush Color="{StaticResource backgroundColor4}"/>
+                        </Menu.Background>
+                        <!--menu-->
+                        <MenuItem Header="Home" Click="MenuItemHome_Click" Padding="6"
+                                  >
+
+
+                            <MenuItem.Style>
+                                <Style TargetType="MenuItem">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="LightBlue"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </MenuItem.Style>
+
+
+
+                        </MenuItem>
+                        <!--add new intern to tables-->
+                        <MenuItem Header="Newbie" Click="MenuItemNewbie_Click" Padding="6"/>
+                        <!--setting-->
+                        <MenuItem Header="Setting" Click="MenuItemSetting_Click" Padding="6"/>
+                    </Menu>
+                    
+
+
+                </Grid>
+
+
+            </StackPanel>
+            <StackPanel Grid.Row="2" Background="#121840">
+                <ContentControl x:Name="UserControlLoader1" Grid.Row="2" >
                 
-                <!--f:IconImage Icon="MoneyBillTransfer" Margin="5" Foreground="#780101"-->
-                <Menu x:Name="Menu" Grid.Column="1" Foreground="White">
-                    <Menu.Background>
-                        <LinearGradientBrush EndPoint="0.5,0.1" StartPoint="0.2,0.7">
-                            <GradientStop Color="DarkRed" Offset="1"/>
-                            <GradientStop Color="Black"/>
-                        </LinearGradientBrush>
-                    </Menu.Background>
-                    <!--menu-->
-                    <MenuItem Header="Home" Click="MenuItemHome_Click" Padding="6">
+                </ContentControl>
 
-                    </MenuItem>
-                    <!--add new intern to tables-->
-                    <MenuItem Header="Newbie" Click="MenuItemNewbie_Click" Padding="6"/>
-                    <!--setting-->
-                    <MenuItem Header="Setting" Click="MenuItemSetting_Click" Padding="6"/>
-                </Menu>
-                <!--close button-->
-                <Button x:Name="CloseButton" 
-                        Grid.Column="4" 
-                        Click="CloseButton_Click"
-                        Style="{StaticResource ButtonStyle1}">
-                    <f:IconImage Icon="x" Margin="7" Foreground="White" />
-                </Button>
-                <!--maximize button-->
-                <Button x:Name="MaximizeButton" 
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Background="#d5daf0" Orientation="Vertical">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="105"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="210"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--show connecton state | labele and state table-->
+                    <Label Content="Connection State :"
+                           Grid.Column="0"
+                           VerticalAlignment="Center"/>
+
+                    <Label Content="" 
+                           Grid.Column="1"
+                           x:Name="connectionStateShowingLabel" />
+
+
+                    <!--show date and time-->
+                    <Label
+                        x:Name="realTimeDateShowingLable"
+                        Foreground="Black"
                         Grid.Column="3"
-                        Click="MaximizeButton_Click"
-                        Style="{StaticResource ButtonStyle2}">
-                    <f:IconImage Icon="WindowMaximize" Margin="7" Foreground="White" />
-                </Button>
-                <!--minimize button-->
-                <Button x:Name="MinimizeButton"
-                        Grid.Column="2"
-                        Click="MinimizeButton_Click"
-                        Style="{StaticResource ButtonStyle2}">
-                    <f:IconImage Icon="WindowMinimize" Margin="7" Foreground="White" />
-                </Button>
-            </Grid>
+                        VerticalAlignment="Center"/>
 
 
 
 
 
 
+                </Grid>
+                
 
-
-        </StackPanel>
-        <ContentControl Grid.Row="1" x:Name="UserControlLoader1" >
-        
-        </ContentControl>
+            </StackPanel>
 
 
 
-    </Grid>
+        </Grid>
+    </Border>
+    
 </Window>
     
     

@@ -18,6 +18,9 @@
     <Page Update="Styles\ButtonStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styles\ColorStockResourseDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\HomeWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
