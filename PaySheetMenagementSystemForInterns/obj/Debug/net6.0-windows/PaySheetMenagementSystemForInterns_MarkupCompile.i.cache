@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\App.xaml
-4-485397917
+627140790
 2108047812
-22208909103
+27-601852244
 2061582510809
-Styles\ButtonStyles.xaml;Styles\ColorStockResourseDictionary.xaml;Views\HomeWindow.xaml;Views\UserControlForSalaryEnteringWindow.xaml;
+Styles\ButtonStyles.xaml;Styles\ColorStockResourseDictionary.xaml;Views\HomeWindow.xaml;Views\UserControlAddNewUserToMasterTable.xaml;Views\UserControlForDashboardWindow.xaml;Views\UserControlForSalaryEnteringWindow.xaml;
 
 True
 

@@ -6,7 +6,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Forms;
 
 namespace PaySheetMenagementSystemForInterns.Commands
 {
@@ -14,13 +16,27 @@ namespace PaySheetMenagementSystemForInterns.Commands
     {
         public void DataseeButtonClick(DataGrid grid, SqlConnection con, UserControlForSalaryEnteringWindow obj)
         {
-            SqlCommand sqlcommand = new SqlCommand("select * from TempararySalaryTable", con);
-            SqlDataAdapter sqldataadapter = new SqlDataAdapter(sqlcommand);
-            DataTable showdatatable = new DataTable();
-            sqldataadapter.Fill(showdatatable);
-            grid.ItemsSource = showdatatable.DefaultView;
+            
 
-            obj.sayToClickEyeButtonLbl.Content = "Temparary Data Table"; 
+            try
+            {
+                con.Open();
+                SqlCommand sqlcommand = new SqlCommand("select * from [TEMP_SALARY-DETAILS_TRAINEE]", con);
+                SqlDataAdapter sqldataadapter = new SqlDataAdapter(sqlcommand);
+                DataTable showdatatable = new DataTable();
+                sqldataadapter.Fill(showdatatable);
+                obj.dataShowingTable.AutoGenerateColumns = false;
+                grid.ItemsSource = showdatatable.DefaultView;
+
+            }
+            catch(Exception ex)
+            {
+                System.Windows.MessageBox.Show(ex.Message,"Error",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
+            finally { con.Close(); }
+            obj.sayToClickEyeButtonLbl.Content = "Temparary Data Table";
+
+
 
         }
 

@@ -59,20 +59,27 @@ namespace PaySheetMenagementSystemForInterns.Views
             SendMessage(helper.Handle, 161, 2, 0);
         }
 
+        //menu items commands
         private void MenuItemHome_Click(object sender, RoutedEventArgs e)
         {
             UserControlLoader1.Content = new UserControlForSalaryEnteringWindow();
                 
         }
 
+        //add new trainee command
         private void MenuItemNewbie_Click(object sender, RoutedEventArgs e)
         {
-
+            UserControlLoader1.Content = new UserControlAddNewUserToMasterTable();
         }
 
         private void MenuItemSetting_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void MenuItemDashboard_Click(object sender, RoutedEventArgs e)
+        {
+            UserControlLoader1.Content = new UserControlForDashboardWindow();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
@@ -94,5 +101,7 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

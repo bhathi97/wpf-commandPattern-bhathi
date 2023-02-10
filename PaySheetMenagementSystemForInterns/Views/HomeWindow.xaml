@@ -162,6 +162,8 @@
                         <!--add new intern to tables-->
                         <MenuItem Header="Newbie" Click="MenuItemNewbie_Click" Padding="6"/>
                         <!--setting-->
+                        <MenuItem Header="Dashboard" Click="MenuItemDashboard_Click" Padding="6"/>
+                        <!--setting-->
                         <MenuItem Header="Setting" Click="MenuItemSetting_Click" Padding="6"/>
                     </Menu>
                     

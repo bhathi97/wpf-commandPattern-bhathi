@@ -10,6 +10,12 @@
     <Compile Update="Views\HomeWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\UserControlAddNewUserToMasterTable.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControlForDashboardWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControlForSalaryEnteringWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,6 +28,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\HomeWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControlAddNewUserToMasterTable.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControlForDashboardWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControlForSalaryEnteringWindow.xaml">
