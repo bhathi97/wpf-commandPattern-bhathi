@@ -35,9 +35,12 @@ C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagemen
 C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\obj\Debug\net6.0-windows\Views\UserControlForSalaryEnteringWindow.g.cs
 C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\obj\Debug\net6.0-windows\Views\UserControlForSalaryEnteringWindow.baml
 C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\obj\Debug\net6.0-windows\Styles\ColorStockResourseDictionary.baml
-C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\bin\Debug\net6.0-windows\Resourses\logo.png
 C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\obj\Debug\net6.0-windows\Views\UserControlForDashboardWindow.g.cs
 C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\obj\Debug\net6.0-windows\Views\UserControlForDashboardWindow.baml
 C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\obj\Debug\net6.0-windows\Views\UserControlAddNewUserToMasterTable.g.cs
 C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\obj\Debug\net6.0-windows\Views\UserControlAddNewUserToMasterTable.baml
+C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\obj\Debug\net6.0-windows\Views\UserControlsForAddNewToMAsterTableContent\UserControlForDataImportFromExcel.g.cs
+C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\obj\Debug\net6.0-windows\Views\UserControlsForAddNewToMAsterTableContent\UserControlForDataImportFromExcel.baml
+C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\obj\Debug\net6.0-windows\Views\UserControlsForAddNewToMAsterTableContent\UserControlForMasterDataShowing.g.cs
+C:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\obj\Debug\net6.0-windows\Views\UserControlsForAddNewToMAsterTableContent\UserControlForMasterDataShowing.baml

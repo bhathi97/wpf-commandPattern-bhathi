@@ -174,8 +174,8 @@
 
             </StackPanel>
             <StackPanel Grid.Row="2" Background="#121840">
-                <ContentControl x:Name="UserControlLoader1" Grid.Row="2" >
-                
+                <ContentControl x:Name="UserControlLoader1" Grid.Row="2" SizeChanged="UserControlLoader1_SizeChanged" >
+                    
                 </ContentControl>
 
             </StackPanel>

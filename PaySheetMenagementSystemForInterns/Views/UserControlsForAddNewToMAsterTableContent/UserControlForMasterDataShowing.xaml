@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAsterTableContent.UserControlForMasterDataShowing"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAsterTableContent"
+             mc:Ignorable="d" 
+             >
+    <UserControl.Resources>
+        <Style x:Key="MyStyle" TargetType="{x:Type Rectangle}">
+            <Setter Property="Width" Value="{Binding ElementName=UserControlLoaderToAddNew, Path=RenderSize.Width}" />
+            <Setter Property="Height" Value="{Binding ElementName=UserControlLoaderToAddNew, Path=RenderSize.Height}" />
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Border BorderThickness="1" 
+                Grid.Column="0" 
+                BorderBrush="#d5daf0"
+                Margin="1">
+            <Border BorderThickness="1" 
+                Grid.Column="0" 
+                BorderBrush="#43496b" 
+                Background="White">
+
+
+                <DataGrid x:Name="masterTableViewDataGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="100"  Header="Trainee Number" Binding="{Binding [Trainee No]}" />
+                        <DataGridTextColumn Width="100" Header="ID" Binding="{Binding ID}" />
+                        <DataGridTextColumn Width="200" Header="Name" Binding="{Binding Name}" />
+                        <DataGridTextColumn Width="200" Header="Location" Binding="{Binding Location}" />
+                        <DataGridTextColumn Width="100" Header="Pay" Binding="{Binding [Should pay or no]}" />
+                        <DataGridTextColumn Width="120" Header="Telephone Number" Binding="{Binding [Telephone No]}" />
+                        <DataGridTextColumn Width="100" Header="Start Date" Binding="{Binding [Start Date]}" />
+                        <DataGridTextColumn Width="100" Header="End Date" Binding="{Binding [End Date]}" />
+                        <DataGridTextColumn Width="100" Header="Months" Binding="{Binding [Months]}"/>
+                        
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </Border>
+        </Border>
+    </Grid>
+</UserControl>

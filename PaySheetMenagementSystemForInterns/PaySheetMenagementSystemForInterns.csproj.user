@@ -19,6 +19,12 @@
     <Compile Update="Views\UserControlForSalaryEnteringWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForDataImportFromExcel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForMasterDataShowing.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Styles\ButtonStyles.xaml">
@@ -37,6 +43,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControlForSalaryEnteringWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForDataImportFromExcel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForMasterDataShowing.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -32,11 +32,14 @@ namespace PaySheetMenagementSystemForInterns.Views
 
         public WindowCloseButtonCommand WindowCloseButtonCommand1 { get => windowCloseButtonCommand1; set => windowCloseButtonCommand1 = value; }
 
+
         public HomeWindow()
         {
             InitializeComponent();
             this.DataContext = this;
             ShowingDatabaseIsConennectedOrNotAtTheBeginningCommand1.showISDAtaBAseConnecetAtTheBeginning(this, connection);
+            //UserControlLoader1.Content = new UserControlForSalaryEnteringWindow();
+            
 
             //show real time and date
             timer = new DispatcherTimer();
@@ -63,7 +66,7 @@ namespace PaySheetMenagementSystemForInterns.Views
         private void MenuItemHome_Click(object sender, RoutedEventArgs e)
         {
             UserControlLoader1.Content = new UserControlForSalaryEnteringWindow();
-                
+           
         }
 
         //add new trainee command
@@ -102,6 +105,10 @@ namespace PaySheetMenagementSystemForInterns.Views
             throw new NotImplementedException();
         }
 
-       
+        private void UserControlLoader1_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            //userControlForSalaryEnteringWindow      .Width = e.NewSize.Width;
+        }
+
     }
 }

@@ -1,7 +1,9 @@
 ﻿
 FC:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\App.xaml;;
 FC:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\Views\HomeWindow.xaml;;
-FC:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\Views\UserControlForSalaryEnteringWindow.xaml;;
-FC:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\Views\UserControlForDashboardWindow.xaml;;
 FC:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\Views\UserControlAddNewUserToMasterTable.xaml;;
+FC:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\Views\UserControlForDashboardWindow.xaml;;
+FC:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\Views\UserControlForSalaryEnteringWindow.xaml;;
+FC:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\Views\UserControlsForAddNewToMAsterTableContent\UserControlForDataImportFromExcel.xaml;;
+FC:\Users\bhath\source\repos\PaySheetMenagementSystemForInterns\PaySheetMenagementSystemForInterns\Views\UserControlsForAddNewToMAsterTableContent\UserControlForMasterDataShowing.xaml;;
 

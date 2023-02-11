@@ -8,34 +8,420 @@
              xmlns:f="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
              
              
-             Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=local:HomeWindow}}"
-             Height="680"
-             
              >
-    
+
+    <UserControl.Resources>
+        <Style x:Key="MyStyle" TargetType="{x:Type Rectangle}">
+            <Setter Property="Width" Value="{Binding ElementName=UserControlLoader1, Path=RenderSize.Width}" />
+            <Setter Property="Height" Value="{Binding ElementName=UserControlLoader1, Path=RenderSize.Height}" />
+        </Style>
+    </UserControl.Resources>
+
     <!--Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=local:HomeWindow}}"
              -->
-    
-    <Grid Background="Transparent">
-        <Grid.ColumnDefinitions >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="Transparent" Grid.Row="0">
+            <Grid.ColumnDefinitions >
+                <!--data entering textboxes-->
+                <ColumnDefinition Width="300"/>
+                <!--show data grid view-->
+                <ColumnDefinition Width="*"/>
+                <!--control buttons-->
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+
             <!--data entering textboxes-->
-            <ColumnDefinition Width="300"/>
-            <!--show data grid view-->
-            <ColumnDefinition Width="*"/>
-            <!--control buttons-->
-            <ColumnDefinition Width="250"/>
-        </Grid.ColumnDefinitions>
-        
-        <!--data entering textboxes-->
-        <Border BorderThickness="1" 
+            <Border BorderThickness="1" 
                 Grid.Column="0" 
                 BorderBrush="#d5daf0"
                 Margin="5">
-            <Border BorderThickness="1" 
+                <Border BorderThickness="1" 
                 Grid.Column="0" 
                 BorderBrush="#43496b" 
                 Background="White">
-                <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True"
+                              >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Orientation="Horizontal" Height="30" Grid.Column="0">
+
+                                <Label  Background="#030c45">
+                                    <Viewbox>
+                                        <f:IconImage Icon="Plus" 
+                                                 Foreground="White"
+                                                 Margin="5"/>
+                                    </Viewbox>
+                                </Label>
+                                <Label Content="Add new Record" 
+                                   Background="#030c45" 
+                                   Width="275"
+                                   Foreground="White"/>
+
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" Background="#d5daf0" Grid.Row="1">
+                                <Border>
+                                    <StackPanel>
+                                        <!--id-->
+                                        <Border BorderBrush="#d5daf0"
+                                BorderThickness="1"
+                                CornerRadius="2"
+                                Margin="0,5,0,0">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="ID" 
+                                       Width="100" 
+                                       FontFamily="Segoe UI Symbol" 
+                                       Foreground="Black"/>
+                                                <TextBox Height="30"
+                                                 Background="white"
+                                                 BorderBrush="Black"
+                                                 Margin="2"
+                                                 Width="100"
+                                                 Name="InternID" KeyDown="InternID_KeyDown" SelectionChanged="InternID_SelectionChanged"/>
+
+                                                <f:IconImage Icon="ArrowAltCircleLeft"
+                                                 Foreground="White"
+                                                 Height="20"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <!--name-->
+                                        <Border BorderBrush="#d5daf0"
+                                BorderThickness="1"
+                                CornerRadius="2"
+                                Margin="0,2,0,0"
+                                >
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="Name" Width="100" FontFamily="Segoe UI Symbol" 
+                                       Foreground="Black"/>
+                                                <TextBox TextWrapping="Wrap"
+                                     MinHeight="30"
+                                     Background="white"
+                                     Margin="2" 
+                                     Name="InternName"
+                                     Width="170"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <!--bank account number-->
+                                        <Border BorderBrush="#d5daf0"
+                                BorderThickness="1"
+                                CornerRadius="3"
+                                Margin="0,2,0,0">
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="Bank Account" Width="100" FontFamily="Segoe UI Symbol" 
+                                       Foreground="Black"/>
+                                                <TextBox TextWrapping="Wrap"
+                                     MinHeight="30"
+                                     Background="white"
+                                     Margin="2" 
+                                     Name="InternBankAccNo"
+                                     Width="170"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <!--bank name-->
+                                        <Border BorderBrush="#d5daf0"
+                                BorderThickness="1"
+                                CornerRadius="2"
+                                Margin="0,2,0,0">
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="Bank Name" Width="100" FontFamily="Segoe UI Symbol" 
+                                       Foreground="Black"/>
+                                                <TextBox TextWrapping="Wrap"
+                                     MinHeight="30"
+                                     Background="white"
+                                     Margin="2" 
+                                     Name="InternBankName"
+                                     Width="170"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <!--Bank code-->
+                                        <Border BorderBrush="#d5daf0"
+                                            BorderThickness="1"
+                                            CornerRadius="3"
+                                            Margin="0,2,0,0">
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="Bank Code" Width="100" FontFamily="Segoe UI Symbol" 
+                                                   Foreground="Black"/>
+                                                <TextBox TextWrapping="Wrap"
+                                                 MinHeight="30"
+                                                 Background="white"
+                                                 Margin="2" 
+                                                 Name="InternBankCode"
+                                                 Width="170"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <!--branch name-->
+                                        <Border BorderBrush="#d5daf0"
+                                            BorderThickness="1"
+                                            CornerRadius="3"
+                                            Margin="0,2,0,0">
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="Branch Name" Width="100" FontFamily="Segoe UI Symbol" 
+                                                   Foreground="Black"/>
+                                                <TextBox TextWrapping="Wrap"
+                                                 MinHeight="30"
+                                                 Background="white"
+                                                 Margin="2" 
+                                                 Name="InternBranchName" 
+                                                 Width="170"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <!--branch code-->
+                                        <Border BorderBrush="#d5daf0"
+                                BorderThickness="1"
+                                CornerRadius="3"
+                                Margin="0,2,0,0">
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="Branch Code" Width="100"  FontFamily="Segoe UI Symbol" 
+                                               Foreground="Black"/>
+                                                <TextBox TextWrapping="Wrap"
+                                                 MinHeight="30"
+                                                 Background="white"
+                                                 Margin="2" 
+                                                 Name="InternBranchCode"
+                                                 Width="170"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                        <!--salary per day-->
+                                        <Border BorderBrush="#d5daf0"
+                                BorderThickness="1"
+                                CornerRadius="3"
+                                Margin="0,2,0,0">
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="Salary Per Day" Width="100" FontFamily="Segoe UI Symbol" 
+                                               Foreground="Black"/>
+                                                <TextBox Height="30"
+                                                 Background="white"
+                                                 Margin="2" 
+                                                 Name="InternSalaryPerDay"
+                                                 Width="150" TextChanged="InternSalaryPerDay_TextChanged"/>
+                                            </StackPanel>
+                                        </Border>
+
+                                    </StackPanel>
+                                </Border>
+
+
+
+                                <!--year-->
+                                <Border BorderBrush="#d5daf0"
+                            BorderThickness="1"
+                            CornerRadius="3"
+                            Margin="0,2,0,0">
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Year" Width="100" FontFamily="Segoe UI Symbol" 
+                                       Foreground="Black"/>
+                                        <ComboBox Height="30"
+                                          BorderBrush="Black"
+                                          Background="white"
+                                          Margin="2" 
+                                          Name="AddingYear" 
+                                          Width="150"/>
+                                        <f:IconImage Icon="ArrowAltCircleLeft"
+                                                 Foreground="White"
+                                                 Height="20"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <!--month-->
+                                <Border BorderBrush="#d5daf0"
+                                BorderThickness="1"
+                                CornerRadius="3"
+                                Margin="0,2,0,0">
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Month" Width="100" FontFamily="Segoe UI Symbol" 
+                                       Foreground="Black"/>
+                                        <ComboBox Height="30"
+                                          BorderBrush="Black"
+                                          Background="white"
+                                          Margin="2" 
+                                          Name="AddingMonth"
+                                          Width="150"/>
+                                        <f:IconImage Icon="ArrowAltCircleLeft"
+                                                 Foreground="White"
+                                                 Height="20"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <!--full work days-->
+                                <Border BorderBrush="#d5daf0"
+                                BorderThickness="1"
+                                CornerRadius="3"
+                                Margin="0,2,0,0">
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Full work days" Width="100" FontFamily="Segoe UI Symbol" 
+                                       Foreground="Black"/>
+                                        <TextBox Height="30"
+                                         Background="white"
+                                         Margin="2" 
+                                         Name="AddingFullWorkDays"
+                                         Width="100" 
+                                         PreviewTextInput="AddingFullWorkDays_PreviewTextInput" TextChanged="TotalSalaryCalculate"/>
+
+                                        <f:IconImage Icon="ArrowAltCircleLeft"
+                                                 Foreground="White"
+                                                 Height="20"/>
+
+                                    </StackPanel>
+                                </Border>
+
+                                <!--half work days-->
+                                <Border BorderBrush="#d5daf0"
+                                BorderThickness="1"
+                                CornerRadius="3"
+                                Margin="0,2,0,0">
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Half work days" Width="100" FontFamily="Segoe UI Symbol" 
+                                       Foreground="Black"/>
+                                        <TextBox Height="30"
+                                         Background="white"
+                                         Margin="2" 
+                                         Width="100"
+                                         Name="AddingHalfWorkDays" PreviewTextInput="AddingHalfWorkDays_PreviewTextInput" TextChanged="TotalSalaryCalculate" />
+
+                                        <f:IconImage Icon="ArrowAltCircleLeft"
+                                                 Foreground="White"
+                                                 Height="20"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <!--Total work days-->
+                                <Border BorderBrush="#d5daf0"
+                                BorderThickness="1"
+                                CornerRadius="3"
+                                Margin="0,2,0,0">
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Total work days" Width="100" FontFamily="Segoe UI Symbol" 
+                                       Foreground="Black"/>
+                                        <Border BorderBrush="DarkGray" BorderThickness="1" Margin="2">
+                                            <TextBlock Height="30"
+                                           Background="white"
+                                           Name="ShowTotalWorkDays"
+                                           Width="100"/>
+
+                                        </Border>
+
+
+                                    </StackPanel>
+                                </Border>
+
+                                <!--total salary-->
+                                <Border BorderBrush="#d5daf0"
+                                BorderThickness="1"
+                                CornerRadius="3"
+                                Margin="0,2,0,0">
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Total Salary" Width="100" FontFamily="Segoe UI Symbol" 
+                                       Foreground="Black"/>
+
+                                        <Border BorderBrush="DarkGray" BorderThickness="1" Margin="2">
+                                            <TextBlock Height="30"
+                                        Background="white"
+                                        Name="ShowTotalSalary"
+                                        Width="150"/>
+                                        </Border>
+
+
+                                    </StackPanel>
+                                </Border>
+
+
+
+
+
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2" Background="#d5daf0" Orientation="Horizontal">
+                                <Label Content="Last Added ID :"/>
+                                <Label Content="" x:Name="lastAddedIDShowingLable"/>
+                            </StackPanel>
+
+                        </Grid>
+
+
+                    </ScrollViewer>
+
+
+                </Border>
+            </Border>
+
+
+
+            <!--data grid view -->
+            <StackPanel Grid.Column="1" 
+                    >
+                <Label x:Name="sayToClickEyeButtonLbl"
+                   Content="Click EYE button to see the content >>"
+                   Foreground="LightGray"/>
+
+                <DataGrid x:Name="dataShowingTable" 
+                      SelectionChanged="dataShowingTable_SelectionChanged"
+                      AutoGenerateColumns="False">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="100" Header="Trainee Number" Binding="{Binding [Trainee No]}" />
+                        <DataGridTextColumn Width="70" Header="Month" Binding="{Binding Month}" />
+                        <DataGridTextColumn Width="50" Header="Year" Binding="{Binding Year}" />
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                        <DataGridTextColumn Width="100" Header="Account No" Binding="{Binding [Account No]}" />
+                        <DataGridTextColumn Header="Bank Name" Binding="{Binding [Bank Name]}" />
+                        <DataGridTextColumn Width="70" Header="Bank Code" Binding="{Binding [Bank Code]}" />
+                        <DataGridTextColumn Header="Branch Name" Binding="{Binding [Branch Name]}" />
+                        <DataGridTextColumn Width="70" Header="Branch Code" Binding="{Binding [Branch Code]}" />
+                        <DataGridTextColumn Width="100" Header="Full Days" Binding="{Binding [Work Days- FULL]}"/>
+                        <DataGridTextColumn Width="100" Header="Half Days" Binding="{Binding [Work Days- HALF]}"/>
+                        <DataGridTextColumn Width="100" Header="Work Days" Binding="{Binding [Work Days- Total]}"/>
+                        <DataGridTextColumn Width="100" Header="Salary" Binding="{Binding [Salary Amount]}"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </StackPanel>
+
+
+
+            <!--for buttons-->
+            <Border Grid.Column="2" 
+                BorderBrush="#d5daf0" 
+                BorderThickness="1"
+                CornerRadius="0"
+                Margin="5,5,5,5">
+
+                <Border BorderThickness="1" 
+                    Grid.Column="0" 
+                    BorderBrush="#43496b"
+                    Background="#d5daf0">
+
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="30"/>
@@ -43,547 +429,169 @@
                             <RowDefinition Height="30"/>
                         </Grid.RowDefinitions>
 
-                        <StackPanel Orientation="Horizontal" Height="30" Grid.Column="0">
-                            <Label  Background="#030c45">
-                                <Viewbox>
-                                    <f:IconImage Icon="Plus" 
-                                                 Foreground="White"
-                                                 Margin="5"/>
-                                </Viewbox>
-                            </Label>
-                            <Label Content="Add new Record" 
-                                   Background="#030c45" 
-                                   Width="275"
-                                   Foreground="White"/>
 
-                        </StackPanel>
-
-                        <StackPanel Orientation="Vertical" Background="#d5daf0" Grid.Row="1">
-                            <Border>
-                                <StackPanel>
-                                    <!--id-->
-                                    <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="2"
-                                Margin="0,5,0,0">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Label Content="ID" 
-                                       Width="100" 
-                                       FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
-                                            <TextBox Height="30"
-                                                 Background="white"
-                                                 BorderBrush="Black"
-                                                 Margin="2"
-                                                 Width="100"
-                                                 Name="InternID" KeyDown="InternID_KeyDown" SelectionChanged="InternID_SelectionChanged"/>
-
-                                            <f:IconImage Icon="ArrowAltCircleLeft"
-                                                 Foreground="White"
-                                                 Height="20"/>
-                                        </StackPanel>
-                                    </Border>
-
-                                    <!--name-->
-                                    <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="2"
-                                Margin="0,2,0,0"
-                                >
-
-                                        <StackPanel Orientation="Horizontal">
-                                            <Label Content="Name" Width="100" FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
-                                            <TextBox TextWrapping="Wrap"
-                                     MinHeight="30"
-                                     Background="white"
-                                     Margin="2" 
-                                     Name="InternName"
-                                     Width="170"/>
-                                        </StackPanel>
-                                    </Border>
-
-                                    <!--bank account number-->
-                                    <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="3"
-                                Margin="0,2,0,0">
-
-                                        <StackPanel Orientation="Horizontal">
-                                            <Label Content="Bank Account" Width="100" FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
-                                            <TextBox TextWrapping="Wrap"
-                                     MinHeight="30"
-                                     Background="white"
-                                     Margin="2" 
-                                     Name="InternBankAccNo"
-                                     Width="170"/>
-                                        </StackPanel>
-                                    </Border>
-
-                                    <!--bank name-->
-                                    <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="2"
-                                Margin="0,2,0,0">
-
-                                        <StackPanel Orientation="Horizontal">
-                                            <Label Content="Bank Name" Width="100" FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
-                                            <TextBox TextWrapping="Wrap"
-                                     MinHeight="30"
-                                     Background="white"
-                                     Margin="2" 
-                                     Name="InternBankName"
-                                     Width="170"/>
-                                        </StackPanel>
-                                    </Border>
-
-                                    <!--Bank code-->
-                                    <Border BorderBrush="#d5daf0"
-                                            BorderThickness="1"
-                                            CornerRadius="3"
-                                            Margin="0,2,0,0">
-
-                                        <StackPanel Orientation="Horizontal">
-                                            <Label Content="Bank Code" Width="100" FontFamily="Segoe UI Symbol" 
-                                                   Foreground="Black"/>
-                                            <TextBox TextWrapping="Wrap"
-                                                 MinHeight="30"
-                                                 Background="white"
-                                                 Margin="2" 
-                                                 Name="InternBankCode"
-                                                 Width="170"/>
-                                        </StackPanel>
-                                    </Border>
-
-                                    <!--branch name-->
-                                    <Border BorderBrush="#d5daf0"
-                                            BorderThickness="1"
-                                            CornerRadius="3"
-                                            Margin="0,2,0,0">
-
-                                        <StackPanel Orientation="Horizontal">
-                                            <Label Content="Branch Name" Width="100" FontFamily="Segoe UI Symbol" 
-                                                   Foreground="Black"/>
-                                            <TextBox TextWrapping="Wrap"
-                                                 MinHeight="30"
-                                                 Background="white"
-                                                 Margin="2" 
-                                                 Name="InternBranchName" 
-                                                 Width="170"/>
-                                        </StackPanel>
-                                    </Border>
-
-                                    <!--branch code-->
-                                    <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="3"
-                                Margin="0,2,0,0">
-
-                                        <StackPanel Orientation="Horizontal">
-                                            <Label Content="Branch Code" Width="100"  FontFamily="Segoe UI Symbol" 
-                                               Foreground="Black"/>
-                                            <TextBox TextWrapping="Wrap"
-                                                 MinHeight="30"
-                                                 Background="white"
-                                                 Margin="2" 
-                                                 Name="InternBranchCode"
-                                                 Width="170"/>
-                                        </StackPanel>
-                                    </Border>
-
-                                    <!--salary per day-->
-                                    <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="3"
-                                Margin="0,2,0,0">
-
-                                        <StackPanel Orientation="Horizontal">
-                                            <Label Content="Salary Per Day" Width="100" FontFamily="Segoe UI Symbol" 
-                                               Foreground="Black"/>
-                                            <TextBox Height="30"
-                                                 Background="white"
-                                                 Margin="2" 
-                                                 Name="InternSalaryPerDay"
-                                                 Width="150" TextChanged="InternSalaryPerDay_TextChanged"/>
-                                        </StackPanel>
-                                    </Border>
-
-                                </StackPanel>
-                            </Border>
-
-
-
-                            <!--year-->
-                            <Border BorderBrush="#d5daf0"
-                            BorderThickness="1"
-                            CornerRadius="3"
-                            Margin="0,2,0,0">
-
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="Year" Width="100" FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
-                                    <ComboBox Height="30"
-                                          BorderBrush="Black"
-                                          Background="white"
-                                          Margin="2" 
-                                          Name="AddingYear" 
-                                          Width="150"/>
-                                    <f:IconImage Icon="ArrowAltCircleLeft"
-                                                 Foreground="White"
-                                                 Height="20"/>
-                                </StackPanel>
-                            </Border>
-
-                            <!--month-->
-                            <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="3"
-                                Margin="0,2,0,0">
-
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="Month" Width="100" FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
-                                    <ComboBox Height="30"
-                                          BorderBrush="Black"
-                                          Background="white"
-                                          Margin="2" 
-                                          Name="AddingMonth"
-                                          Width="150"/>
-                                    <f:IconImage Icon="ArrowAltCircleLeft"
-                                                 Foreground="White"
-                                                 Height="20"/>
-                                </StackPanel>
-                            </Border>
-
-                            <!--full work days-->
-                            <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="3"
-                                Margin="0,2,0,0">
-
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="Full work days" Width="100" FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
-                                    <TextBox Height="30"
-                                         Background="white"
-                                         Margin="2" 
-                                         Name="AddingFullWorkDays"
-                                         Width="100" 
-                                         PreviewTextInput="AddingFullWorkDays_PreviewTextInput" TextChanged="TotalSalaryCalculate"/>
-
-                                    <f:IconImage Icon="ArrowAltCircleLeft"
-                                                 Foreground="White"
-                                                 Height="20"/>
-
-                                </StackPanel>
-                            </Border>
-
-                            <!--half work days-->
-                            <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="3"
-                                Margin="0,2,0,0">
-
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="Half work days" Width="100" FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
-                                    <TextBox Height="30"
-                                         Background="white"
-                                         Margin="2" 
-                                         Width="100"
-                                         Name="AddingHalfWorkDays" PreviewTextInput="AddingHalfWorkDays_PreviewTextInput" TextChanged="TotalSalaryCalculate" />
-
-                                    <f:IconImage Icon="ArrowAltCircleLeft"
-                                                 Foreground="White"
-                                                 Height="20"/>
-                                </StackPanel>
-                            </Border>
-
-                            <!--Total work days-->
-                            <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="3"
-                                Margin="0,2,0,0">
-
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="Total work days" Width="100" FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
-                                    <Border BorderBrush="DarkGray" BorderThickness="1" Margin="2">
-                                        <TextBlock Height="30"
-                                           Background="white"
-                                           Name="ShowTotalWorkDays"
-                                           Width="100"/>
-                                        
-                                    </Border>
-                                    
-
-                                </StackPanel>
-                            </Border>
-
-                            <!--total salary-->
-                            <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="3"
-                                Margin="0,2,0,0">
-
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="Total Salary" Width="100" FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
-
-                                    <Border BorderBrush="DarkGray" BorderThickness="1" Margin="2">
-                                        <TextBlock Height="30"
-                                        Background="white"
-                                        Name="ShowTotalSalary"
-                                        Width="150"/>
-                                    </Border>
-                                    
-
-                                </StackPanel>
-                            </Border>
-
-
-
-
-
-                        </StackPanel>
-
-                        <StackPanel Grid.Row="2" Background="#d5daf0" Orientation="Horizontal">
-                            <Label Content="Last Added ID :"/>
-                            <Label Content="" x:Name="lastAddedIDShowingLable"/>
-                        </StackPanel>
-
-                    </Grid>
-
-
-                </ScrollViewer>
-
-
-            </Border>
-        </Border>
-        
-        
-        
-        <!--data grid view -->
-        <StackPanel Grid.Column="1" 
-                    >
-            <Label x:Name="sayToClickEyeButtonLbl"
-                   Content="Click EYE button to see the content >>"
-                   Foreground="LightGray"/>
-
-            <DataGrid x:Name="dataShowingTable" 
-                      SelectionChanged="dataShowingTable_SelectionChanged"
-                      AutoGenerateColumns="False">
-
-                <DataGrid.Columns>
-                    <DataGridTextColumn Width="100" Header="Trainee Number" Binding="{Binding [Trainee No]}" />
-                    <DataGridTextColumn Width="70" Header="Month" Binding="{Binding Month}" />
-                    <DataGridTextColumn Width="50" Header="Year" Binding="{Binding Year}" />
-                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                    <DataGridTextColumn Width="100" Header="Account No" Binding="{Binding [Account No]}" />
-                    <DataGridTextColumn Header="Bank Name" Binding="{Binding [Bank Name]}" />
-                    <DataGridTextColumn Width="70" Header="Bank Code" Binding="{Binding [Bank Code]}" />
-                    <DataGridTextColumn Header="Branch Name" Binding="{Binding [Branch Name]}" />
-                    <DataGridTextColumn Width="70" Header="Branch Code" Binding="{Binding [Branch Code]}" />
-                    <DataGridTextColumn Width="100" Header="Full Days" Binding="{Binding [Work Days- FULL]}"/>
-                    <DataGridTextColumn Width="100" Header="Half Days" Binding="{Binding [Work Days- HALF]}"/>
-                    <DataGridTextColumn Width="100" Header="Work Days" Binding="{Binding [Work Days- Total]}"/>
-                    <DataGridTextColumn Width="100" Header="Salary" Binding="{Binding [Salary Amount]}"/>
-                    
-                </DataGrid.Columns>
-
-
-
-
-
-            </DataGrid>
-        </StackPanel>
-        
-        
-        
-        <!--for buttons-->
-        <Border Grid.Column="2" 
-                BorderBrush="#d5daf0" 
-                BorderThickness="1"
-                CornerRadius="0"
-                Margin="5,5,15,5">
-            
-            <Border BorderThickness="1" 
-                    Grid.Column="0" 
-                    BorderBrush="#43496b"
-                    Background="#d5daf0">
-
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="30"/>
-                    </Grid.RowDefinitions>
-
-
-                    <StackPanel Orientation="Horizontal" 
+                        <StackPanel Orientation="Horizontal" 
                                 HorizontalAlignment="Right" 
                                 Grid.Row="0"
                                 Background="#030c45">
 
-                        <Label Content="Control panal" 
+                            <Label Content="Control panal" 
                                 FontFamily="Segoe UI Symbol" 
                                 Foreground="White" 
                                 VerticalAlignment="Center"
                                 Width="188"
                                 Margin="10,0,0,0"/>
 
-                        <f:IconImage Icon="AngleDoubleDown"
+                            <f:IconImage Icon="AngleDoubleDown"
                                      Foreground="White"
                                      Height="12"
                                      Margin="8,0,10,0"/>
 
-                    </StackPanel>
+                        </StackPanel>
 
 
-                    <StackPanel Orientation="Vertical" Grid.Row="1">
+                        <StackPanel Orientation="Vertical" Grid.Row="1">
 
-                        <!--to see data-->
-                        <Border  Margin="13,10,0,5"
+                            <!--to see data-->
+                            <Border  Margin="13,10,0,5"
                                  Height="40"
                                  Width="40"
                                  BorderBrush="{StaticResource borderButton1}"
                                  BorderThickness="1"
-                                 HorizontalAlignment="Left"> 
+                                 HorizontalAlignment="Left">
 
-                            <Button x:Name="seeTableData"
+                                <Button x:Name="seeTableData"
                                     Style="{StaticResource ButtonStyle3}" Click="seeTableData_Click">
 
-                                <Button.ToolTip>
-                                    <ToolTip Content="Click to open the information of the temperary data table, if there remain."/>
-                                </Button.ToolTip>
+                                    <Button.ToolTip>
+                                        <ToolTip Content="Click to open the information of the temperary data table, if there remain."/>
+                                    </Button.ToolTip>
 
 
-                                <StackPanel Orientation="Horizontal">
-                                    <f:IconImage Icon="Eye" Height="20" Foreground="DarkRed"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <f:IconImage Icon="Eye" Height="20" Foreground="DarkRed"/>
 
-                                </StackPanel>
-                            </Button>
+                                    </StackPanel>
+                                </Button>
 
-                        </Border>
+                            </Border>
 
-                        <!--add data to button-->
-                        <Border  Margin="0,0,0,5"
+                            <!--add data to button-->
+                            <Border  Margin="0,0,0,5"
                                  Height="40"
                                  Width="200"
                                  BorderBrush="{StaticResource borderButton1}"
                                  BorderThickness="1"
                                  HorizontalAlignment="Center">
-                            
-                            <Button x:Name="SendToTable"
-                                    Style="{StaticResource ButtonStyle3}" Click="SendToTable_Click">
-                                <Button.ToolTip>
-                                    <ToolTip Content="Click to Add filled data to the temperary data table."/>
-                                </Button.ToolTip>
 
-                                <StackPanel Orientation="Horizontal">
-                                    <f:IconImage Icon="Table" Height="15" 
+                                <Button x:Name="SendToTable"
+                                    Style="{StaticResource ButtonStyle3}" Click="SendToTable_Click">
+                                    <Button.ToolTip>
+                                        <ToolTip Content="Click to Add filled data to the temperary data table."/>
+                                    </Button.ToolTip>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <f:IconImage Icon="Table" Height="15" 
                                                  Foreground="#030c45" />
-                                    <TextBlock Text="Add To Table" VerticalAlignment="Center" 
+                                        <TextBlock Text="Add To Table" VerticalAlignment="Center" 
                                             Margin="10"
                                             FontSize="12"
                                             FontFamily="Segoe UI Symbol"/>
 
-                                </StackPanel>
-                            </Button>
+                                    </StackPanel>
+                                </Button>
 
-                        </Border>
+                            </Border>
 
-                        <!--add new data-->
-                        <Border  Margin="0,0,0,5"
+                            <!--add new data-->
+                            <Border  Margin="0,0,0,5"
                                  Height="40"
                                  Width="200"
                                  HorizontalAlignment="Center"
                                  BorderBrush="{StaticResource borderButton1}"
                                  BorderThickness="1">
-                            
-                            <Button x:Name="AddNewRecord"
+
+                                <Button x:Name="AddNewRecord"
                                     Style="{StaticResource ButtonStyle3}" Click="AddNewRecord_Click">
 
-                                <Button.ToolTip>
-                                    <ToolTip Content="Click to clear all input text boxes for add new user information."/>
-                                </Button.ToolTip>
+                                    <Button.ToolTip>
+                                        <ToolTip Content="Click to clear all input text boxes for add new user information."/>
+                                    </Button.ToolTip>
 
-                                <StackPanel Orientation="Horizontal">
-                                    <f:IconImage Icon="Pen" Height="15" 
+                                    <StackPanel Orientation="Horizontal">
+                                        <f:IconImage Icon="Pen" Height="15" 
                                                  Foreground="#030c45"/>
-                                    <TextBlock Text="Add New" VerticalAlignment="Center" 
+                                        <TextBlock Text="Add New" VerticalAlignment="Center" 
                                             Margin="20,0,20,0"
                                             FontSize="12"
                                             FontFamily="Segoe UI Symbol"/>
 
-                                </StackPanel>
-                            </Button>
+                                    </StackPanel>
+                                </Button>
 
-                        </Border>
+                            </Border>
 
 
-                        <!--update data-->
-                        <Border  Margin="0,0,0,5"
+                            <!--update data-->
+                            <Border  Margin="0,0,0,5"
                                  Height="40"
                                  Width="200"
                                  HorizontalAlignment="Center"
                                  BorderBrush="{StaticResource borderButton1}"
                                  BorderThickness="1">
-                            
-                            <Button x:Name="UpdateExistingRecord"
+
+                                <Button x:Name="UpdateExistingRecord"
                                     Style="{StaticResource ButtonStyle3}" Click="UpdateExistingRecord_Click">
 
-                                <Button.ToolTip>
-                                    <ToolTip Content="Click to update chahanged information and save to the temparary data table."/>
-                                </Button.ToolTip>
+                                    <Button.ToolTip>
+                                        <ToolTip Content="Click to update chahanged information and save to the temparary data table."/>
+                                    </Button.ToolTip>
 
-                                <StackPanel Orientation="Horizontal">
-                                    <f:IconImage Icon="Refresh" Height="15" 
+                                    <StackPanel Orientation="Horizontal">
+                                        <f:IconImage Icon="Refresh" Height="15" 
                                                  Foreground="#030c45" />
-                                    <TextBlock Text="Update" VerticalAlignment="Center" 
+                                        <TextBlock Text="Update" VerticalAlignment="Center" 
                                             Margin="20,0,30,0"
                                             FontSize="12"
                                             FontFamily="Segoe UI Symbol"/>
 
-                                </StackPanel>
-                            </Button>
+                                    </StackPanel>
+                                </Button>
 
-                        </Border>
+                            </Border>
 
-                        <!--delete data-->
-                        <Border  Margin="0,0,0,5"
+                            <!--delete data-->
+                            <Border  Margin="0,0,0,5"
                                  Height="40"
                                  Width="200"
                                  HorizontalAlignment="Center"
                                  BorderBrush="{StaticResource borderButton1}"
                                  BorderThickness="1">
-                            
-                            <Button x:Name="DeleteExistingRecord"
+
+                                <Button x:Name="DeleteExistingRecord"
                                     Style="{StaticResource ButtonStyle3}" Click="DeleteExistingRecord_Click">
 
-                                <Button.ToolTip>
-                                    <ToolTip Content="Click to delete selected data permenently from temperary data table. "/>
-                                </Button.ToolTip>
+                                    <Button.ToolTip>
+                                        <ToolTip Content="Click to delete selected data permenently from temperary data table. "/>
+                                    </Button.ToolTip>
 
 
-                                <StackPanel Orientation="Horizontal">
-                                    <f:IconImage Icon="Trash" Height="15" 
+                                    <StackPanel Orientation="Horizontal">
+                                        <f:IconImage Icon="Trash" Height="15" 
                                                  Foreground="#030c45" />
-                                    <TextBlock Text="Delete" VerticalAlignment="Center" 
+                                        <TextBlock Text="Delete" VerticalAlignment="Center" 
                                             Margin="27,0,30,0"
                                             FontSize="12"
                                             FontFamily="Segoe UI Symbol"/>
 
-                                </StackPanel>
-                            </Button>
+                                    </StackPanel>
+                                </Button>
 
-                        </Border>
+                            </Border>
 
 
-                        <!---->
-                        <Border BorderBrush="#43496b"
+                            <!---->
+                            <Border BorderBrush="#43496b"
                                 BorderThickness="1"
                                 CornerRadius="2"
                                 Margin="0,0,0,0"
@@ -592,146 +600,151 @@
                                 Background="#d5daf0">
 
 
-                            <!--search bar for find-->
-                            <StackPanel Orientation="Vertical" 
+                                <!--search bar for find-->
+                                <StackPanel Orientation="Vertical" 
                                         >
 
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="ID" 
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="ID" 
                                            
                                             Foreground="Black"
                                             VerticalAlignment="Top"
                                             Margin="0,2,0,0"/>
 
-                                    <TextBox x:Name="IDforSearch"
+                                        <TextBox x:Name="IDforSearch"
                                             Width="118"
                                             Height="30"/>
 
-                                    <Border  Margin="5,5,0,0"
+                                        <Border  Margin="5,5,0,0"
                                              Height="41"
                                              Width="41"
                                              HorizontalAlignment="Center"
                                              BorderBrush="{StaticResource borderButton1}"
                                              BorderThickness="1"
                                              CornerRadius="21">
-                                        
-                                        <Button x:Name="SearchIsIDInGridView"
+
+                                            <Button x:Name="SearchIsIDInGridView"
                                                 Style="{StaticResource ButtonStyleSearch}" 
                                                 Click="SearchIsIDInGridView_Click"
                                                 Width="39"
                                                 Height="39">
-                                            
-                                            <f:IconImage Icon="Search" Height="22" 
+
+                                                <f:IconImage Icon="Search" Height="22" 
                                                          Foreground="#030c45" />
 
-                                            <Button.ToolTip>
-                                                <ToolTip Content="Click to search the information is exist for entered ID"/>
-                                            </Button.ToolTip>
-                                        </Button>
+                                                <Button.ToolTip>
+                                                    <ToolTip Content="Click to search the information is exist for entered ID"/>
+                                                </Button.ToolTip>
+                                            </Button>
 
-                                    </Border>
+                                        </Border>
 
-                                </StackPanel>
+                                    </StackPanel>
 
-                                <!--grid for show search results-->
-                                <StackPanel HorizontalAlignment="Left"
+                                    <!--grid for show search results-->
+                                    <StackPanel HorizontalAlignment="Left"
                                 Margin="5">
-                                    <DataGrid x:Name="SearchResultOfTemperaryDataTableGridView"
+                                        <DataGrid x:Name="SearchResultOfTemperaryDataTableGridView"
                                         Width="188"
                                         Height="100" 
                                         SelectionChanged="SearchResultOfTemperaryDataTableGridView_SelectionChanged"/>
+                                    </StackPanel>
+
+
+
                                 </StackPanel>
 
-
-
-                            </StackPanel>
-
-                        </Border>
+                            </Border>
 
 
 
-                        <!--data export-->
+                            <!--data export-->
 
-                        <StackPanel Orientation="Horizontal"
+                            <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Left"
                             Margin="5,10,0,0">
 
-                            <Label>
-                                <Viewbox>
-                                    <f:IconImage Icon="FileAlt" Foreground="Black"
+                                <Label>
+                                    <Viewbox>
+                                        <f:IconImage Icon="FileAlt" Foreground="Black"
                                             Height="40"/>
-                                </Viewbox>
-                            </Label>
+                                    </Viewbox>
+                                </Label>
 
-                            <StackPanel Orientation="Vertical">
-                                <Label Content="File Name :"
+                                <StackPanel Orientation="Vertical">
+                                    <Label Content="File Name :"
                                        FontFamily="Segoe UI Symbol" 
                                        Foreground="#030c45" 
                                        VerticalAlignment="Center"
                                        HorizontalAlignment="Left"/>
 
-                                <TextBox x:Name="theFolderNameToSavePaySheet"
+                                    <TextBox x:Name="theFolderNameToSavePaySheet"
                                          Width="170"
                                          HorizontalAlignment="Left"
                                          TextWrapping="Wrap" TextChanged="theFolderNameToSavePaySheet_TextChanged"/>
 
 
+                                </StackPanel>
+
                             </StackPanel>
 
-                        </StackPanel>
 
 
 
 
-
-                        <Border  Margin="0,0,0,5"
+                            <Border  Margin="0,0,0,5"
                                  Height="40"
                                  Width="210"
                                  BorderBrush="{StaticResource borderButton1}"
                                  HorizontalAlignment="Center"
                                  BorderThickness="1">
-                            
-                            <Button x:Name="dataExportToaTextFile"
+
+                                <Button x:Name="dataExportToaTextFile"
                                     Style="{StaticResource ButtonStyle3}" 
                                     Click="dataExportToaTextFile_Click">
-                                <StackPanel Orientation="Horizontal">
-                                    <f:IconImage Icon="FileExport" Height="18" 
+                                    <StackPanel Orientation="Horizontal">
+                                        <f:IconImage Icon="FileExport" Height="18" 
                                                  Foreground="DarkRed" />
-                                    <TextBlock Text="Export as .txt" VerticalAlignment="Center" 
+                                        <TextBlock Text="Export as .txt" VerticalAlignment="Center" 
                                             Margin="10,0,10,0"
                                             FontSize="12"
                                             FontFamily="Segoe UI Symbol"/>
 
-                                </StackPanel>
+                                    </StackPanel>
 
-                                <Button.ToolTip>
-                                    <ToolTip Content="Click to export temperary data table to a permenent table and save as .txt file (bank paysheet type)"/>
-                                </Button.ToolTip>
-
-
-                            </Button>
-
-                        </Border>
+                                    <Button.ToolTip>
+                                        <ToolTip Content="Click to export temperary data table to a permenent table and save as .txt file (bank paysheet type)"/>
+                                    </Button.ToolTip>
 
 
+                                </Button>
 
-
-
-
-                    </StackPanel>
-
-
-
-                </Grid>
-
-                
+                            </Border>
 
 
 
 
 
+
+                        </StackPanel>
+
+
+
+                    </Grid>
+
+
+
+
+
+
+
+                </Border>
             </Border>
-        </Border>
-           
+
+        </Grid>
+
+
     </Grid>
+    
+    
 </UserControl>

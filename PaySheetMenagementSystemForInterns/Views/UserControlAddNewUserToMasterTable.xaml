@@ -6,29 +6,72 @@
              xmlns:local="clr-namespace:PaySheetMenagementSystemForInterns.Views"
              mc:Ignorable="d"
              xmlns:f="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-             
-             
-             Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=local:HomeWindow}}"
-             Height="680">
+             Height="650"
+
+             >
     
     
+    
+    
+    <!--want implement height property properly-->
+
+    <UserControl.Resources>
+        <Style x:Key="MyStyle" TargetType="{x:Type Rectangle}">
+            <Setter Property="Width" Value="{Binding ElementName=UserControlLoader1, Path=RenderSize.Width}" />
+            <!--Setter Property="Height" Value="{Binding ElementName=UserControlLoader1, Path=RenderSize.Height}" -->
+        </Style>
+    </UserControl.Resources>
+
+
     <Grid>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
+        
+        <!--control panal | button panal -->
         <Border BorderThickness="1" 
                 Grid.Column="0" 
                 BorderBrush="#d5daf0"
-                Margin="5">
+                Margin="5,5,0,5">
             <Border BorderThickness="1" 
                 Grid.Column="0" 
                 BorderBrush="#43496b" 
                 Background="#d5daf0">
 
-                <StackPanel>
+                <StackPanel Orientation="Vertical">
+
+                    <!--to see master table-->
+
+                    <Border  Height="40"
+                             Width="190"
+                             BorderBrush="{StaticResource borderButton1}"
+                             HorizontalAlignment="Center"
+                             BorderThickness="1">
+
+                        <Button x:Name="seeMasterTableData"
+                                Style="{StaticResource ButtonStyle3}" 
+                                Click="seeMasterTableData_Click">
+
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text ="See Master Table" 
+                                           VerticalAlignment="Center" 
+                                           Margin="5"
+                                           FontSize="12"
+                                           FontFamily="Segoe UI Symbol"/>
+
+                                <f:IconImage Icon="File" 
+                                             Height="18"    
+                                             Foreground="#730307" />
+                            </StackPanel>
+
+                            <Button.ToolTip>
+                                <ToolTip Content="Click to import data from excel file to a datagrid"/>
+                            </Button.ToolTip>
+                        </Button>
+
+                    </Border>
 
                     <!--load excel data to grid view-->
                     <Border  Height="40"
@@ -42,10 +85,11 @@
                                 Click="LoadAddDataFromExelDAtaSheet_Click">
 
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text ="Load From EXCEL" VerticalAlignment="Center" 
-                                            Margin="10"
-                                            FontSize="12"
-                                            FontFamily="Segoe UI Symbol"/>
+                                <TextBlock Text ="Load From EXCEL" 
+                                           VerticalAlignment="Center" 
+                                           Margin="5"
+                                           FontSize="12"
+                                           FontFamily="Segoe UI Symbol"/>
 
                                 <f:IconImage Icon="FileExcel" 
                                              Height="18"    
@@ -63,6 +107,14 @@
 
             </Border>
         </Border>
+
+        <!--content control-->
+        <StackPanel Grid.Column="1" Margin="5,5,5,5">
+            <ContentControl x:Name="UserControlLoaderToAddNew" Grid.Row="1" >
+
+            </ContentControl>
+
+        </StackPanel>
 
 
     </Grid>
