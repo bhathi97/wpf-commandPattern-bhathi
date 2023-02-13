@@ -77,8 +77,15 @@ namespace PaySheetMenagementSystemForInterns.Views
 
         private void MenuItemSetting_Click(object sender, RoutedEventArgs e)
         {
+            /*try
+            {
+                System.Diagnostics.Process.Start("google.com................");
+            }
+            catch (Exception ex){ MessageBox.Show(ex.Message);}*/
 
         }
+
+            
 
         private void MenuItemDashboard_Click(object sender, RoutedEventArgs e)
         {

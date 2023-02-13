@@ -25,7 +25,7 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             InitializeComponent();
         }
-
+        //load data from exel --- not completed ----extra feature
         private void LoadAddDataFromExelDAtaSheet_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -37,6 +37,8 @@ namespace PaySheetMenagementSystemForInterns.Views
             
         }
 
+
+        //to see table of details of all interns in a grid  
         private void seeMasterTableData_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -44,6 +46,26 @@ namespace PaySheetMenagementSystemForInterns.Views
                 UserControlLoaderToAddNew.Content = new UserControlForMasterDataShowing();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        //to see table of Bank account details of all interns in a grid  
+        private void seeAccountTableData_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                UserControlLoaderToAddNew.Content = new UserControlForSalaryDetailsShowing();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void seeSalaryTableData_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                UserControlLoaderToAddNew.Content = new UserControlForPaidSalaryDetailsShowing();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
         }
     }
 }

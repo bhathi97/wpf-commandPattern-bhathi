@@ -24,7 +24,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
                 try
                 {
                     connection.Open();
-                    SqlDataAdapter sda1 = new SqlDataAdapter("SELECT count(ID) FROM TempararySalaryTable WHERE ID ='" + obj.InternID.Text + "'", connection);
+                    SqlDataAdapter sda1 = new SqlDataAdapter("SELECT count([Trainee No]) FROM [TEMP_SALARY-DETAILS_TRAINEE] WHERE [Trainee No] ='" + obj.InternID.Text + "'", connection);
                     DataTable dt1 = new DataTable();
                     dt1.AcceptChanges();
                     sda1.Fill(dt1);
@@ -41,7 +41,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
                             try
                             {
                                 //delete coomand
-                                SqlCommand sqlCommandDelete = new SqlCommand("DELETE FROM TempararySalaryTable WHERE ID = '" + obj.InternID.Text + "'", connection);
+                                SqlCommand sqlCommandDelete = new SqlCommand("DELETE FROM [TEMP_SALARY-DETAILS_TRAINEE] WHERE [Trainee No] = '" + obj.InternID.Text + "'", connection);
                                 sqlCommandDelete.ExecuteNonQuery();
                                 MessageBox.Show("Successfully deleted", "success", MessageBoxButton.OK, MessageBoxImage.Information);
 

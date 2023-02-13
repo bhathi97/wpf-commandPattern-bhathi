@@ -43,7 +43,7 @@
                 Margin="5">
                 <Border BorderThickness="1" 
                 Grid.Column="0" 
-                BorderBrush="#43496b" 
+                BorderBrush="#030c45" 
                 Background="White">
                     <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True"
                               >
@@ -419,7 +419,7 @@
 
                 <Border BorderThickness="1" 
                     Grid.Column="0" 
-                    BorderBrush="#43496b"
+                    BorderBrush="#030c45"
                     Background="#d5daf0">
 
                     <Grid>
@@ -433,7 +433,8 @@
                         <StackPanel Orientation="Horizontal" 
                                 HorizontalAlignment="Right" 
                                 Grid.Row="0"
-                                Background="#030c45">
+                                Background="#030c45"
+                                    Width="236">
 
                             <Label Content="Control panal" 
                                 FontFamily="Segoe UI Symbol" 
@@ -445,7 +446,7 @@
                             <f:IconImage Icon="AngleDoubleDown"
                                      Foreground="White"
                                      Height="12"
-                                     Margin="8,0,10,0"/>
+                                     Margin="18,0,10,0"/>
 
                         </StackPanel>
 
@@ -493,8 +494,9 @@
                                     <StackPanel Orientation="Horizontal">
                                         <f:IconImage Icon="Table" Height="15" 
                                                  Foreground="#030c45" />
-                                        <TextBlock Text="Add To Table" VerticalAlignment="Center" 
-                                            Margin="10"
+                                        <TextBlock Text="  Add To Table     " 
+                                                   VerticalAlignment="Center" 
+                                            
                                             FontSize="12"
                                             FontFamily="Segoe UI Symbol"/>
 
@@ -521,8 +523,9 @@
                                     <StackPanel Orientation="Horizontal">
                                         <f:IconImage Icon="Pen" Height="15" 
                                                  Foreground="#030c45"/>
-                                        <TextBlock Text="Add New" VerticalAlignment="Center" 
-                                            Margin="20,0,20,0"
+                                        <TextBlock Text="  Add New Record" 
+                                                   VerticalAlignment="Center" 
+                                            
                                             FontSize="12"
                                             FontFamily="Segoe UI Symbol"/>
 
@@ -550,10 +553,10 @@
                                     <StackPanel Orientation="Horizontal">
                                         <f:IconImage Icon="Refresh" Height="15" 
                                                  Foreground="#030c45" />
-                                        <TextBlock Text="Update" VerticalAlignment="Center" 
-                                            Margin="20,0,30,0"
-                                            FontSize="12"
-                                            FontFamily="Segoe UI Symbol"/>
+                                        <TextBlock Text="  Update Record  " 
+                                                   VerticalAlignment="Center" 
+                                                    FontSize="12"
+                                                    FontFamily="Segoe UI Symbol"/>
 
                                     </StackPanel>
                                 </Button>
@@ -579,10 +582,10 @@
                                     <StackPanel Orientation="Horizontal">
                                         <f:IconImage Icon="Trash" Height="15" 
                                                  Foreground="#030c45" />
-                                        <TextBlock Text="Delete" VerticalAlignment="Center" 
-                                            Margin="27,0,30,0"
-                                            FontSize="12"
-                                            FontFamily="Segoe UI Symbol"/>
+                                        <TextBlock Text="  Delete Record    " 
+                                                   VerticalAlignment="Center" 
+                                                    FontSize="12"
+                                                    FontFamily="Segoe UI Symbol"/>
 
                                     </StackPanel>
                                 </Button>

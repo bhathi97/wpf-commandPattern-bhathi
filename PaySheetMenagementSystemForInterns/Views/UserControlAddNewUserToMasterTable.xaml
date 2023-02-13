@@ -30,6 +30,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
+        
         <!--control panal | button panal -->
         <Border BorderThickness="1" 
                 Grid.Column="0" 
@@ -37,73 +38,194 @@
                 Margin="5,5,0,5">
             <Border BorderThickness="1" 
                 Grid.Column="0" 
-                BorderBrush="#43496b" 
+                BorderBrush="#030c45" 
                 Background="#d5daf0">
 
-                <StackPanel Orientation="Vertical">
 
-                    <!--to see master table-->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
 
-                    <Border  Height="40"
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" 
+                                Grid.Column="0">
+
+                        <Label Background="#030c45">
+                            <Viewbox>
+                                <f:IconImage Icon="List" 
+                                             Foreground="White"
+                                             Margin="5"/>
+                            </Viewbox>
+                        </Label>
+                        <Label Content="Button Panel" 
+                                   Background="#030c45" 
+                                   Width="275"
+                                   Foreground="White"/>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" 
+                                Grid.Row="1"
+                                >
+
+
+                        <!--Add new record to intern Master Table and salary table-->
+
+
+                        
+                        
+                        
+                        
+                    
+
+                        <!--to see account table-->
+                        <Border  Height="40"
                              Width="190"
                              BorderBrush="{StaticResource borderButton1}"
                              HorizontalAlignment="Center"
                              BorderThickness="1">
 
-                        <Button x:Name="seeMasterTableData"
+                            <Button x:Name="seeAccountTableData"
+                                Style="{StaticResource ButtonStyle3}" 
+                                Click="seeAccountTableData_Click">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <f:IconImage Icon="Bank" 
+                                             Height="18"    
+                                             Foreground="#730307" />
+
+                                    <TextBlock Text =" Account Details      " 
+                                           VerticalAlignment="Center" 
+                                           Margin="5"
+                                           FontSize="12"
+                                           FontFamily="Segoe UI Symbol"/>
+
+
+                                </StackPanel>
+
+                                <Button.ToolTip>
+                                    <ToolTip Content="Click to see Interns Accounts Details"/>
+                                </Button.ToolTip>
+                            </Button>
+
+                        </Border>
+
+
+                        <!--to see master table-->
+                        <Border  Height="40"
+                             Width="190"
+                             BorderBrush="{StaticResource borderButton1}"
+                             HorizontalAlignment="Center"
+                             BorderThickness="1">
+
+                            <Button x:Name="seeMasterTableData"
                                 Style="{StaticResource ButtonStyle3}" 
                                 Click="seeMasterTableData_Click">
 
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text ="See Master Table" 
+                                <StackPanel Orientation="Horizontal" >
+
+                                    <f:IconImage Icon="UserGroup" 
+                                             Height="18"    
+                                             Foreground="#730307" 
+                                             />
+
+                                    <TextBlock Text ="Trainees Details      " 
                                            VerticalAlignment="Center" 
                                            Margin="5"
                                            FontSize="12"
                                            FontFamily="Segoe UI Symbol"/>
 
-                                <f:IconImage Icon="File" 
-                                             Height="18"    
-                                             Foreground="#730307" />
-                            </StackPanel>
 
-                            <Button.ToolTip>
-                                <ToolTip Content="Click to import data from excel file to a datagrid"/>
-                            </Button.ToolTip>
-                        </Button>
+                                </StackPanel>
 
-                    </Border>
+                                <Button.ToolTip>
+                                    <ToolTip Content="Click to see Interns Details in MASTER Table"/>
+                                </Button.ToolTip>
+                            </Button>
 
-                    <!--load excel data to grid view-->
-                    <Border  Height="40"
+                        </Border>
+
+
+                        <!--to see salary table-->
+                        <!--no crud ******************-->
+                        <Border  Height="40"
                              Width="190"
                              BorderBrush="{StaticResource borderButton1}"
                              HorizontalAlignment="Center"
                              BorderThickness="1">
 
-                        <Button x:Name="LoadAddDataFromExelDAtaSheet"
+                            <Button x:Name="seeSalaryTableData"
                                 Style="{StaticResource ButtonStyle3}" 
-                                Click="LoadAddDataFromExelDAtaSheet_Click">
+                                Click="seeSalaryTableData_Click">
 
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text ="Load From EXCEL" 
+                                <StackPanel Orientation="Horizontal" >
+
+                                    <f:IconImage Icon="Book" 
+                                             Height="18"    
+                                             Foreground="#730307" 
+                                             />
+
+                                    <TextBlock Text =" Payment Details     " 
                                            VerticalAlignment="Center" 
                                            Margin="5"
                                            FontSize="12"
                                            FontFamily="Segoe UI Symbol"/>
 
-                                <f:IconImage Icon="FileExcel" 
+
+                                </StackPanel>
+
+                                <Button.ToolTip>
+                                    <ToolTip Content="Click to see Interns Details in MASTER Table"/>
+                                </Button.ToolTip>
+                            </Button>
+
+                        </Border>
+                        
+                        
+
+                        <!-- to see log datail log-->
+                        <!--no crud ******************-->
+
+
+
+                        <!--load excel data to grid view-->
+                        <Border  Height="40"
+                             Width="190"
+                             BorderBrush="{StaticResource borderButton1}"
+                             HorizontalAlignment="Center"
+                             BorderThickness="1">
+
+                            <Button x:Name="LoadAddDataFromExelDAtaSheet"
+                                Style="{StaticResource ButtonStyle3}" 
+                                Click="LoadAddDataFromExelDAtaSheet_Click">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <f:IconImage Icon="FileExcel" 
                                              Height="18"    
                                              Foreground="#730307" />
-                            </StackPanel>
 
-                            <Button.ToolTip>
-                                <ToolTip Content="Click to import data from excel file to a datagrid"/>
-                            </Button.ToolTip>
-                        </Button>
+                                    <TextBlock Text ="Export From EXCEL   " 
+                                           VerticalAlignment="Center" 
+                                           Margin="5"
+                                           FontSize="12"
+                                           FontFamily="Segoe UI Symbol"/>
 
-                    </Border>
 
-                </StackPanel>
+                                </StackPanel>
+
+                                <Button.ToolTip>
+                                    <ToolTip Content="Click to import data from excel file to a datagrid"/>
+                                </Button.ToolTip>
+                            </Button>
+
+                        </Border>
+
+                    </StackPanel>
+
+
+                </Grid>
 
             </Border>
         </Border>

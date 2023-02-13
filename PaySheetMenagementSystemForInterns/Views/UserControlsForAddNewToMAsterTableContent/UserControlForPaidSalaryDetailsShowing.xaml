@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAsterTableContent.UserControlForPaidSalaryDetailsShowing"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAsterTableContent"
+             mc:Ignorable="d" 
+            >
+    <UserControl.Resources>
+        <Style x:Key="MyStyle" TargetType="{x:Type Rectangle}">
+            <Setter Property="Width" Value="{Binding ElementName=UserControlLoaderToAddNew, Path=RenderSize.Width}" />
+            <Setter Property="Height" Value="{Binding ElementName=UserControlLoaderToAddNew, Path=RenderSize.Height}" />
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Border BorderThickness="1" 
+                Grid.Column="0" 
+                BorderBrush="#d5daf0"
+                Margin="1">
+            <Border BorderThickness="1" 
+                Grid.Column="0" 
+                BorderBrush="#43496b" 
+                Background="White">
+
+
+                <DataGrid x:Name="PaidSalaryDetailsTableViewDataGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="100" Header="Trainee Number" Binding="{Binding [Trainee No]}" />
+                        <DataGridTextColumn Width="100" Header="Salary" Binding="{Binding [Salary Amount]}"/>
+                        <DataGridTextColumn Width="70" Header="Month" Binding="{Binding Month}" />
+                        <DataGridTextColumn Width="50" Header="Year" Binding="{Binding Year}" />
+                        <DataGridTextColumn Width="100" Header="Account No" Binding="{Binding [Account No]}" />
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                        <DataGridTextColumn Header="Bank Name" Binding="{Binding [Bank Name]}" />
+                        <DataGridTextColumn Width="70" Header="Bank Code" Binding="{Binding [Bank Code]}" />
+                        <DataGridTextColumn Header="Branch Name" Binding="{Binding [Branch Name]}" />
+                        <DataGridTextColumn Width="70" Header="Branch Code" Binding="{Binding [Branch Code]}" />
+                        <DataGridTextColumn Width="100" Header="Full Days" Binding="{Binding [Work Days- FULL]}"/>
+                        <DataGridTextColumn Width="100" Header="Half Days" Binding="{Binding [Work Days- HALF]}"/>
+                        <DataGridTextColumn Width="100" Header="Work Days" Binding="{Binding [Work Days- Total]}"/>
+                        
+
+                    </DataGrid.Columns>
+                </DataGrid>
+
+            </Border>
+        </Border>
+    </Grid>
+</UserControl>

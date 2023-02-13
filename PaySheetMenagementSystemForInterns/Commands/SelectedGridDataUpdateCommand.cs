@@ -21,19 +21,19 @@ namespace PaySheetMenagementSystemForInterns.Commands
                     connection.Open();
                     //validate - check if the data allready in the SalaryStoreTable or temperarySalaryTable
                     //check salarySotere table
-                    SqlDataAdapter sda1 = new SqlDataAdapter("SELECT count(ID) FROM SalaryStoreTable WHERE ID ='" + obj.InternID.Text + "' AND Month ='" + obj.AddingMonth.Text + "' AND Year ='" + obj.AddingYear.Text + "' AND AccountNo ='" + obj.InternBankAccNo.Text + "'", connection);
+                    SqlDataAdapter sda1 = new SqlDataAdapter("SELECT count([Trainee No]) FROM [ALL_SALARY-DETAILS_TRAINEE] WHERE [Trainee No] ='" + obj.InternID.Text + "' AND Month ='" + obj.AddingMonth.Text + "' AND Year ='" + obj.AddingYear.Text + "' AND [Account No] ='" + obj.InternBankAccNo.Text + "'", connection);
                     DataTable dt1 = new DataTable();
                     dt1.AcceptChanges();
                     sda1.Fill(dt1);
 
                     //check temperary table
-                    SqlDataAdapter sda2 = new SqlDataAdapter("SELECT count(ID) FROM TempararySalaryTable WHERE ID ='" + obj.InternID.Text + "'", connection);
+                    SqlDataAdapter sda2 = new SqlDataAdapter("SELECT count([Trainee No]) FROM [TEMP_SALARY-DETAILS_TRAINEE] WHERE [Trainee No] ='" + obj.InternID.Text + "'", connection);
                     DataTable dt2 = new DataTable();
                     dt2.AcceptChanges();
                     sda2.Fill(dt2);
 
                     //check thet Id in the master table
-                    SqlDataAdapter sda3 = new SqlDataAdapter("SELECT count(ID) FROM InternsMasterTable WHERE ID ='" + obj.InternID.Text + "'", connection);
+                    SqlDataAdapter sda3 = new SqlDataAdapter("SELECT count([Trainee No]) FROM [MASTER-DETAILS_TRAINEE] WHERE [Trainee No] ='" + obj.InternID.Text + "'", connection);
                     DataTable dt3 = new DataTable();
                     dt3.AcceptChanges();
                     sda3.Fill(dt3);
@@ -47,7 +47,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
                     {
 
                         //data update query               
-                        SqlCommand c1 = new SqlCommand("UPDATE TempararySalaryTable SET AccountNo = '" + obj.InternBankAccNo.Text + "', Month = '" + obj.AddingMonth.Text + "', Year = '" + int.Parse(obj.AddingYear.Text) + "', BankName = '" + obj.InternBankName.Text + "', BankCode = '" + obj.InternBankCode.Text + "', BranchName = '" + obj.InternBranchName.Text + "', BranchCode = '" + obj.InternBranchCode.Text + "', SalaryPerDay = '" + float.Parse(obj.InternSalaryPerDay.Text) + "', FullWorkDays = '" + int.Parse(obj.AddingFullWorkDays.Text) + "', HalfWorkDays = '" + int.Parse(obj.AddingHalfWorkDays.Text) + "', TotalWorkDays = '" + float.Parse(obj.ShowTotalWorkDays.Text) + "', TotalSalaryAmount = '" + float.Parse(obj.ShowTotalSalary.Text) + "', Name = '" + obj.InternName.Text + "' WHERE ID = '" + obj.InternID.Text + "'", connection);
+                        SqlCommand c1 = new SqlCommand("UPDATE [TEMP_SALARY-DETAILS_TRAINEE] SET [Account No] = '" + obj.InternBankAccNo.Text + "', Month = '" + obj.AddingMonth.Text + "', Year = '" + int.Parse(obj.AddingYear.Text) + "', [Bank Name] = '" + obj.InternBankName.Text + "', [Bank Code] = '" + obj.InternBankCode.Text + "', [Branch Name] = '" + obj.InternBranchName.Text + "', [Branch Code] = '" + obj.InternBranchCode.Text + "', [Work Days- FULL] = '" + int.Parse(obj.AddingFullWorkDays.Text) + "', [Work Days- HALF] = '" + int.Parse(obj.AddingHalfWorkDays.Text) + "', [Work Days- Total] = '" + float.Parse(obj.ShowTotalWorkDays.Text) + "', [Salary Amount] = '" + float.Parse(obj.ShowTotalSalary.Text) + "', Name = '" + obj.InternName.Text + "' WHERE [Trainee No] = '" + obj.InternID.Text + "'", connection);
                         c1.ExecuteNonQuery();
                         MessageBox.Show("Successfully added to the table", "success", MessageBoxButton.OK, MessageBoxImage.Information);
 

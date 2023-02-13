@@ -28,7 +28,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally { con.Close(); }
 
