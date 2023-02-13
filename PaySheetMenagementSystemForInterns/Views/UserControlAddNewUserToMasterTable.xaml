@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PaySheetMenagementSystemForInterns.Views"
              mc:Ignorable="d"
              xmlns:f="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-             Height="650"
+             Height="675"
 
              >
     
@@ -61,7 +61,7 @@
                         </Label>
                         <Label Content="Button Panel" 
                                 Background="#030c45" 
-                                Width="275"
+                                Width="160"
                                 Foreground="White"/>
 
                     </StackPanel>
@@ -99,7 +99,7 @@
                                 </StackPanel>
 
                                 <Button.ToolTip>
-                                    <ToolTip Content="Click to see Interns Accounts Details"/>
+                                    <ToolTip Content="Click to Add new Trainee"/>
                                 </Button.ToolTip>
                             </Button>
 

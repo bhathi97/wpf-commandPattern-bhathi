@@ -16,6 +16,20 @@
         
         
     >
+    
+    <Window.Resources>
+    <Style TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <ContentPresenter />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</Window.Resources>
+    
+    
 
     <Border Margin="5" MouseLeftButtonDown="Border_MouseLeftButtonDown">
         <Grid >
@@ -117,11 +131,6 @@
 
 
 
-
-
-
-
-
                     </StackPanel>
 
                 </StackPanel>
@@ -130,21 +139,27 @@
             
             
             <!--2 parts-->
-            <StackPanel Orientation="Vertical" Grid.Row="1">
+            <StackPanel Orientation="Vertical" Grid.Row="1" Background="#d5daf0">
                 <Grid Height="30">
-            
-                    <!--f:IconImage Icon="MoneyBillTransfer" Margin="5" Foreground="#780101"-->
-                    <Menu x:Name="Menu" 
-                          
-                          >
+                    
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    
+                    
+                    
+                    <Menu x:Name="Menu" Grid.Column="0">
                         <Menu.Background>
                             <SolidColorBrush Color="{StaticResource backgroundColor4}"/>
                         </Menu.Background>
                         <!--menu-->
-                        <MenuItem Header="Home" Click="MenuItemHome_Click" Padding="6"
-                                  >
-
-
+                        <MenuItem Header="Home" Click="MenuItemHome_Click" Padding="6">
                             <MenuItem.Style>
                                 <Style TargetType="MenuItem">
                                     <Setter Property="Background" Value="Transparent"/>
@@ -155,9 +170,6 @@
                                     </Style.Triggers>
                                 </Style>
                             </MenuItem.Style>
-
-
-
                         </MenuItem>
                         <!--add new intern to tables / i change this as database later-->
                         <MenuItem Header="DataBase" Click="MenuItemNewbie_Click" Padding="6"/>
@@ -167,8 +179,65 @@
                         <MenuItem Header="Setting" Click="MenuItemSetting_Click" Padding="6"/>
                     </Menu>
                     
+                    <!--goto website-->
+                    <Button x:Name="webBrowserLoadButton"
+                            Width="25" Grid.Column="3"
+                            BorderBrush="#d5daf0"
+                            Click="webBrowserLoadButton_Click"
+                            VerticalAlignment="Center">
+
+                        <Label Background="#d5daf0">
+                            <Viewbox>
+                                <f:IconImage Icon="Edge" 
+                                         Height="20" 
+                                         Foreground="#121840"
+                                         VerticalAlignment="Center"
+                                         HorizontalAlignment="Center"/>
+                            </Viewbox>
+                        </Label>
+                    </Button>
+                    
+                    <!--go to notepad-->
+                    <Button x:Name="notePadLoadButton"
+                            Width="25" Grid.Column="4"
+                            VerticalAlignment="Center"
+                            BorderBrush="#d5daf0"
+                          
+                            Click="notePadLoadButton_Click">
+
+                        <Label Background="#d5daf0">
+                            <Viewbox>
+                                <f:IconImage Icon="NoteSticky" 
+                                         Height="20" 
+                                         Foreground="#121840"
+                                         VerticalAlignment="Center"
+                                         HorizontalAlignment="Center"/>
+                            </Viewbox>
+                        </Label>
+                    </Button>
+
+                    <!--userIcon-->
 
 
+                    <Label Background="#d5daf0" Grid.Column="2" Height="25">
+                        <Viewbox>
+                            <f:IconImage Icon="UserCircle" 
+                                         Height="20" 
+                                         Foreground="#121840"
+                                         VerticalAlignment="Center"
+                                         HorizontalAlignment="Center"/>
+                        </Viewbox>
+                    </Label>
+
+
+                    <TextBlock Grid.Column="1"
+                               Background="#d5daf0"
+                               Foreground="#121840"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Right"
+                               FontFamily="Microsoft Sans Serif"
+                               x:Name="showingWhoIsLoggedTextBlock"
+                               Text="bhathiya bandara"/>
                 </Grid>
 
 

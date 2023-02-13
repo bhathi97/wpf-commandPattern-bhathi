@@ -22,8 +22,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="1"/>
+            <RowDefinition Height="675"/>
         </Grid.RowDefinitions>
 
         <Grid Background="Transparent" Grid.Row="0">
@@ -42,9 +41,10 @@
                 BorderBrush="#d5daf0"
                 Margin="5">
                 <Border BorderThickness="1" 
-                Grid.Column="0" 
-                BorderBrush="#030c45" 
-                Background="White">
+                    Grid.Column="0" 
+                    BorderBrush="#030c45" 
+                    Background="White">  
+                    
                     <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True"
                               >
                         <Grid>
@@ -65,7 +65,7 @@
                                 </Label>
                                 <Label Content="Add new Record" 
                                    Background="#030c45" 
-                                   Width="275"
+                                   Width="260"
                                    Foreground="White"/>
 
                             </StackPanel>
@@ -75,9 +75,9 @@
                                     <StackPanel>
                                         <!--id-->
                                         <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="2"
-                                Margin="0,5,0,0">
+                                            BorderThickness="1"
+                                            CornerRadius="2"
+                                            Margin="0,5,0,0">   
                                             <StackPanel Orientation="Horizontal">
                                                 <Label Content="ID" 
                                        Width="100" 
@@ -98,38 +98,39 @@
 
                                         <!--name-->
                                         <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="2"
-                                Margin="0,2,0,0"
-                                >
+                                                BorderThickness="1"
+                                                CornerRadius="2"
+                                                Margin="0,2,0,0"
+                                                >
 
                                             <StackPanel Orientation="Horizontal">
                                                 <Label Content="Name" Width="100" FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
+                                                        Foreground="Black"/>
                                                 <TextBox TextWrapping="Wrap"
-                                     MinHeight="30"
-                                     Background="white"
-                                     Margin="2" 
-                                     Name="InternName"
-                                     Width="170"/>
+                                                         MinHeight="30"
+                                                         Background="white"
+                                                         Margin="2" 
+                                                         Name="InternName"
+                                                         Width="170"/>
                                             </StackPanel>
                                         </Border>
 
                                         <!--bank account number-->
                                         <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="3"
-                                Margin="0,2,0,0">
+                                                BorderThickness="1"
+                                                CornerRadius="3"
+                                                Margin="0,2,0,0">
 
                                             <StackPanel Orientation="Horizontal">
                                                 <Label Content="Bank Account" Width="100" FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
+                                                       Foreground="Black"/>
+                                                
                                                 <TextBox TextWrapping="Wrap"
-                                     MinHeight="30"
-                                     Background="white"
-                                     Margin="2" 
-                                     Name="InternBankAccNo"
-                                     Width="170"/>
+                                                        MinHeight="30"
+                                                        Background="white"
+                                                        Margin="2" 
+                                                        Name="InternBankAccNo"
+                                                        Width="170"/>
                                             </StackPanel>
                                         </Border>
 

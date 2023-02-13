@@ -16,6 +16,7 @@ using PaySheetMenagementSystemForInterns.Commands;
 using System.Windows.Interop;
 using System.Windows.Threading;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace PaySheetMenagementSystemForInterns.Views
 {
@@ -117,5 +118,24 @@ namespace PaySheetMenagementSystemForInterns.Views
             //userControlForSalaryEnteringWindow      .Width = e.NewSize.Width;
         }
 
+        private void webBrowserLoadButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe", "https://ceypetco.gov.lk/");
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
+           
+        }
+
+        private void notePadLoadButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start("notepad.exe");
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+        }
     }
 }

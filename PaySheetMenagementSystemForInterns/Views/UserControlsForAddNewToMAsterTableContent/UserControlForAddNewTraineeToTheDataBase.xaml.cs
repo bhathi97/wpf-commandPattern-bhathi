@@ -24,5 +24,10 @@ namespace PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAster
         {
             InitializeComponent();
         }
+
+        private void LoadAddDataToDataBase_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
