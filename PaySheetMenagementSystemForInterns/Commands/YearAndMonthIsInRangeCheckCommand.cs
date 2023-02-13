@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PaySheetMenagementSystemForInterns.Commands
 {
@@ -39,21 +40,21 @@ namespace PaySheetMenagementSystemForInterns.Commands
                 connection.Open();
                 //start year,start month,end year and end month get from master table considering user id
 
-                SqlCommand command1 = new SqlCommand("SELECT WorkStartMonth FROM InternsMasterTable where ID = '" + obj.InternID.Text + "'", connection);
-                startMonthFromDB=(string)command1.ExecuteScalar();
-                startMonth = int.Parse(startMonthFromDB);
+                SqlCommand command1 = new SqlCommand("SELECT MONTH([Start Date]) FROM [MASTER-DETAILS_TRAINEE] where [Trainee No] = '" + obj.InternID.Text + "'", connection);
+                //startMonthFromDB=(string)command1.ExecuteScalar();
+                startMonth = (int)command1.ExecuteScalar();
 
-                SqlCommand command2 = new SqlCommand("SELECT WorkStartYear FROM InternsMasterTable where ID = '" + obj.InternID.Text + "'", connection);
+                SqlCommand command2 = new SqlCommand("SELECT YEAR([Start Date]) FROM [MASTER-DETAILS_TRAINEE] where [Trainee No] = '" + obj.InternID.Text + "'", connection);
                 startYear = (int)command2.ExecuteScalar();
 
-                SqlCommand command3 = new SqlCommand("SELECT WorkEndYear FROM InternsMasterTable where ID = '" + obj.InternID.Text + "'", connection);
+                SqlCommand command3 = new SqlCommand("SELECT YEAR([End Date]) FROM [MASTER-DETAILS_TRAINEE] where [Trainee No] = '" + obj.InternID.Text + "'", connection);
                 endYear = (int)command3.ExecuteScalar();
 
-                SqlCommand command4 = new SqlCommand("SELECT WorkEndMonth FROM InternsMasterTable where ID = '" + obj.InternID.Text + "'", connection);
-                endMonthFromDB = (string)command4.ExecuteScalar();
-                endMonth = int.Parse(endMonthFromDB);
+                SqlCommand command4 = new SqlCommand("SELECT MONTH([End Date]) FROM [MASTER-DETAILS_TRAINEE] where [Trainee No] = '" + obj.InternID.Text + "'", connection);
+                //endMonthFromDB = (string)command4.ExecuteScalar();
+                endMonth = (int)command4.ExecuteScalar();
 
-                
+
                 int flag2 = 0;
                 while (flag2 == 0)
                 {
@@ -104,6 +105,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
             finally
             {
                 connection.Close();
+                MessageBox.Show(startMonth.ToString(),endMonth.ToString());
             }
             return flag;
         }

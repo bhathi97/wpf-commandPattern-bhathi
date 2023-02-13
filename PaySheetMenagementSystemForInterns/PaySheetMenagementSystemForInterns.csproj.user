@@ -19,6 +19,9 @@
     <Compile Update="Views\UserControlForSalaryEnteringWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForAddNewTraineeToTheDataBase.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForDataImportFromExcel.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +52,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControlForSalaryEnteringWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForAddNewTraineeToTheDataBase.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForDataImportFromExcel.xaml">

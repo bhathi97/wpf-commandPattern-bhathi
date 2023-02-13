@@ -60,9 +60,9 @@
                             </Viewbox>
                         </Label>
                         <Label Content="Button Panel" 
-                                   Background="#030c45" 
-                                   Width="275"
-                                   Foreground="White"/>
+                                Background="#030c45" 
+                                Width="275"
+                                Foreground="White"/>
 
                     </StackPanel>
 
@@ -72,24 +72,57 @@
 
 
                         <!--Add new record to intern Master Table and salary table-->
+                        <Border  Height="50"
+                                 Width="180"
+                                 BorderBrush="{StaticResource borderButton1}"
+                                 HorizontalAlignment="Center"
+                                 BorderThickness="1"
+                                 Margin="5"
+                                 CornerRadius="4">
+
+                            <Button x:Name="addNewTrainee"
+                                Style="{StaticResource ButtonStyle3}" 
+                                Click="addNewTrainee_Click">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <f:IconImage Icon="UserPlus" 
+                                             Height="18"    
+                                             Foreground="#730307" />
+
+                                    <TextBlock Text ="Add New Trainee   " 
+                                           VerticalAlignment="Center" 
+                                           Margin="5"
+                                           FontSize="12"
+                                           FontFamily="Segoe UI Symbol"/>
 
 
-                        
-                        
-                        
-                        
-                    
+                                </StackPanel>
+
+                                <Button.ToolTip>
+                                    <ToolTip Content="Click to see Interns Accounts Details"/>
+                                </Button.ToolTip>
+                            </Button>
+
+                        </Border>
+
+
+
+
+
+
 
                         <!--to see account table-->
-                        <Border  Height="40"
-                             Width="190"
-                             BorderBrush="{StaticResource borderButton1}"
-                             HorizontalAlignment="Center"
-                             BorderThickness="1">
+                        <Border Height="50"
+                                Width="180"
+                                BorderBrush="{StaticResource borderButton1}"
+                                HorizontalAlignment="Center"
+                                BorderThickness="1"
+                                Margin="5,0,5,5"
+                                CornerRadius="4">
 
                             <Button x:Name="seeAccountTableData"
-                                Style="{StaticResource ButtonStyle3}" 
-                                Click="seeAccountTableData_Click">
+                                    Style="{StaticResource ButtonStyle3}" 
+                                    Click="seeAccountTableData_Click">
 
                                 <StackPanel Orientation="Horizontal">
                                     <f:IconImage Icon="Bank" 
@@ -114,11 +147,13 @@
 
 
                         <!--to see master table-->
-                        <Border  Height="40"
-                             Width="190"
-                             BorderBrush="{StaticResource borderButton1}"
-                             HorizontalAlignment="Center"
-                             BorderThickness="1">
+                        <Border  Height="50"
+                                 Width="180"
+                                 BorderBrush="{StaticResource borderButton1}"
+                                 HorizontalAlignment="Center"
+                                 BorderThickness="1"
+                                 Margin="5,0,5,5"
+                                 CornerRadius="4">
 
                             <Button x:Name="seeMasterTableData"
                                 Style="{StaticResource ButtonStyle3}" 
@@ -150,11 +185,13 @@
 
                         <!--to see salary table-->
                         <!--no crud ******************-->
-                        <Border  Height="40"
-                             Width="190"
-                             BorderBrush="{StaticResource borderButton1}"
-                             HorizontalAlignment="Center"
-                             BorderThickness="1">
+                        <Border  Height="50"
+                                 Width="180"
+                                 BorderBrush="{StaticResource borderButton1}"
+                                 HorizontalAlignment="Center"
+                                 BorderThickness="1"
+                                 Margin="5,0,5,5"
+                                 CornerRadius="4">
 
                             <Button x:Name="seeSalaryTableData"
                                 Style="{StaticResource ButtonStyle3}" 
@@ -167,7 +204,7 @@
                                              Foreground="#730307" 
                                              />
 
-                                    <TextBlock Text =" Payment Details     " 
+                                    <TextBlock Text =" Payment Details      " 
                                            VerticalAlignment="Center" 
                                            Margin="5"
                                            FontSize="12"
@@ -191,11 +228,12 @@
 
 
                         <!--load excel data to grid view-->
-                        <Border  Height="40"
-                             Width="190"
-                             BorderBrush="{StaticResource borderButton1}"
-                             HorizontalAlignment="Center"
-                             BorderThickness="1">
+                        <Border  Height="50"
+                                 Width="180"
+                                 BorderBrush="{StaticResource borderButton1}"
+                                 HorizontalAlignment="Center"
+                                 BorderThickness="1"
+                                 Margin="5,0,5,5">
 
                             <Button x:Name="LoadAddDataFromExelDAtaSheet"
                                 Style="{StaticResource ButtonStyle3}" 

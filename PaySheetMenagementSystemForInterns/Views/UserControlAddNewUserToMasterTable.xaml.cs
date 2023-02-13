@@ -67,5 +67,16 @@ namespace PaySheetMenagementSystemForInterns.Views
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
         }
+
+        //add new trainee to the database | both master and account tables
+        private void addNewTrainee_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                UserControlLoaderToAddNew.Content = new UserControlForAddNewTraineeToTheDataBase();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+        }
     }
 }
