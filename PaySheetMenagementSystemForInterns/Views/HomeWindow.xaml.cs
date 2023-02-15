@@ -78,11 +78,7 @@ namespace PaySheetMenagementSystemForInterns.Views
 
         private void MenuItemSetting_Click(object sender, RoutedEventArgs e)
         {
-            /*try
-            {
-                System.Diagnostics.Process.Start("google.com................");
-            }
-            catch (Exception ex){ MessageBox.Show(ex.Message);}*/
+
 
         }
 
@@ -122,7 +118,7 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             try
             {
-                Process.Start("C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe", "https://ceypetco.gov.lk/");
+                Process.Start(@"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe", "https://ceypetco.gov.lk/");
             }
             catch(Exception ex) { MessageBox.Show(ex.Message); }
            

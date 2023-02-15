@@ -109,7 +109,7 @@
                                         BorderBrush="Black"
                                         Background="white" 
                                         Name="TraineeLocationToDB" 
-                                        Width="300"/>
+                                        Width="300" />
                             </StackPanel>
 
 
@@ -214,7 +214,8 @@
                                         BorderBrush="Black"
                                         Background="white" 
                                         Name="TraineeBankNameToDB" 
-                                        Width="300"/>
+                                        Width="300" DropDownClosed="TraineeBankNameToDB_DropDownClosed_1" 
+                                       />
                                 </StackPanel>
 
                                 <!--Bank Code-->
@@ -224,6 +225,7 @@
                                    FontFamily="Segoe UI Symbol"/>
 
                                     <TextBlock 
+                                        Text=" "
                                         Background="white" 
                                         Name="TraineeBankCodeToDB" 
                                         Width="100"/>
@@ -236,10 +238,11 @@
                                    FontFamily="Segoe UI Symbol"/>
 
                                     <ComboBox Height="30"
-                                        BorderBrush="Black"
-                                        Background="white" 
-                                        Name="TraineeBranchNameToDB" 
-                                        Width="300"/>
+                                            BorderBrush="Black"
+                                            Background="white" 
+                                            Name="TraineeBranchNameToDB" 
+                                            
+                                            Width="300" DropDownClosed="TraineeBranchNameToDB_DropDownClosed"/>   
                                 </StackPanel>
 
 

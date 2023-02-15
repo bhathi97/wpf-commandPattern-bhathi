@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PaySheetMenagementSystemForInterns.Commands
 {
-    class TotalSalaryCalculationCommand
+    class TotalSalaryCalculationCommand: DataValidationOfFullAndHalfDaysCommand
     {
         public void totalSalaryAutoCalculate(UserControlForSalaryEnteringWindow obj)
         {
