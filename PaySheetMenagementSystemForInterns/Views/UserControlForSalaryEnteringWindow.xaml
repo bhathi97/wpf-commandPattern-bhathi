@@ -387,9 +387,9 @@
 
                 <DataGrid x:Name="dataShowingTable" 
                       SelectionChanged="dataShowingTable_SelectionChanged"
-                      AutoGenerateColumns="False">
+                      >
 
-                    <DataGrid.Columns>
+                    <!--DataGrid.Columns>
                         <DataGridTextColumn Width="100" Header="Trainee Number" Binding="{Binding [Trainee No]}" />
                         <DataGridTextColumn Width="70" Header="Month" Binding="{Binding Month}" />
                         <DataGridTextColumn Width="50" Header="Year" Binding="{Binding Year}" />
@@ -404,7 +404,7 @@
                         <DataGridTextColumn Width="100" Header="Work Days" Binding="{Binding [Work Days- Total]}"/>
                         <DataGridTextColumn Width="100" Header="Salary" Binding="{Binding [Salary Amount]}"/>
 
-                    </DataGrid.Columns>
+                    </DataGrid.Columns-->
 
                 </DataGrid>
             </StackPanel>
@@ -613,14 +613,14 @@
                                         >
 
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="ID" 
+                                        <Label Content="Trainee No" 
                                            
                                             Foreground="Black"
                                             VerticalAlignment="Top"
                                             Margin="0,2,0,0"/>
 
                                         <TextBox x:Name="IDforSearch"
-                                            Width="118"
+                                            Width="80"
                                             Height="30"/>
 
                                         <Border  Margin="5,5,0,0"

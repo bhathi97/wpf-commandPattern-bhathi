@@ -25,7 +25,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
                 SqlDataAdapter sqldataadapter = new SqlDataAdapter(sqlcommand);
                 DataTable showdatatable = new DataTable();
                 sqldataadapter.Fill(showdatatable);
-                obj.dataShowingTable.AutoGenerateColumns = false;
+                //obj.dataShowingTable.AutoGenerateColumns = false;
                 grid.ItemsSource = showdatatable.DefaultView;
 
             }

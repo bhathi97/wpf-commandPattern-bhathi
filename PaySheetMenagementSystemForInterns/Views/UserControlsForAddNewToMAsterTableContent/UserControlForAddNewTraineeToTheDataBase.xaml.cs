@@ -25,7 +25,7 @@ namespace PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAster
         //connection
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-KHI8921;Initial Catalog=CPC_Interns_Salary_Management_System_Database;Integrated Security=True;TrustServerCertificate=True");
         AddNewTraineeAllCommands addNewTraineeAllCommands1 = new AddNewTraineeAllCommands();
-
+        NewTraineeDataSendToDataBaseCommand newTraineeDataSendToDataBaseCommand1 = new NewTraineeDataSendToDataBaseCommand();
         public UserControlForAddNewTraineeToTheDataBase()
         {   
             InitializeComponent();
@@ -44,7 +44,7 @@ namespace PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAster
 
         private void LoadAddDataToDataBase_Click(object sender, RoutedEventArgs e)
         {
-
+            newTraineeDataSendToDataBaseCommand1.addNewTraineeToDataTables(this,connection);
         }
 
         //autoload code of bank

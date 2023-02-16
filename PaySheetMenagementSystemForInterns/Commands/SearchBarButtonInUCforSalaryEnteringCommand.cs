@@ -20,7 +20,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
             //check is there any input
             if (string.IsNullOrEmpty(obj.IDforSearch.Text)) 
             { 
-                MessageBox.Show("Enter ID before click the button", "Oops!", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Enter Trainee No before click the button", "Oops!", MessageBoxButton.OK, MessageBoxImage.Warning);
                 obj.IDforSearch.Focus();
             }
 
@@ -32,19 +32,19 @@ namespace PaySheetMenagementSystemForInterns.Commands
                     connection.Open();
 
                     //check is that data available
-                    SqlDataAdapter sda = new SqlDataAdapter("SELECT count(ID) FROM TempararySalaryTable WHERE ID = '" + obj.IDforSearch.Text + "'", connection);
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT count([Trainee No]) FROM [TEMP_SALARY-DETAILS_TRAINEE] WHERE [Trainee No] = '" + obj.IDforSearch.Text + "'", connection);
                     DataTable dt = new DataTable();
                     dt.AcceptChanges();
                     sda.Fill(dt);
 
                     if (dt.Rows[0][0].ToString() == "0")
                     {
-                        MessageBox.Show("ID is unavailable", " Error ", MessageBoxButton.OKCancel, MessageBoxImage.Error);
+                        MessageBox.Show("Trainee No is unavailable", " Error ", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                         
                     }
                     else
                     {
-                        SqlCommand sqlcommandforsearch = new SqlCommand("SELECT Month,TotalSalaryAmount,AccountNo,ID,Year,Month,FullWorkDays,HalfWorkDays FROM TempararySalaryTable WHERE ID = '" + obj.IDforSearch.Text + "'", connection);
+                        SqlCommand sqlcommandforsearch = new SqlCommand("SELECT * FROM [TEMP_SALARY-DETAILS_TRAINEE] WHERE [Trainee No] = '" + obj.IDforSearch.Text + "'", connection);
                         SqlDataAdapter sda1 = new SqlDataAdapter(sqlcommandforsearch);
                         DataTable showdatatable = new DataTable();
                         showdatatable.AcceptChanges();

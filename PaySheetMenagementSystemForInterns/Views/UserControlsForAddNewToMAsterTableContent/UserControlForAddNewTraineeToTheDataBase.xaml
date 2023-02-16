@@ -67,8 +67,8 @@
                                 <TextBox x:Name="TraineeNumberToDB"
                                      FontSize="12"
                                      FontFamily="Segoe UI Symbol"
-                                     Width="200"
-                                     />
+                                     Width="300"
+                                      BorderBrush="#43496b"/>
                             </StackPanel>
 
                             <!--Trainee name-->
@@ -82,7 +82,7 @@
                                      FontSize="12"
                                      FontFamily="Segoe UI Symbol"
                                      Width="300"
-                                     />
+                                     BorderBrush="#43496b" />
                             </StackPanel>
 
                             <!--Trainee ID number-->
@@ -96,7 +96,7 @@
                                      FontSize="12"
                                      FontFamily="Segoe UI Symbol"
                                      Width="300"
-                                     />
+                                      BorderBrush="#43496b"/>
                             </StackPanel>
 
                             <!--Location-->
@@ -137,8 +137,8 @@
                                      TextWrapping="Wrap"
                                      FontSize="12"
                                      FontFamily="Segoe UI Symbol"
-                                     Width="200"
-                                     />
+                                     Width="300"
+                                      BorderBrush="#43496b"/>
                             </StackPanel>
 
                             <!--Start Date-->
@@ -201,7 +201,7 @@
                                      FontSize="12"
                                      FontFamily="Segoe UI Symbol"
                                      Width="300"
-                                     />
+                                      BorderBrush="#43496b"/>
                                 </StackPanel>
 
                                 <!--Bank Name-->

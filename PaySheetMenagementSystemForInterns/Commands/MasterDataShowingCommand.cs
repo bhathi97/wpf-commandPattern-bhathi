@@ -22,7 +22,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
                 SqlDataAdapter sqldataadapter = new SqlDataAdapter(sqlcommand);
                 DataTable showdatatable = new DataTable();
                 sqldataadapter.Fill(showdatatable);
-                obj.masterTableViewDataGrid.AutoGenerateColumns = false;
+                //obj.masterTableViewDataGrid.AutoGenerateColumns = false;
                 obj.masterTableViewDataGrid.ItemsSource = showdatatable.DefaultView;
 
             }

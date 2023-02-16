@@ -16,13 +16,14 @@ namespace PaySheetMenagementSystemForInterns.Commands
         {
             DataGrid dataGrid = (DataGrid)obj.dataShowingTable;
             DataRowView rowView = dataGrid.SelectedItem as DataRowView;
+
             if (rowView != null)
             {
-                obj.InternID.Text = rowView["ID"].ToString();
+                obj.InternID.Text = rowView["Trainee No"].ToString();
                 obj.AddingMonth.Text = rowView["Month"].ToString();
                 obj.AddingYear.Text = rowView["Year"].ToString();
-                obj.AddingFullWorkDays.Text = rowView["FullWorkDays"].ToString();
-                obj.AddingHalfWorkDays.Text = rowView["HalfWorkDays"].ToString();
+                obj.AddingFullWorkDays.Text = rowView["Work Days- FULL"].ToString();
+                obj.AddingHalfWorkDays.Text = rowView["Work Days- HALF"].ToString();
             }
         }
     }

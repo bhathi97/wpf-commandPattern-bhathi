@@ -29,9 +29,15 @@
                 BorderBrush="#43496b" 
                 Background="White">
 
+                <StackPanel Orientation="Vertical">
 
-                <DataGrid x:Name="importedDataShowingTable">
-                </DataGrid>
+
+                    <!--data showing grid view-->
+                    <DataGrid x:Name="importedDataShowingTable">
+                    </DataGrid>
+
+                </StackPanel>
+                
 
             </Border>
         </Border>

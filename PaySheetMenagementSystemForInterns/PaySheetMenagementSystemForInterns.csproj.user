@@ -13,6 +13,9 @@
     <Compile Update="Views\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\PopUpWindowsForCrudOperations\PopUpWindowForShowingMasterTableData.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControlAddNewUserToMasterTable.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +52,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PopUpWindowsForCrudOperations\PopUpWindowForShowingMasterTableData.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControlAddNewUserToMasterTable.xaml">

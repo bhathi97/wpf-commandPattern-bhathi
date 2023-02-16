@@ -21,11 +21,30 @@
             <Border BorderThickness="1" 
                 Grid.Column="0" 
                 BorderBrush="#43496b" 
-                Background="White">
+                Background="White" >
 
 
-                <DataGrid x:Name="masterTableViewDataGrid">
-                    <DataGrid.Columns>
+
+
+                <StackPanel Orientation="Vertical">
+                    
+                    <!--search bar-->
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Search ID"/>
+                        <TextBox x:Name="MasterTableSearchTextBox"
+                                 Width="100"/>
+                        <Button>
+                            
+                        </Button>
+                        
+                    </StackPanel>
+
+
+
+
+                    <!--deataShowing Grid-->
+                    <DataGrid x:Name="masterTableViewDataGrid">
+                    <!--DataGrid.Columns>
                         <DataGridTextColumn Width="100"  Header="Trainee Number" Binding="{Binding [Trainee No]}" />
                         <DataGridTextColumn Width="100" Header="ID" Binding="{Binding ID}" />
                         <DataGridTextColumn Width="200" Header="Name" Binding="{Binding Name}" />
@@ -36,8 +55,13 @@
                         <DataGridTextColumn Width="100" Header="End Date" Binding="{Binding [End Date]}" />
                         <DataGridTextColumn Width="100" Header="Months" Binding="{Binding [Months]}"/>
                         
-                    </DataGrid.Columns>
-                </DataGrid>
+                    </DataGrid.Columns-->
+                    </DataGrid>
+
+                </StackPanel>
+
+
+                
 
             </Border>
         </Border>

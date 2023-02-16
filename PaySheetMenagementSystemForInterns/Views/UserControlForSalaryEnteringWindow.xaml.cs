@@ -73,7 +73,12 @@ namespace PaySheetMenagementSystemForInterns.Views
         //when datagrid view data select, autofill textboxes -> if update need to use
         private void dataShowingTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            dataGridViewSelectionAutofillCommand1.dataSelectionAutofill(this);
+            try
+            {
+                dataGridViewSelectionAutofillCommand1.dataSelectionAutofill(this);
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
+            
         }
         //validate fulldays input
         private void AddingFullWorkDays_PreviewTextInput(object sender, TextCompositionEventArgs e)
