@@ -262,39 +262,7 @@
                         <!-- to see log datail log-->
                         <!--no crud ******************-->
 
-                        <!--load excel data to grid view-->
-                        <Border  Height="50"
-                                 Width="180"
-                                 BorderBrush="{StaticResource borderButton1}"
-                                 HorizontalAlignment="Center"
-                                 BorderThickness="1"
-                                 Margin="5,0,5,5">
-
-                            <Button x:Name="LoadAddDataFromExelDAtaSheet"
-                                Style="{StaticResource ButtonStyle3}" 
-                                Click="LoadAddDataFromExelDAtaSheet_Click">
-
-                                <StackPanel Orientation="Horizontal">
-                                    <f:IconImage Icon="FileExcel" 
-                                             Height="18"    
-                                             Foreground="#730307" />
-
-                                    <TextBlock Text ="Export From EXCEL   " 
-                                           VerticalAlignment="Center" 
-                                           Margin="5"
-                                           FontSize="12"
-                                           FontFamily="Segoe UI Symbol"/>
-
-
-                                </StackPanel>
-
-                                <Button.ToolTip>
-                                    <ToolTip Content="Click to import data from excel file to a datagrid"/>
-                                </Button.ToolTip>
-                            </Button>
-
-                        </Border>
-
+                        
                     </StackPanel>
 
 

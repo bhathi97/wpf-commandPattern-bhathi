@@ -76,19 +76,6 @@ namespace PaySheetMenagementSystemForInterns.Views
             UserControlLoader1.Content = new UserControlAddNewUserToMasterTable();
         }
 
-        private void MenuItemSetting_Click(object sender, RoutedEventArgs e)
-        {
-
-
-        }
-
-            
-
-        private void MenuItemDashboard_Click(object sender, RoutedEventArgs e)
-        {
-            UserControlLoader1.Content = new UserControlForDashboardWindow();
-        }
-
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             WindowCloseButtonCommand1.WindowClose();

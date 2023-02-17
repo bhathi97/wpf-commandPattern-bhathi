@@ -154,29 +154,18 @@
 
 
 
-                    <Menu x:Name="Menu" Grid.Column="0">
+                    <Menu x:Name="Menu" Grid.Column="0" >
                         <Menu.Background>
                             <SolidColorBrush Color="{StaticResource backgroundColor4}"/>
                         </Menu.Background>
                         <!--menu-->
-                        <MenuItem Header="Home" Click="MenuItemHome_Click" Padding="6">
-                            <MenuItem.Style>
-                                <Style TargetType="MenuItem">
-                                    <Setter Property="Background" Value="Transparent"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="LightBlue"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </MenuItem.Style>
+                        <MenuItem Header="Add Salary Details" Click="MenuItemHome_Click" Padding="6">
+                            
                         </MenuItem>
                         <!--add new intern to tables / i change this as database later-->
-                        <MenuItem Header="DataBase" Click="MenuItemNewbie_Click" Padding="6"/>
+                        <MenuItem Header="Main Database Access" Click="MenuItemNewbie_Click" Padding="6"/>
                         <!--setting-->
-                        <MenuItem Header="Dashboard" Click="MenuItemDashboard_Click" Padding="6"/>
-                        <!--setting-->
-                        <MenuItem Header="Setting" Click="MenuItemSetting_Click" Padding="6"/>
+                        
                     </Menu>
 
                     <!--goto website-->

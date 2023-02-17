@@ -25,18 +25,7 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             InitializeComponent();
         }
-        //load data from exel --- not completed ----extra feature
-        private void LoadAddDataFromExelDAtaSheet_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                UserControlLoaderToAddNew.Content = new UserControlForDataImportFromExcel();
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-            
-            
-        }
-
+        
 
         //to see table of details of all interns in a grid  
         private void seeMasterTableData_Click(object sender, RoutedEventArgs e)
