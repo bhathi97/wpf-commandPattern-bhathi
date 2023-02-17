@@ -235,7 +235,7 @@
 
                                 <StackPanel Orientation="Horizontal" >
 
-                                    <f:IconImage Icon="UserEdit" 
+                                    <f:IconImage Icon="UserCog" 
                                              Height="18"    
                                              Foreground="#730307" 
                                              />

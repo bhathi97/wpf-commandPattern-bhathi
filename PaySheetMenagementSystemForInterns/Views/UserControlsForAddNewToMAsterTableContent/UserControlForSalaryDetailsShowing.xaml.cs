@@ -33,5 +33,20 @@ namespace PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAster
         BankAccountDetailsToGridViewCommand bankAccountDetailsToGridViewCommand1 = new BankAccountDetailsToGridViewCommand();
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-KHI8921;Initial Catalog=CPC_Interns_Salary_Management_System_Database;Integrated Security=True;TrustServerCertificate=True");
 
+        private void AccountDetailsTableViewDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                if (e.ChangedButton == MouseButton.Left)
+                {
+                    var rowValue = e.Source as DataGrid;
+                    //each values pass as an object
+                    PopUpWindowForBankAccountDetails popUpWindowForBankAccountDetails = new PopUpWindowForBankAccountDetails(rowValue.SelectedItem);
+                    popUpWindowForBankAccountDetails.Owner = Window.GetWindow(this);
+                    popUpWindowForBankAccountDetails.Show();
+                }
+            }
+            catch (Exception ex) { }
+        }
     }
 }

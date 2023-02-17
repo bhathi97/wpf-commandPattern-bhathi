@@ -19,9 +19,12 @@ namespace PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAster
     /// </summary>
     public partial class PopUpWindowForMasterDataShowing : Window
     {
-        public PopUpWindowForMasterDataShowing()
+        //constructer override by changeing parameter signature
+        public PopUpWindowForMasterDataShowing(object trainee)
         {
             InitializeComponent();
+            //data binding 
+            DataContext = trainee;
         }
     }
 }

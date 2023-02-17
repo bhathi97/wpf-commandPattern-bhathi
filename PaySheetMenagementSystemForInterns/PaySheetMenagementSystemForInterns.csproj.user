@@ -22,6 +22,9 @@
     <Compile Update="Views\UserControlForSalaryEnteringWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\PopUpWindowForBankAccountDetails.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\PopUpWindowForMasterDataShowing.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -64,6 +67,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControlForSalaryEnteringWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControlsForAddNewToMAsterTableContent\PopUpWindowForBankAccountDetails.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControlsForAddNewToMAsterTableContent\PopUpWindowForMasterDataShowing.xaml">

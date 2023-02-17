@@ -5,8 +5,186 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAsterTableContent"
         mc:Ignorable="d"
-        Title="Trainee Details" Height="500" Width="400">
-    <Grid>
-        
-    </Grid>
+        Title="Trainee Details"
+        xmlns:f="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"  
+        Height="400" Width="400"
+        Icon="/Resourses/logo.png">
+
+    <Border BorderThickness="2"    
+            BorderBrush="White"
+            Background="White">
+
+        <Border BorderThickness="1" 
+                BorderBrush="#43496b"
+                CornerRadius="3">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#d5daf0" Offset="1"/>
+                    <GradientStop Color="white" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+
+
+            <Grid>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+
+                    <StackPanel>
+
+                        <Grid HorizontalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Margin="0,0,10,0">
+                                <Viewbox>
+                                    <f:IconImage Icon="UserTag" 
+                                                 Foreground="#43496b"
+                                                 Height="70"/>
+                                </Viewbox>
+                            </Label>
+
+                            <StackPanel Grid.Column="1">
+
+                                <!--trainee number-->
+                                <StackPanel Orientation="Horizontal" >
+                                    <TextBlock x:Name="TraineeNumber" 
+                                               Text="{Binding [Trainee No]}"
+                                               VerticalAlignment="Center"
+                                               FontWeight="Bold"
+                                               FontSize="20"
+                                           />
+                                </StackPanel>
+
+                                <!--trinee ID-->
+                                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                    <TextBlock x:Name="TraineeID"
+                                       Text="{Binding [ID]}"
+                                       VerticalAlignment="Center"
+                                       FontWeight="Bold"
+                                       />
+                                </StackPanel>
+
+                                <!--trinee Location-->
+                                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+
+                                    <TextBlock x:Name="TraineeLocation"
+                                       Text="{Binding Location}"
+                                       VerticalAlignment="Center"
+                                       FontWeight="Bold"
+                                       />
+
+                                    <Label>
+                                        <Viewbox>
+                                            <f:IconImage Icon="Location" 
+                                                 Foreground="Black"
+                                                 Height="15"/>
+                                        </Viewbox>
+                                    </Label>
+                                </StackPanel>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+                        <StackPanel>
+                        
+                        <!--trinee name-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="                     Name :" Width="120"/>
+                            <TextBlock x:Name="TraineeName" Width="250"
+                                       Text="{Binding [Name]}"
+                                       VerticalAlignment="Center"
+                                       FontWeight="Bold"
+                                       />
+                        </StackPanel>
+
+                        
+
+                        <!--trainee Location-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="Telephone Number :" Width="120"/>
+                            <TextBlock x:Name="TraineeTelephoneNumber" Width="250"
+                                       Text="{Binding [Telephone No]}"
+                                       VerticalAlignment="Center"
+                                       FontWeight="Bold"
+                                       />
+                        </StackPanel>
+
+                            <Border
+                                BorderThickness="1"
+                                BorderBrush="#43496b"
+                                Margin="5,10,5,5"
+                                CornerRadius="3">
+
+
+                                <StackPanel Margin="0,0,0,10">
+
+                                    <Label>
+                                        <Label Content="Training" FontWeight="Bold"/>
+                                    </Label>
+                                    <!--trainee start date-->
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="                Start :" Width="100"/>
+                                        <TextBlock x:Name="TraineeStartDate" Width="250"
+                                                   Text="{Binding [Start Date]}"
+                                                   VerticalAlignment="Center"
+                                                   FontWeight="Bold"
+                                                   />
+                                    </StackPanel>
+
+                                    <!--trainee end date-->
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <Label Content="                 End :" Width="100"/>
+                                        <TextBlock x:Name="TraineeEndDate" Width="250"
+                                       Text="{Binding [End Date]}"
+                                       VerticalAlignment="Center"
+                                       FontWeight="Bold"
+                                       />
+                                    </StackPanel>
+
+                                    <!--trainee months-->
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="           Months :" Width="100"/>
+                                        <TextBlock x:Name="TraineeMonths" Width="250"
+                                                   Text="{Binding Months}"
+                                                   VerticalAlignment="Center"
+                                                   FontWeight="Bold"
+                                       />
+                                    </StackPanel>
+
+
+                                </StackPanel>
+                                
+                            </Border>
+
+                        
+
+                            <!--trinee isPay -->
+                            <StackPanel Orientation="Horizontal" 
+                                        Margin="10"
+                                        HorizontalAlignment="Right">
+                                <Label Content="Pay or No :"/>
+                                <TextBlock x:Name="TraineePay"
+                                       Text="{Binding [Should pay or no]}"
+                                       VerticalAlignment="Center"
+                                       FontWeight="Bold"
+                                       Foreground="#43496b"/>
+                            </StackPanel>
+                        </StackPanel>
+
+
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
 </Window>

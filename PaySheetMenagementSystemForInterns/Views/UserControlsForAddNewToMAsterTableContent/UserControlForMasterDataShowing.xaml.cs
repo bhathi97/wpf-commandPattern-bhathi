@@ -32,15 +32,17 @@ namespace PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAster
         MasterDataShowingCommand masterDataShowingCommand1 = new MasterDataShowingCommand();
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-KHI8921;Initial Catalog=CPC_Interns_Salary_Management_System_Database;Integrated Security=True;TrustServerCertificate=True");
 
+        //popup window 
         private void masterTableViewDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             try
             {
                 if(e.ChangedButton == MouseButton.Left)
                 {
-                    
-                    PopUpWindowForMasterDataShowing popUpWindowForMasterData = new PopUpWindowForMasterDataShowing();
-                    
+                    var rowValue = e.Source as DataGrid;
+                    //each values pass as an object
+                    PopUpWindowForMasterDataShowing popUpWindowForMasterData = new PopUpWindowForMasterDataShowing(rowValue.SelectedItem);
+                    popUpWindowForMasterData.Owner = Window.GetWindow(this);
                     popUpWindowForMasterData.Show();
                 }
             }
