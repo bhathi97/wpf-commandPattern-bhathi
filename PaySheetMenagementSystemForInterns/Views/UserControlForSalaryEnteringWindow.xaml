@@ -106,7 +106,7 @@
                                             <StackPanel Orientation="Horizontal">
                                                 <Label Content="Name" Width="100" FontFamily="Segoe UI Symbol" 
                                                         Foreground="Black"/>
-                                                <TextBox TextWrapping="Wrap"
+                                                <TextBlock TextWrapping="Wrap"
                                                          MinHeight="30"
                                                          Background="white"
                                                          Margin="2" 
@@ -125,7 +125,7 @@
                                                 <Label Content="Bank Account" Width="100" FontFamily="Segoe UI Symbol" 
                                                        Foreground="Black"/>
 
-                                                <TextBox TextWrapping="Wrap"
+                                                <TextBlock TextWrapping="Wrap"
                                                         MinHeight="30"
                                                         Background="white"
                                                         Margin="2" 
@@ -136,19 +136,21 @@
 
                                         <!--bank name-->
                                         <Border BorderBrush="#d5daf0"
-                                BorderThickness="1"
-                                CornerRadius="2"
-                                Margin="0,2,0,0">
+                                                BorderThickness="1"
+                                                CornerRadius="2"
+                                                Margin="0,2,0,0">
 
                                             <StackPanel Orientation="Horizontal">
-                                                <Label Content="Bank Name" Width="100" FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
-                                                <TextBox TextWrapping="Wrap"
-                                     MinHeight="30"
-                                     Background="white"
-                                     Margin="2" 
-                                     Name="InternBankName"
-                                     Width="170"/>
+                                                <Label Content="Bank Name"
+                                                       Width="100" 
+                                                       FontFamily="Segoe UI Symbol" 
+                                                       Foreground="Black"/>
+                                                <TextBlock TextWrapping="Wrap"
+                                                           MinHeight="30"
+                                                           Background="white"
+                                                           Margin="2" 
+                                                           Name="InternBankName"
+                                                           Width="170"/>          
                                             </StackPanel>
                                         </Border>
 
@@ -159,14 +161,15 @@
                                             Margin="0,2,0,0">
 
                                             <StackPanel Orientation="Horizontal">
-                                                <Label Content="Bank Code" Width="100" FontFamily="Segoe UI Symbol" 
-                                                   Foreground="Black"/>
-                                                <TextBox TextWrapping="Wrap"
-                                                 MinHeight="30"
-                                                 Background="white"
-                                                 Margin="2" 
-                                                 Name="InternBankCode"
-                                                 Width="170"/>
+                                                <Label Content="Bank Code" 
+                                                       Width="100" FontFamily="Segoe UI Symbol" 
+                                                       Foreground="Black"/>
+                                                <TextBlock TextWrapping="Wrap"
+                                                            MinHeight="30"
+                                                            Background="white"
+                                                            Margin="2" 
+                                                            Name="InternBankCode"
+                                                            Width="170"/>  
                                             </StackPanel>
                                         </Border>
 
@@ -177,14 +180,15 @@
                                             Margin="0,2,0,0">
 
                                             <StackPanel Orientation="Horizontal">
-                                                <Label Content="Branch Name" Width="100" FontFamily="Segoe UI Symbol" 
-                                                   Foreground="Black"/>
-                                                <TextBox TextWrapping="Wrap"
-                                                 MinHeight="30"
-                                                 Background="white"
-                                                 Margin="2" 
-                                                 Name="InternBranchName" 
-                                                 Width="170"/>
+                                                <Label Content="Branch Name" 
+                                                       Width="100" FontFamily="Segoe UI Symbol" 
+                                                       Foreground="Black"/>
+                                                <TextBlock TextWrapping="Wrap"
+                                                         MinHeight="30"
+                                                         Background="white"
+                                                         Margin="2" 
+                                                         Name="InternBranchName" 
+                                                         Width="170"/>  
                                             </StackPanel>
                                         </Border>
 
@@ -195,14 +199,15 @@
                                 Margin="0,2,0,0">
 
                                             <StackPanel Orientation="Horizontal">
-                                                <Label Content="Branch Code" Width="100"  FontFamily="Segoe UI Symbol" 
-                                               Foreground="Black"/>
-                                                <TextBox TextWrapping="Wrap"
-                                                 MinHeight="30"
-                                                 Background="white"
-                                                 Margin="2" 
-                                                 Name="InternBranchCode"
-                                                 Width="170"/>
+                                                <Label Content="Branch Code" 
+                                                       Width="100"  FontFamily="Segoe UI Symbol" 
+                                                       Foreground="Black"/>
+                                                <TextBlock TextWrapping="Wrap"
+                                                         MinHeight="30"
+                                                         Background="white"
+                                                         Margin="2" 
+                                                         Name="InternBranchCode"
+                                                         Width="170"/>  
                                             </StackPanel>
                                         </Border>
 

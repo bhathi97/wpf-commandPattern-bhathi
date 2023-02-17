@@ -16,20 +16,20 @@
         
         
     >
-    
+
     <Window.Resources>
-    <Style TargetType="Button">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <ContentPresenter />
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-</Window.Resources>
-    
-    
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+
 
     <Border Margin="5" MouseLeftButtonDown="Border_MouseLeftButtonDown">
         <Grid >
@@ -39,7 +39,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
-            
+
             <!--heading-->
             <Border Padding="1" Grid.Row="0" Background="#d5daf0">
                 <StackPanel Grid.Row="0">
@@ -78,7 +78,7 @@
                                     <Button.ToolTip>
                                         <ToolTip Content="Close"/>
                                     </Button.ToolTip>
-                                    
+
                                 </Button>
 
                             </Border>
@@ -95,7 +95,7 @@
                                     Click="MaximizeButton_Click"
                                     Style="{StaticResource ButtonStyle1}">
                                     <f:IconImage Icon="WindowMaximize" Margin="9" Foreground="Black"/>
-                                    
+
                                     <Button.ToolTip>
                                         <ToolTip Content="Restore"/>
                                     </Button.ToolTip>
@@ -117,7 +117,7 @@
                                     Grid.Column="2"
                                     Click="MinimizeButton_Click"
                                     Style="{StaticResource ButtonStyle1}">
-                                    
+
                                     <f:IconImage Icon="WindowMinimize" Margin="6" Foreground="Black"/>
                                     <Button.ToolTip>
                                         <ToolTip Content="Minimize"/>
@@ -135,14 +135,14 @@
 
                 </StackPanel>
             </Border>
-            
-            
-            
+
+
+
             <!--2 parts-->
             <StackPanel Orientation="Vertical" Grid.Row="1" Background="#d5daf0">
                 <Grid Height="30">
-                    
-                    
+
+
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="120"/>
@@ -150,10 +150,10 @@
                         <ColumnDefinition Width="25"/>
                         <ColumnDefinition Width="25"/>
                     </Grid.ColumnDefinitions>
-                    
-                    
-                    
-                    
+
+
+
+
                     <Menu x:Name="Menu" Grid.Column="0">
                         <Menu.Background>
                             <SolidColorBrush Color="{StaticResource backgroundColor4}"/>
@@ -178,7 +178,7 @@
                         <!--setting-->
                         <MenuItem Header="Setting" Click="MenuItemSetting_Click" Padding="6"/>
                     </Menu>
-                    
+
                     <!--goto website-->
                     <Button x:Name="webBrowserLoadButton"
                             Width="25" Grid.Column="3"
@@ -196,7 +196,7 @@
                             </Viewbox>
                         </Label>
                     </Button>
-                    
+
                     <!--go to notepad-->
                     <Button x:Name="notePadLoadButton"
                             Width="25" Grid.Column="4"
@@ -242,9 +242,16 @@
 
 
             </StackPanel>
-            <StackPanel Grid.Row="2" Background="#121840">
+            <StackPanel Grid.Row="2">
+                <StackPanel.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#121840"/>
+                        <GradientStop Color="#121881" Offset=".5"/>
+                        <GradientStop Color="#121840" Offset="1"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
                 <ContentControl x:Name="UserControlLoader1" Grid.Row="2" SizeChanged="UserControlLoader1_SizeChanged" >
-                    
+
                 </ContentControl>
 
             </StackPanel>
@@ -257,7 +264,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="210"/>
                     </Grid.ColumnDefinitions>
-                    
+
                     <!--show connecton state | labele and state table-->
                     <StackPanel Orientation="Horizontal" 
                                 Grid.Column="0">
@@ -275,7 +282,7 @@
 
                     </StackPanel>
 
-                   
+
                     <Label Content="" 
                            Grid.Column="1"
                            x:Name="connectionStateShowingLabel" />
@@ -294,7 +301,7 @@
 
 
                 </Grid>
-                
+
 
             </StackPanel>
 
@@ -302,7 +309,7 @@
 
         </Grid>
     </Border>
-    
+
 </Window>
     
     

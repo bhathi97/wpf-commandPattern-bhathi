@@ -35,7 +35,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
                     {
                         foreach (DataRowView dr in obj.dataShowingTable.ItemsSource)
                         {
-                            writer.WriteLine(dr[0].ToString().PadRight(10, '0') + dr[13].ToString().PadRight(10, '0') + dr[1].ToString());
+                            writer.WriteLine(dr[0].ToString().PadRight(10, '0') /*+ dr[13].ToString().PadRight(10, '0') + dr[1].ToString())*/);
                         }
 
 

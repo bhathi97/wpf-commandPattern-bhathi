@@ -14,7 +14,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
         public int emptyTextBoxCheck(UserControlForSalaryEnteringWindow obj)
         {
             int flag = 0;
-            TextBox[] textBox = { obj.InternID, obj.InternName, obj.InternBankAccNo, obj.InternBankName, obj.InternBankCode, obj.InternBranchName, obj.InternBranchCode, obj.InternSalaryPerDay, obj.AddingFullWorkDays, obj.AddingHalfWorkDays };
+            TextBox[] textBox = { obj.InternID, obj.InternSalaryPerDay, obj.AddingFullWorkDays, obj.AddingHalfWorkDays };
             foreach (var textbox in textBox)
             {
                 if (string.IsNullOrEmpty(textbox.Text))

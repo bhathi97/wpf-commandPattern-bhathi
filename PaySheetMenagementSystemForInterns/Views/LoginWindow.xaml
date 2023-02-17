@@ -21,9 +21,14 @@
             CornerRadius="5">
         <Border BorderThickness="1" 
                 Grid.Column="0" 
-                BorderBrush="#030c45" 
-                Background="#d5daf0"
+                BorderBrush="#030c45"
                 CornerRadius="5">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#d5daf0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
 
             <StackPanel>
                 <!--hedding-->
@@ -49,7 +54,7 @@
 
                     </StackPanel>
                 </Grid>
-                
+
                 <!--sub topic-->
                 <TextBlock Text="LOGIN"
                     FontSize="30"
@@ -63,7 +68,7 @@
                 <StackPanel Orientation="Horizontal" 
                             VerticalAlignment="Center"
                             Margin="0,30,0,0">
-                    
+
                     <Label Content="User Name : "
                            Margin="80,0,0,0"
                            FontSize="25"
@@ -78,9 +83,9 @@
                         x:Name="userNameForLogin"
                         Width="300"
                         />
-                    
+
                 </StackPanel>
-                
+
                 <!--password-->
                 <StackPanel Orientation="Horizontal" 
                             VerticalAlignment="Center"
@@ -103,38 +108,64 @@
                         />
 
                 </StackPanel>
-                
+
                 <!--buttons-->
                 <StackPanel
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
                     Margin="0,20,0,0">
 
-                    <Button x:Name="btnLogin"
+                    <Border
+                        BorderThickness=".5"
+                        BorderBrush="DarkGreen"
+                        Margin="10"
+                        CornerRadius="4">
+
+                        <Button x:Name="btnLogin"
                             Width="100"
                             Content="login"
-                            Height="40">
-                        
-                    </Button>
+                            Height="40" 
+                            
+                            Click="btnLogin_Click"
+                            
+                            Style="{StaticResource ButtonStyle3}">
 
-                    <Button x:Name="btnExit"
+                        </Button>
+
+                    </Border>
+
+                    <Border
+                        BorderThickness=".5"
+                        BorderBrush="DarkRed"
+                        Margin="10"
+                        CornerRadius="4">
+
+                        <Button x:Name="btnExit"
                             Width="100"
                             Content="Exit"
-                            Height="40">
+                            Height="40"
+                            Click="btnExit_Click"
+                            Style="{StaticResource ButtonStyle3}">
 
-                    </Button>
+                        </Button>
+
+
+                    </Border>
+
+
 
                 </StackPanel>
-                
+
                 <!--time *********************88-->
 
             </StackPanel>
 
-            
-            
-            
-            
-            
+
+
+
+
+
         </Border>
     </Border>
 </Window>

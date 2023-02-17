@@ -23,5 +23,15 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
