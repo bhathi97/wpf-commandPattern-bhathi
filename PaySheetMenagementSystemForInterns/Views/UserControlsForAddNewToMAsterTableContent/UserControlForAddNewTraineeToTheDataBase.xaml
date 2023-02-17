@@ -42,14 +42,14 @@
                             <StackPanel Orientation="Horizontal" >
                                 <Label Content=" Personal details" 
                                        Background="#030c45" 
-                                       Width="425"
+                                       Width="414"
                                        Foreground="White"
                                        FontSize="12"
                                        FontFamily="Segoe UI Symbol"/>
 
                                 <Label Background="#030c45">
                                     <Viewbox>
-                                        <f:IconImage Icon="Person" 
+                                        <f:IconImage Icon="UserTag" 
                                                      Foreground="White"
                                                      Height="20"
                                                      />
@@ -124,7 +124,7 @@
                                         BorderBrush="Black"
                                         Background="white" 
                                         Name="TraineeShouPayOrNoToDB" 
-                                        Width="100"/>
+                                        Width="300"/>
                             </StackPanel>
 
                             <!--Telephone number-->
@@ -150,7 +150,7 @@
                                 <DatePicker x:Name="TraineeStartDateToDB"
                                      FontSize="12"
                                      FontFamily="Segoe UI Symbol"
-                                     Width="200"
+                                     Width="300"
                                      BorderBrush="#d5daf0"/>
                             </StackPanel>
 
@@ -163,7 +163,7 @@
                                 <DatePicker x:Name="TraineeEndtDateToDB"
                                      FontSize="12"
                                      FontFamily="Segoe UI Symbol"
-                                     Width="200"
+                                     Width="300"
                                      BorderBrush="#d5daf0"/>
                             </StackPanel>
 
@@ -181,7 +181,7 @@
 
                                     <Label Background="#030c45">
                                         <Viewbox>
-                                            <f:IconImage Icon="Coins" 
+                                            <f:IconImage Icon="Bank" 
                                                      Foreground="White"
                                                      Height="20"
                                                      />
@@ -228,7 +228,7 @@
                                         Text=" "
                                         Background="white" 
                                         Name="TraineeBankCodeToDB" 
-                                        Width="100"/>
+                                        Width="300"/>
                                 </StackPanel>
 
                                 <!--Branch Name-->
@@ -255,7 +255,7 @@
                                     <TextBlock
                                         Background="white" 
                                         Name="TraineeBranchCodeToDB" 
-                                        Width="100"/>
+                                        Width="300"/>
                                 </StackPanel>
 
 
@@ -279,13 +279,13 @@
                                     <StackPanel Orientation="Horizontal">
 
                                         <f:IconImage Icon="Database" 
-                                             Height="20"    
+                                             Height="15"    
                                              Foreground="#730307" />
 
                                         <TextBlock Text =" ADD TO DATABASE" 
                                            VerticalAlignment="Center" 
                                            Margin="5"
-                                           FontSize="15"
+                                           FontSize="12"
                                            FontFamily="Segoe UI Symbol"/>
 
 

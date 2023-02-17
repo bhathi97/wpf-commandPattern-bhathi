@@ -231,7 +231,7 @@
 
                             <Button x:Name="updateOrDeleteTableData"
                                 Style="{StaticResource ButtonStyle3}" 
-                                Click="seeSalaryTableData_Click">
+                                Click="updateOrDeleteTableData_Click">
 
                                 <StackPanel Orientation="Horizontal" >
 

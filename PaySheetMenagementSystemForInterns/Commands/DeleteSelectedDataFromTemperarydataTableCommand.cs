@@ -36,7 +36,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
                     //if the ID is inthe table, the do the deletion
                     else if(dt1.Rows[0][0].ToString() != "0")
                     {
-                        if ((MessageBox.Show("Do you Want to delete " + obj.InternID.Text + " from the datatable?", "Worning", MessageBoxButton.OKCancel, MessageBoxImage.Warning)) == MessageBoxResult.OK)
+                        if ((MessageBox.Show("Do you Want to delete " + obj.InternID.Text + " from the datatable?", "Warning", MessageBoxButton.OKCancel, MessageBoxImage.Warning)) == MessageBoxResult.OK)
                         {
                             try
                             {

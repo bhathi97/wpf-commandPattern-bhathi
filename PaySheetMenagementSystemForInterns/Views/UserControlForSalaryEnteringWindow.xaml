@@ -43,8 +43,8 @@
                 <Border BorderThickness="1" 
                     Grid.Column="0" 
                     BorderBrush="#030c45" 
-                    Background="White">  
-                    
+                    Background="White">
+
                     <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True"
                               >
                         <Grid>
@@ -77,7 +77,7 @@
                                         <Border BorderBrush="#d5daf0"
                                             BorderThickness="1"
                                             CornerRadius="2"
-                                            Margin="0,5,0,0">   
+                                            Margin="0,5,0,0">
                                             <StackPanel Orientation="Horizontal">
                                                 <Label Content="ID" 
                                        Width="100" 
@@ -124,7 +124,7 @@
                                             <StackPanel Orientation="Horizontal">
                                                 <Label Content="Bank Account" Width="100" FontFamily="Segoe UI Symbol" 
                                                        Foreground="Black"/>
-                                                
+
                                                 <TextBox TextWrapping="Wrap"
                                                         MinHeight="30"
                                                         Background="white"
@@ -548,7 +548,7 @@
                                      CornerRadius="2">
 
                                 <Button x:Name="UpdateExistingRecord"
-                                    Style="{StaticResource ButtonStyle3}" Click="UpdateExistingRecord_Click">
+                                    Style="{StaticResource ButtonStyle3}" Click="UpdateExistingRecord_Click" Height="38" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="198">
 
                                     <Button.ToolTip>
                                         <ToolTip Content="Click to update chahanged information and save to the temparary data table."/>
@@ -755,6 +755,6 @@
 
 
     </Grid>
-    
-    
+
+
 </UserControl>

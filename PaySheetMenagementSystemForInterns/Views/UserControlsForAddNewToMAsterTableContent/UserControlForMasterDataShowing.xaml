@@ -43,7 +43,9 @@
 
 
                     <!--deataShowing Grid-->
-                    <DataGrid x:Name="masterTableViewDataGrid">
+                    <DataGrid x:Name="masterTableViewDataGrid" MouseDoubleClick="masterTableViewDataGrid_MouseDoubleClick">
+                        
+                        
                     <!--DataGrid.Columns>
                         <DataGridTextColumn Width="100"  Header="Trainee Number" Binding="{Binding [Trainee No]}" />
                         <DataGridTextColumn Width="100" Header="ID" Binding="{Binding ID}" />

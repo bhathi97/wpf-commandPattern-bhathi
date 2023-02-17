@@ -31,5 +31,22 @@ namespace PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAster
         //import
         MasterDataShowingCommand masterDataShowingCommand1 = new MasterDataShowingCommand();
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-KHI8921;Initial Catalog=CPC_Interns_Salary_Management_System_Database;Integrated Security=True;TrustServerCertificate=True");
+
+        private void masterTableViewDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                if(e.ChangedButton == MouseButton.Left)
+                {
+                    
+                    PopUpWindowForMasterDataShowing popUpWindowForMasterData = new PopUpWindowForMasterDataShowing();
+                    
+                    popUpWindowForMasterData.Show();
+                }
+            }
+            catch (Exception ex) { }
+        }
+
+        
     }
 }

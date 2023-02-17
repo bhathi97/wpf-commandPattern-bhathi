@@ -56,7 +56,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
         public int emptyComboBoxCheck(UserControlForAddNewTraineeToTheDataBase obj)
         {
             int flag3 = 0;
-            ComboBox[] comboBoxes = {obj.TraineeBankNameToDB , obj.TraineeBranchNameToDB };
+            ComboBox[] comboBoxes = {obj.TraineeBankNameToDB , obj.TraineeBranchNameToDB, obj.TraineeShouPayOrNoToDB, obj.TraineeLocationToDB };
             foreach (var comboBox in comboBoxes)
             {
                 if (string.IsNullOrEmpty(comboBox.Text))

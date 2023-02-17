@@ -78,5 +78,16 @@ namespace PaySheetMenagementSystemForInterns.Views
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
         }
+
+        //edit existing User in the database
+        private void updateOrDeleteTableData_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                UserControlLoaderToAddNew.Content = new UserControlForEdidTraineeDetails();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+        }
     }
 }

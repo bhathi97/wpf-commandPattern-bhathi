@@ -13,9 +13,6 @@
     <Compile Update="Views\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\PopUpWindowsForCrudOperations\PopUpWindowForShowingMasterTableData.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\UserControlAddNewUserToMasterTable.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -25,10 +22,16 @@
     <Compile Update="Views\UserControlForSalaryEnteringWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\PopUpWindowForMasterDataShowing.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForAddNewTraineeToTheDataBase.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForDataImportFromExcel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForEdidTraineeDetails.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForMasterDataShowing.xaml.cs">
@@ -54,9 +57,6 @@
     <Page Update="Views\LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\PopUpWindowsForCrudOperations\PopUpWindowForShowingMasterTableData.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Views\UserControlAddNewUserToMasterTable.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -66,10 +66,16 @@
     <Page Update="Views\UserControlForSalaryEnteringWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\UserControlsForAddNewToMAsterTableContent\PopUpWindowForMasterDataShowing.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForAddNewTraineeToTheDataBase.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForDataImportFromExcel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForEdidTraineeDetails.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForMasterDataShowing.xaml">

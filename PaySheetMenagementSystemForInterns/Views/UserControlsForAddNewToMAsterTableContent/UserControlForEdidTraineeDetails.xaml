@@ -6,94 +6,213 @@
              xmlns:local="clr-namespace:PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAsterTableContent"
              mc:Ignorable="d" 
              xmlns:f="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-            
-                      
-             >
+             Width="500"       
+             Height="666"
+             HorizontalAlignment="Left">
 
 
-    <UserControl.Resources>
-        <Style x:Key="MyStyle" TargetType="{x:Type Rectangle}">
-            <Setter Property="Width" Value="{Binding ElementName=UserControlLoaderToAddNew, Path=RenderSize.Width}" />
-            <Setter Property="Height" Value="{Binding ElementName=UserControlLoaderToAddNew, Path=RenderSize.Height}" />
-        </Style>
-    </UserControl.Resources>
-
-    <Grid>
+    <Border BorderThickness="1"    
+            BorderBrush="#d5daf0"
+            Margin="1"
+            >
         <Border BorderThickness="1" 
-                Grid.Column="0" 
-                BorderBrush="#d5daf0"
-                Margin="1">
-            <Border BorderThickness="1" 
-                Grid.Column="0" 
                 BorderBrush="#43496b" 
                 Background="#d5daf0">
 
-             
+            <Grid>
+                <StackPanel Orientation="Vertical">
 
-                <Grid>
-                        <StackPanel Orientation="Vertical" Margin="10,20,5,20">
+                    <!--personal details-->
+                    <StackPanel Orientation="Vertical" >
 
-                            <!--trainee number-->
+                        <StackPanel Orientation="Horizontal" >
+                            <Label Content=" Update or Delete trainee Details" 
+                                       Background="#030c45" 
+                                       Width="465"
+                                       Foreground="White"
+                                       FontSize="12"
+                                       FontFamily="Segoe UI Symbol"/>
+
+                            <Label Background="#030c45">
+                                <Viewbox>
+                                    <f:IconImage Icon="Edit" 
+                                                     Foreground="White"
+                                                     Height="20"
+                                                     />
+                                </Viewbox>
+                            </Label>
+
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Margin="10,0,0,0">
+
+
+                        <!--trainee number-->
+                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <Label Content="Trainee Number" Width="110"/>
+                            <TextBox x:Name="TBforUpdateTraineeNumber" Width="325" BorderBrush="#43496b" TextChanged="TBforUpdateTraineeNumber_TextChanged"/>
+                            <f:IconImage f:Icon="ArrowAltCircleLeft" Width="20" Margin="5,0,0,0" Foreground="#030c45"/>
+                        </StackPanel>
+
+                        <!--trinee name-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="Trainee Name" Width="110"/>
+                            <TextBox x:Name="TBforUpdateTraineeName" Width="350" BorderBrush="#43496b"/>
+                        </StackPanel>
+
+                        <!--trinee ID-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="Trainee ID" Width="110"/>
+                            <TextBox x:Name="TBforUpdateTraineeID" Width="350" BorderBrush="#43496b"/>
+                        </StackPanel>
+
+                        <!--trinee Location-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="Assigned Location" Width="110"/>
+                            <ComboBox x:Name="TBforUpdateTraineeLocation" Width="350" BorderBrush="#43496b"/>
+                        </StackPanel>
+
+                        <!--trinee Location-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="Pay or No" Width="110"/>
+                            <ComboBox x:Name="TBforUpdateTraineePay" Width="350" BorderBrush="#43496b"/>
+                        </StackPanel>
+
+                        <!--trainee Location-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="Trainee Telephone" Width="110"/>
+                            <TextBox x:Name="TBforUpdateTraineeTelephoneNumber" Width="350" BorderBrush="#43496b"/>
+                        </StackPanel>
+
+                        <!--trainee start date-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="Training Start" Width="110"/>
+                            <DatePicker x:Name="TBforUpdateTraineeStartDate" Width="350" SelectedDateChanged="TBforUpdateTraineeStartDate_SelectedDateChanged" />
+                        </StackPanel>
+
+                        <!--trainee end date-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="Training End" Width="110"/>
+                            <DatePicker x:Name="TBforUpdateTraineeEndDate" Width="350" SelectedDateChanged="TBforUpdateTraineeStartDate_SelectedDateChanged" />
+                        </StackPanel>
+
+                        <!--trainee months-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="Training Period" Width="110"/>
+                            <TextBlock x:Name="TBforUpdateTraineeMonths" Width="350" Background="White"/>
+                        </StackPanel>
+
+
+                        <!--bank account-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="Bank Account No" Width="110"/>
+                            <TextBox x:Name="TBforUpdateBankAccountNo" Width="350" BorderBrush="#43496b" Background="White"/>
+                        </StackPanel>
+
+                        <!--bank name-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="Bank Name" Width="110"/>
+                            <ComboBox x:Name="TBforUpdateBankName" Width="350" BorderBrush="#43496b" DropDownClosed="TBforUpdateBankName_DropDownClosed"/>
+                        </StackPanel>
+
+                        <!--bank code-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="Bank Code" Width="110"/>
+                            <TextBlock x:Name="TBforUpdateBankCode" Width="350"  Background="White"  />
+                        </StackPanel>
+
+                        <!--branch name-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="BranchName" Width="110"/>
+                            <ComboBox x:Name="TBforUpdateBranchName" Width="350" BorderBrush="#43496b" DropDownClosed="TBforUpdateBranchName_DropDownClosed"/>
+                        </StackPanel>
+
+                        <!--bank code-->
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Label Content="Branch Code" Width="110"/>
+                            <TextBlock x:Name="TBforUpdateBranchCode" Width="350"  Background="White"  />
+                        </StackPanel>
+
+
+
+                    </StackPanel>
+
+                    <!--button to update data to tatabase-->
+                    <Border  Height="40"
+                            Width="300"
+                            BorderBrush="{StaticResource borderButton1}"
+                            HorizontalAlignment="Center"
+                            BorderThickness="1"
+                            Margin="40,40,40,0"
+                            CornerRadius="5">
+
+                        <Button x:Name="updateData"
+                                Style="{StaticResource ButtonStyle3}" 
+                                Click="updateData_Click">
+
                             <StackPanel Orientation="Horizontal">
-                                <Label Content="Trainee Number" Width="110"/>
-                                <TextBox x:Name="TBforUpdateTraineeNumber" Width="260" BorderBrush="#43496b"/>
-                            </StackPanel>
 
-                            <!--trinee name-->
-                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                                <Label Content="Trainee Name" Width="110"/>
-                                <TextBox x:Name="TBforUpdateTraineeName" Width="260" BorderBrush="#43496b"/>
-                            </StackPanel>
+                                <f:IconImage Icon="UserEdit" 
+                                             Height="15"    
+                                             Foreground="#0e4a0a" />
 
-                            <!--trinee ID-->
-                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                                <Label Content="Trainee ID" Width="110"/>
-                                <TextBox x:Name="TBforUpdateTraineeID" Width="260" BorderBrush="#43496b"/>
-                            </StackPanel>
-
-                            <!--trinee Location-->
-                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                                <Label Content="Assigned Location" Width="110"/>
-                                <ComboBox x:Name="TBforUpdateTraineeLocation" Width="260" BorderBrush="#43496b"/>
-                            </StackPanel>
-
-                            <!--trinee Location-->
-                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                                <Label Content="Pay or No" Width="110"/>
-                                <ComboBox x:Name="TBforUpdateTraineePay" Width="260" BorderBrush="#43496b"/>
-                            </StackPanel>
-
-                            <!--trainee Location-->
-                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                                <Label Content="Trainee Telephone" Width="110"/>
-                                <ComboBox x:Name="TBforUpdateTraineeTelephoneNumber" Width="260" BorderBrush="#43496b"/>
-                            </StackPanel>
-
-                            <!--trainee start date-->
-                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                                <Label Content="Training Start" Width="110"/>
-                                <DatePicker x:Name="TBforUpdateTraineeStartDate" Width="260" BorderBrush="#43496b"/>
-                            </StackPanel>
-
-                            <!--trainee end date-->
-                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                                <Label Content="Training End" Width="110"/>
-                                <DatePicker x:Name="TBforUpdateTraineeEndDate" Width="260" BorderBrush="#43496b"/>
-                            </StackPanel>
-
-                            <!--trainee months-->
-                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                                <Label Content="Training Period" Width="110"/>
-                                <TextBlock x:Name="TBforUpdateTraineeMonths" Width="260" Background="White"/>
-                            </StackPanel>
-
-
-                            <!--bank account-->
-
-
+                                <TextBlock Text =" UPDATE" 
+                                           VerticalAlignment="Center" 
+                                           Margin="5"
+                                           FontSize="12"
+                                           FontFamily="Segoe UI Symbol"/>
 
 
                             </StackPanel>
+
+                            <Button.ToolTip>
+                                <ToolTip Content="Click to Add new trainee to the Database"/>
+                            </Button.ToolTip>
+
+                        </Button>
+                    </Border>
+
+                    <!--button to delete data from database-->
+                    <Border  Height="40"
+                                 Width="300"
+                                 BorderBrush="{StaticResource borderButton1}"
+                                 HorizontalAlignment="Center"
+                                 BorderThickness="1"
+                                 Margin="40,10,40,40"
+                                 CornerRadius="5">
+
+                        <Button x:Name="DeleteData"
+                                Style="{StaticResource ButtonStyle3}" 
+                                Click="DeleteData_Click">
+
+                            <StackPanel Orientation="Horizontal">
+
+                                <f:IconImage Icon="UserMinus" 
+                                             Height="15"    
+                                             Foreground="#730307" />
+
+                                <TextBlock Text =" DELETE  " 
+                                           VerticalAlignment="Center" 
+                                           Margin="5"
+                                           FontSize="12"
+                                           FontFamily="Segoe UI Symbol"/>
+
+
+                            </StackPanel>
+
+                            <Button.ToolTip>
+                                <ToolTip Content="Click to Add new trainee to the Database"/>
+                            </Button.ToolTip>
+
+                        </Button>
+                    </Border>
+
+
+
+
+
+                </StackPanel>
 
 
 
@@ -107,6 +226,6 @@
 
 
             </Border>
-        </Border>
-    </Grid>
+     </Border>
+    
 </UserControl>

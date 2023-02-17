@@ -252,17 +252,30 @@
             <StackPanel Grid.Row="3" Background="#d5daf0" Orientation="Vertical">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="105"/>
+                        <ColumnDefinition Width="101"/>
                         <ColumnDefinition Width="200"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="210"/>
                     </Grid.ColumnDefinitions>
                     
                     <!--show connecton state | labele and state table-->
-                    <Label Content="Connection State :"
-                           Grid.Column="0"
+                    <StackPanel Orientation="Horizontal" 
+                                Grid.Column="0">
+
+                        <!-- >
+                            <Viewbox>
+                                <f:IconImage Icon="Plug" 
+                                             Foreground="#121840"
+                                             Height="15"/>
+                            </Viewbox>
+                        </Label-->
+
+                        <Label Content="Connection State :"
                            VerticalAlignment="Center"/>
 
+                    </StackPanel>
+
+                   
                     <Label Content="" 
                            Grid.Column="1"
                            x:Name="connectionStateShowingLabel" />
