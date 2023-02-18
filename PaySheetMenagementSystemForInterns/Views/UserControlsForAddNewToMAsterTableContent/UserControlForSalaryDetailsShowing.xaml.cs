@@ -32,6 +32,7 @@ namespace PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAster
 
         BankAccountDetailsToGridViewCommand bankAccountDetailsToGridViewCommand1 = new BankAccountDetailsToGridViewCommand();
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-KHI8921;Initial Catalog=CPC_Interns_Salary_Management_System_Database;Integrated Security=True;TrustServerCertificate=True");
+        SearchAccountDataTableCommand searchAccountDataTableCommand1 = new SearchAccountDataTableCommand(); 
 
         private void AccountDetailsTableViewDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
@@ -47,6 +48,16 @@ namespace PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAster
                 }
             }
             catch (Exception ex) { }
+        }
+
+        private void SearchTraineeFromMasterTB_Click(object sender, RoutedEventArgs e)
+        {
+            searchAccountDataTableCommand1.SearchAccountDataTableCommandFromDB(this,connection);
+        }
+
+        private void searchCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

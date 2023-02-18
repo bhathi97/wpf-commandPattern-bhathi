@@ -31,5 +31,14 @@ namespace PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAster
         PaidSalariesDetailsToGridViewCommand paidSalariesDetailsToGridViewCommand1 = new PaidSalariesDetailsToGridViewCommand();
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-KHI8921;Initial Catalog=CPC_Interns_Salary_Management_System_Database;Integrated Security=True;TrustServerCertificate=True");
 
+        private void searchCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void SearchPAidSalariesFromMasterTB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

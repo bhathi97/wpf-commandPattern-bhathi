@@ -614,57 +614,74 @@
 
 
                                 <!--search bar for find-->
-                                <StackPanel Orientation="Vertical" 
-                                        >
+                                <StackPanel Orientation="Vertical" >
 
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Content="Trainee No" 
-                                           
-                                            Foreground="Black"
-                                            VerticalAlignment="Top"
-                                            Margin="0,2,0,0"/>
 
-                                        <TextBox x:Name="IDforSearch"
-                                            Width="80"
-                                            Height="30"/>
+                                    <Border BorderBrush="White"
+                                            BorderThickness="1"
+                                            CornerRadius="20"
+                                            Height="42">
+                                        <Border.Background>
+                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                <GradientStop Color="#121840"/>
+                                                <GradientStop Color="#121881" Offset="0.8"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="Trainee :" 
+                                                   Foreground="White"
+                                                   VerticalAlignment="Center"
+                                                   Margin="5,0,0,0"/>
 
-                                        <Border  Margin="5,5,0,0"
-                                             Height="41"
-                                             Width="41"
-                                             HorizontalAlignment="Center"
-                                             BorderBrush="{StaticResource borderButton1}"
-                                             BorderThickness="1"
-                                             CornerRadius="21">
+                                            <TextBox x:Name="IDforSearch"
+                                                     Width="98"
+                                                     Margin="0,8,0,8"
+                                                     Foreground="White"
+                                                     VerticalAlignment="Center"
+                                                     Background="Transparent"
+                                                     BorderBrush="Transparent"/>
 
-                                            <Button x:Name="SearchIsIDInGridView"
-                                                Style="{StaticResource ButtonStyleSearch}" 
-                                                Click="SearchIsIDInGridView_Click"
-                                                Width="39"
-                                                Height="39">
+                                            <Border  Margin="4"
+                                                     Height="30"
+                                                     Width="30"
+                                                     HorizontalAlignment="Center"
+                                                     BorderBrush="{StaticResource borderButton1}"
+                                                     BorderThickness="1"
+                                                     CornerRadius="21">
 
-                                                <f:IconImage Icon="Search" Height="22" 
+                                                <Button x:Name="SearchIsIDInGridView"
+                                                        Style="{StaticResource ButtonStyleSearch}" 
+                                                        Click="SearchIsIDInGridView_Click"
+                                                        >
+
+                                                    <f:IconImage Icon="Search" 
+                                                                 Height="18" 
                                                          Foreground="#030c45" />
 
-                                                <Button.ToolTip>
-                                                    <ToolTip Content="Click to search the information is exist for entered ID"/>
-                                                </Button.ToolTip>
-                                            </Button>
+                                                    <Button.ToolTip>
+                                                        <ToolTip Content="Click to search the information is exist for entered ID"/>
+                                                    </Button.ToolTip>
+                                                </Button>
 
-                                        </Border>
+                                            </Border>
 
-                                    </StackPanel>
+                                        </StackPanel>
+
+                                    </Border>
+                                    
+
+                                    
 
                                     <!--grid for show search results-->
                                     <StackPanel HorizontalAlignment="Left"
-                                Margin="5">
+                                                Margin="5">
+
                                         <DataGrid x:Name="SearchResultOfTemperaryDataTableGridView"
-                                        Width="188"
-                                        Height="100" 
-                                        SelectionChanged="SearchResultOfTemperaryDataTableGridView_SelectionChanged"/>
+                                                  Width="188"
+                                                  Height="100" 
+                                                  SelectionChanged="SearchResultOfTemperaryDataTableGridView_SelectionChanged"/>
                                     </StackPanel>
-
-
-
                                 </StackPanel>
 
                             </Border>

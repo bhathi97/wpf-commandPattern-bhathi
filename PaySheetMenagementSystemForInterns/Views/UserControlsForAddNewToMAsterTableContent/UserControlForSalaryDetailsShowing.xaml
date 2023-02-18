@@ -4,7 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAsterTableContent"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
+             xmlns:f="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             MaxHeight="675"
              >
     <UserControl.Resources>
         <Style x:Key="MyStyle" TargetType="{x:Type Rectangle}">
@@ -20,9 +22,94 @@
             <Border BorderThickness="1" 
                 Grid.Column="0" 
                 BorderBrush="#43496b" 
-                Background="White">
+                Background="#d5daf0">
+
+                <StackPanel>
+                    
+                <!--search bar-->
+                <StackPanel Orientation="Horizontal" Margin="7" >
+
+                    <Border BorderBrush="White"
+                                BorderThickness="1"
+                                CornerRadius="20"
+                                Height="42">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#121840"/>
+                                <GradientStop Color="#121881" Offset="0.8"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+
+                        <StackPanel Orientation="Horizontal" 
+                                        Margin="5">
+
+                            <!--to select search logic-->
+                            <Border CornerRadius="20" 
+                                        BorderThickness="4">
+                                <ComboBox 
+                                        x:Name="searchCombo"
+                                        SelectedIndex="0" 
+                                        Foreground="#121840" 
+                                        SelectionChanged="searchCombo_SelectionChanged"
+                                        BorderBrush="Transparent">
+
+                                        <ComboBoxItem Content="Trainee Number"/>
+                                        <ComboBoxItem Content="Bank Name"/>
+                                        <ComboBoxItem Content="Branch Name"/>
+                                        <ComboBoxItem Content="Trainee Name"/>
+                                    
+                                </ComboBox>
+                            </Border>
+
+                                <TextBox x:Name="MasterTableSearchTextBox"
+                                         Width="150"
+                                         BorderBrush="White"
+                                         Margin="0,3,0,3"
+                                         Background="Transparent"
+                                         Foreground="White"/>
+
+                                <Button x:Name="SearchTraineeFromMasterTB"
+                                        Style="{StaticResource ButtonStyleSearch}" 
+                                        Width="30"
+                                        Height="30"
+                                        Margin="4,0,0,0" Click="SearchTraineeFromMasterTB_Click">
+
+                                <f:IconImage Icon="Search" 
+                                             Height="15" 
+                                             Foreground="#030c45" />
+
+                                <Button.ToolTip>
+                                    <ToolTip Content="Click here to search trainee"/>
+                                </Button.ToolTip>
+                            </Button>
+
+                        </StackPanel>
+
+                    </Border>
 
 
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label>
+                        <Viewbox>
+                            <f:IconImage Icon="ArrowCircleRight" 
+                                             Foreground="Black"
+                                             Height="12"
+                                             Margin="3,3,0,3"
+                                             VerticalAlignment="Center"/>
+                        </Viewbox>
+                    </Label>
+                    <Label Content="Double-click on a Record in the Account Master Table to view more details about the selected individual.">
+
+                    </Label>
+
+                </StackPanel>
+
+
+
+                <!--datashowing table-->
                 <DataGrid x:Name="AccountDetailsTableViewDataGrid" MouseDoubleClick="AccountDetailsTableViewDataGrid_MouseDoubleClick">
                     <!--DataGrid.Columns>
                         <DataGridTextColumn Width="100"  Header="Trainee Number" Binding="{Binding [Trainee No]}" />
@@ -36,6 +123,7 @@
                     </DataGrid.Columns-->
                 </DataGrid>
 
+                </StackPanel>
             </Border>
         </Border>
     </Grid>

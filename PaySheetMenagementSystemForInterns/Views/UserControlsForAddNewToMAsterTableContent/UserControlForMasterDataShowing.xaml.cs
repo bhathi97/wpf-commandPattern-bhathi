@@ -31,6 +31,7 @@ namespace PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAster
         //import
         MasterDataShowingCommand masterDataShowingCommand1 = new MasterDataShowingCommand();
         SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-KHI8921;Initial Catalog=CPC_Interns_Salary_Management_System_Database;Integrated Security=True;TrustServerCertificate=True");
+        SearchMasterDataTableCommand searchMasterDataTableCommand1 = new SearchMasterDataTableCommand();
 
         //popup window 
         private void masterTableViewDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -49,6 +50,19 @@ namespace PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAster
             catch (Exception ex) { }
         }
 
-        
+        private void SearchTraineeFromMasterTB_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                searchMasterDataTableCommand1.serachTraineeDetailsFromMasterDataTable(this, connection);
+            }
+            catch(Exception ex) { }
+            
+        }
+
+        private void searchCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
