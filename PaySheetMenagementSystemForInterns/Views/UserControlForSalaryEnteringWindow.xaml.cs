@@ -198,8 +198,10 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             try
             {
+                temperaryDataSendToPaidSalaryTableCommand1.sendDataToAllSalaryDetails(this, connection);
                 exportTemperaryDataToATextFileAsBankPaySheetCommand1.exportDatatoSaaryTableAndSaveAsBankPaysheetTxtFile(this, connection);
                 theFolderNameToSavePaySheet.Clear();
+
 
                 //add dta to permenent table
 
@@ -236,7 +238,7 @@ namespace PaySheetMenagementSystemForInterns.Views
         SearchBarButtonInUCforSalaryEnteringCommand searchBarButtonInUCforSalaryEnteringCommand1 = new SearchBarButtonInUCforSalaryEnteringCommand();
         SearchDataGridViewDataAutoFillWhenclickOnCommand SearchDataGridViewDataAutoFillWhenclickOnCommand1 = new SearchDataGridViewDataAutoFillWhenclickOnCommand();
         ExportTemperaryDataToATextFileAsBankPaySheetCommand exportTemperaryDataToATextFileAsBankPaySheetCommand1 = new ExportTemperaryDataToATextFileAsBankPaySheetCommand();
-
+        TemperaryDataSendToPaidSalaryTableCommand temperaryDataSendToPaidSalaryTableCommand1 = new TemperaryDataSendToPaidSalaryTableCommand();
         private void StackPanel_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
         {
 
