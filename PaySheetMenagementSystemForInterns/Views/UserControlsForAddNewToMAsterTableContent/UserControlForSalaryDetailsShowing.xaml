@@ -110,8 +110,11 @@
 
 
                 <!--datashowing table-->
-                <DataGrid x:Name="AccountDetailsTableViewDataGrid" MouseDoubleClick="AccountDetailsTableViewDataGrid_MouseDoubleClick">
-                    <!--DataGrid.Columns>
+                    <ScrollViewer>
+                        <DataGrid x:Name="AccountDetailsTableViewDataGrid" 
+                                  MouseDoubleClick="AccountDetailsTableViewDataGrid_MouseDoubleClick"
+                                  Height="575">
+                            <!--DataGrid.Columns>
                         <DataGridTextColumn Width="100"  Header="Trainee Number" Binding="{Binding [Trainee No]}" />
                         <DataGridTextColumn Width="300" Header="Name" Binding="{Binding Name}" />
                         <DataGridTextColumn Width="200" Header="Account number" Binding="{Binding [Account No]}" />
@@ -121,8 +124,10 @@
                         <DataGridTextColumn Width="100" Header="Branch Code" Binding="{Binding [Branch Code]}" />
                         
                     </DataGrid.Columns-->
-                </DataGrid>
+                        </DataGrid>
 
+                    </ScrollViewer>
+               
                 </StackPanel>
             </Border>
         </Border>

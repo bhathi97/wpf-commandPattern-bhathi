@@ -78,5 +78,14 @@ namespace PaySheetMenagementSystemForInterns.Views
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
         }
+        //edit bank detils
+        private void bankAndBranchDetails_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                UserControlLoaderToAddNew.Content = new UserControlForBankAndBranchCrud();
+            }
+            catch(Exception ex) { MessageBox.Show(ex.Message); }
+        }
     }
 }

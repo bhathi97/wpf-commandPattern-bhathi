@@ -113,22 +113,13 @@
                     
 
                     <!--deataShowing Grid-->
-                    <DataGrid x:Name="masterTableViewDataGrid" MouseDoubleClick="masterTableViewDataGrid_MouseDoubleClick">
+                    <ScrollViewer>
+                        <DataGrid Height="575"
+                            x:Name="masterTableViewDataGrid" MouseDoubleClick="masterTableViewDataGrid_MouseDoubleClick">
+                        </DataGrid>
 
-
-                        <!--DataGrid.Columns>
-                        <DataGridTextColumn Width="100"  Header="Trainee Number" Binding="{Binding [Trainee No]}" />
-                        <DataGridTextColumn Width="100" Header="ID" Binding="{Binding ID}" />
-                        <DataGridTextColumn Width="200" Header="Name" Binding="{Binding Name}" />
-                        <DataGridTextColumn Width="200" Header="Location" Binding="{Binding Location}" />
-                        <DataGridTextColumn Width="100" Header="Pay" Binding="{Binding [Should pay or no]}" />
-                        <DataGridTextColumn Width="120" Header="Telephone Number" Binding="{Binding [Telephone No]}" />
-                        <DataGridTextColumn Width="100" Header="Start Date" Binding="{Binding [Start Date]}" />
-                        <DataGridTextColumn Width="100" Header="End Date" Binding="{Binding [End Date]}" />
-                        <DataGridTextColumn Width="100" Header="Months" Binding="{Binding [Months]}"/>
-                        
-                    </DataGrid.Columns-->
-                    </DataGrid>
+                    </ScrollViewer>
+                    
 
                 </StackPanel>
 

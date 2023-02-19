@@ -25,7 +25,7 @@
             <RowDefinition Height="675"/>
         </Grid.RowDefinitions>
 
-        <Grid Background="Transparent" Grid.Row="0">
+        <Grid Background="Transparent" Grid.Row="0" Height="675" VerticalAlignment="Bottom">
             <Grid.ColumnDefinitions >
                 <!--data entering textboxes-->
                 <ColumnDefinition Width="300"/>
@@ -390,28 +390,17 @@
                    Content="Click EYE button to see the content >>"
                    Foreground="LightGray"/>
 
-                <DataGrid x:Name="dataShowingTable" 
+                <ScrollViewer>
+                    <DataGrid x:Name="dataShowingTable" Height="644"
                       SelectionChanged="dataShowingTable_SelectionChanged"
                       >
+                    </DataGrid>
+                </ScrollViewer>
 
-                    <!--DataGrid.Columns>
-                        <DataGridTextColumn Width="100" Header="Trainee Number" Binding="{Binding [Trainee No]}" />
-                        <DataGridTextColumn Width="70" Header="Month" Binding="{Binding Month}" />
-                        <DataGridTextColumn Width="50" Header="Year" Binding="{Binding Year}" />
-                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
-                        <DataGridTextColumn Width="100" Header="Account No" Binding="{Binding [Account No]}" />
-                        <DataGridTextColumn Header="Bank Name" Binding="{Binding [Bank Name]}" />
-                        <DataGridTextColumn Width="70" Header="Bank Code" Binding="{Binding [Bank Code]}" />
-                        <DataGridTextColumn Header="Branch Name" Binding="{Binding [Branch Name]}" />
-                        <DataGridTextColumn Width="70" Header="Branch Code" Binding="{Binding [Branch Code]}" />
-                        <DataGridTextColumn Width="100" Header="Full Days" Binding="{Binding [Work Days- FULL]}"/>
-                        <DataGridTextColumn Width="100" Header="Half Days" Binding="{Binding [Work Days- HALF]}"/>
-                        <DataGridTextColumn Width="100" Header="Work Days" Binding="{Binding [Work Days- Total]}"/>
-                        <DataGridTextColumn Width="100" Header="Salary" Binding="{Binding [Salary Amount]}"/>
+                
 
-                    </DataGrid.Columns-->
 
-                </DataGrid>
+                
             </StackPanel>
 
 

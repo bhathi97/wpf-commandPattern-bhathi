@@ -1,0 +1,170 @@
+﻿<UserControl x:Class="PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAsterTableContent.UserControlForBankAndBranchCrud"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PaySheetMenagementSystemForInterns.Views.UserControlsForAddNewToMAsterTableContent"
+             mc:Ignorable="d" xmlns:f="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             MaxHeight="675"
+            >
+    <UserControl.Resources>
+        <Style x:Key="MyStyle" TargetType="{x:Type Rectangle}">
+            <Setter Property="Width" Value="{Binding ElementName=UserControlLoaderToAddNew, Path=RenderSize.Width}" />
+            <Setter Property="Height" Value="{Binding ElementName=UserControlLoaderToAddNew, Path=RenderSize.Height}" />
+        </Style>
+    </UserControl.Resources>
+
+    
+    <Border BorderThickness="1" 
+            Grid.Column="0" 
+            BorderBrush="#d5daf0"
+            Margin="1">
+        <Border BorderThickness="1" 
+            Grid.Column="0" 
+            BorderBrush="#43496b" 
+            Background="#d5daf0">
+
+            <Grid Height="660">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="500"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <!--bank adding-->
+
+                <StackPanel Grid.Row="0" Grid.Column="0" >
+                    <StackPanel Orientation="Horizontal" Background="#030c45">
+                        <Label Background="#030c45">
+                            <Viewbox>
+                                <f:IconImage Icon="Bank" Foreground="White" Margin="5" Height="15"/>
+                            </Viewbox>
+                        </Label>
+                        <Label Content="Banks" Background="#030c45" Width="460" Foreground="White" FontSize="15" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <!--Bank name-->
+                    <StackPanel Orientation="Horizontal" Margin="20,20,0,0">
+                        <Label Content="Bank Name " Width="100"/>
+                        <TextBox x:Name="nameOfTheBank" Width="300"/>
+                    </StackPanel>
+                    <!--bank code-->
+                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                        <Label Content="Bank Code " Width="100"/>
+                        <TextBox x:Name="codeOfTheBank" Width="300"/>
+                    </StackPanel>
+                    <StackPanel Margin="20" HorizontalAlignment="Left">
+                        <!--add new bank-->
+                        <Button x:Name="addBank" Width="200" Content="Add" Margin="5" Height="25"
+                                 Style="{StaticResource ButtonStyle3}">
+                            
+                        </Button>
+                        
+                        <!--update bank-->
+                        <Button x:Name="updateBank" Width="200" Content="Update" Margin="5" Height="25"
+                                 Style="{StaticResource ButtonStyle3}">
+
+                        </Button>
+                        
+                        <!--delete-->
+                        <Button x:Name="deleteBank" Width="200" Content="Delete" Margin="5" Height="25"
+                                 Style="{StaticResource ButtonStyle3}">
+
+                        </Button>
+                    </StackPanel>
+
+
+                </StackPanel>
+                
+                <!--branch adding-->
+                <StackPanel Grid.Row="1" Grid.Column="0" >
+                    <StackPanel Orientation="Horizontal" Background="#030c45">
+                        <Label Background="#030c45">
+                            <Viewbox>
+                                <f:IconImage Icon="BuildingFlag" Foreground="White" Margin="5" Height="15"/>
+                            </Viewbox>
+                        </Label>
+                        <Label Content="Branch" Background="#030c45" Width="460" Foreground="White" FontSize="15" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <!--bankName-->
+                    <StackPanel Orientation="Horizontal" Margin="20,20,0,0">
+                        <Label Content="Bankc Code" Width="100"/>
+                        <TextBox x:Name="codeOfTheBankForBranch" Width="300"/>
+                    </StackPanel>
+
+                    <!--Branch name-->
+                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                        <Label Content="Branch Name " Width="100"/>
+                        <TextBox x:Name="nameOfTheBranch" Width="300"/>
+                    </StackPanel>
+                    <!--branch code-->
+                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                        <Label Content="Branch Code " Width="100"/>
+                        <TextBox x:Name="codeOfTheBranch" Width="300"/>
+                    </StackPanel>
+                    <StackPanel Margin="20" HorizontalAlignment="Left">
+                        <!--add new bank-->
+                        <Button x:Name="addBranch" Width="200" Content="Add" Margin="5" Height="25"
+                                 Style="{StaticResource ButtonStyle3}">
+
+                        </Button>
+
+                        <!--update bank-->
+                        <Button x:Name="updateBranch" Width="200" Content="Update" Margin="5" Height="25"
+                                 Style="{StaticResource ButtonStyle3}">
+
+                        </Button>
+
+                        <!--delete-->
+                        <Button x:Name="deleteBranch" Width="200" Content="Delete" Margin="5" Height="25"
+                                 Style="{StaticResource ButtonStyle3}">
+
+                        </Button>
+                    </StackPanel>
+
+
+                </StackPanel>
+                
+                <!--to show bank details-->
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <StackPanel Orientation="Horizontal" Background="White">
+                        <Label Background="White">
+                            <Viewbox>
+                                <f:IconImage Icon="ArrowRightFromBracket" Foreground="#030c45" Height="19" Margin="3"/>
+                            </Viewbox>
+                        </Label>
+                        <Label Content="Bank Details" Background="White" Width="460" Foreground="#030c45" FontSize="15" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <DataGrid x:Name="toShowBankNamesDG" Margin="10">
+                        
+                    </DataGrid>
+                    
+                 </StackPanel>
+
+                <!--to show branc details-->
+                <StackPanel Grid.Row="1" Grid.Column="1">
+                    <StackPanel Orientation="Horizontal" Background="White">
+                        <Label Background="White">
+                            <Viewbox>
+                                <f:IconImage Icon="ArrowRightFromBracket" Foreground="#030c45" Height="19" Margin="3"/>
+                            </Viewbox>
+                        </Label>
+                        <Label Content="Branch Details" Background="White" Width="460" Foreground="#030c45" FontSize="15" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <DataGrid x:Name="toShowBranchNamesDG" Margin="10">
+
+                    </DataGrid>
+
+                </StackPanel>
+
+
+            </Grid>
+        </Border>
+    </Border>
+    
+            
+    
+</UserControl>

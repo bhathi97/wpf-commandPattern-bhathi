@@ -263,6 +263,43 @@
                         <!--no crud ******************-->
 
                         
+                        <!--to add bank and branch details-->
+                        <!--to upadte or delete tables-->
+                        <Border  Height="50"
+                                 Width="180"
+                                 BorderBrush="{StaticResource borderButton1}"
+                                 HorizontalAlignment="Center"
+                                 BorderThickness="1"
+                                 Margin="5,0,5,5"
+                                 CornerRadius="4">
+
+                            <Button x:Name="bankAndBranchDetails"
+                                Style="{StaticResource ButtonStyle3}" 
+                                Click="bankAndBranchDetails_Click">
+
+                                <StackPanel Orientation="Horizontal" >
+
+                                    <f:IconImage Icon="Cog" 
+                                             Height="18"    
+                                             Foreground="#730307" 
+                                             />
+
+                                    <TextBlock Text =" Bank details            "   
+                                           VerticalAlignment="Center" 
+                                           Margin="5"
+                                           FontSize="12"
+                                           FontFamily="Segoe UI Symbol"/>
+
+
+                                </StackPanel>
+
+                                <Button.ToolTip>
+                                    <ToolTip Content="Click to see Interns Details in MASTER Table"/>
+                                </Button.ToolTip>
+                            </Button>
+
+                        </Border>
+                        
                     </StackPanel>
 
 

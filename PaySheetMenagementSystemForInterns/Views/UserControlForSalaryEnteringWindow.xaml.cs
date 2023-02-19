@@ -200,6 +200,10 @@ namespace PaySheetMenagementSystemForInterns.Views
             {
                 exportTemperaryDataToATextFileAsBankPaySheetCommand1.exportDatatoSaaryTableAndSaveAsBankPaysheetTxtFile(this, connection);
                 theFolderNameToSavePaySheet.Clear();
+
+                //add dta to permenent table
+
+
             }
             catch (Exception ex)
             {

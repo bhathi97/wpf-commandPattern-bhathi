@@ -28,6 +28,9 @@
     <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForAddNewTraineeToTheDataBase.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForBankAndBranchCrud.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForEdidTraineeDetails.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -67,6 +70,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForAddNewTraineeToTheDataBase.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForBankAndBranchCrud.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControlsForAddNewToMAsterTableContent\UserControlForEdidTraineeDetails.xaml">
