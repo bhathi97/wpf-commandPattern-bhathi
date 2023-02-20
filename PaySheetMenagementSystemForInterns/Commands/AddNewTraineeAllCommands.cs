@@ -79,7 +79,8 @@ namespace PaySheetMenagementSystemForInterns.Commands
             try
             {
                 con.Open();
-                SqlCommand cmd1 = new SqlCommand("SELECT [Bank Code] FROM [MASTER_TABLE-BANK] where [Bank Name] = '"+ obj.TraineeBankNameToDB.Text +"'", con);
+                SqlCommand cmd1 = new SqlCommand("SELECT [Bank Code] FROM [MASTER_TABLE-BANK] where [Bank Name] = @bankName", con);
+                cmd1.Parameters.AddWithValue("@bankName", obj.TraineeBankNameToDB.Text);
                 object result = cmd1.ExecuteScalar();
                 if (result != null)
                 {
@@ -88,7 +89,8 @@ namespace PaySheetMenagementSystemForInterns.Commands
 
 
                     //load data to combo
-                    SqlCommand cmd = new SqlCommand("SELECT [Branch Name] FROM [MASTER_TABLE-BRANCH] where [Bank Code] = '" + bankCode + "'", con);
+                    SqlCommand cmd = new SqlCommand("SELECT [Branch Name] FROM [MASTER_TABLE-BRANCH] where [Bank Code] = @bankCode", con);
+                    cmd.Parameters.AddWithValue("bankCode", bankCode);
                     SqlDataAdapter sqldataadapter = new SqlDataAdapter(cmd);
                     DataTable dataTable = new DataTable();
                     sqldataadapter.Fill(dataTable);
@@ -113,7 +115,8 @@ namespace PaySheetMenagementSystemForInterns.Commands
             try
             {
                 con.Open();
-                SqlCommand cmd2 = new SqlCommand("SELECT [Branch Code] FROM [MASTER_TABLE-BRANCH] where [Branch Name] = '" + obj.TraineeBranchNameToDB.Text + "'", con);
+                SqlCommand cmd2 = new SqlCommand("SELECT [Branch Code] FROM [MASTER_TABLE-BRANCH] where [Branch Name] = @branchName", con);
+                cmd2.Parameters.AddWithValue("@branchName", obj.TraineeBranchNameToDB.Text);
                 object result = cmd2.ExecuteScalar();
                 if (result != null)
                 {

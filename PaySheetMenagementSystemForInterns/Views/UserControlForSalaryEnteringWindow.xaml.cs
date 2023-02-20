@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,7 +23,6 @@ namespace PaySheetMenagementSystemForInterns.Views
     /// </summary>
     public partial class UserControlForSalaryEnteringWindow : UserControl
     {
-        
         public UserControlForSalaryEnteringWindow()
         {
             InitializeComponent();
@@ -41,7 +41,9 @@ namespace PaySheetMenagementSystemForInterns.Views
             //disable at the beginning
             dataExportToaTextFile.IsEnabled= false;
 
-        }
+           
+
+    }
         
         
         private void InternID_KeyDown(object sender, KeyEventArgs e)
@@ -188,20 +190,20 @@ namespace PaySheetMenagementSystemForInterns.Views
 
 
         //export button enable
-        private void theFolderNameToSavePaySheet_TextChanged(object sender, TextChangedEventArgs e)
+        /*private void theFolderNameToSavePaySheet_TextChanged(object sender, TextChangedEventArgs e)
         {
             dataExportToaTextFile.IsEnabled = true;
-        }
+        }*/
 
         //button for export temperary data to a text file as bank pay sheet style and save a selected loacation
         private void dataExportToaTextFile_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                temperaryDataSendToPaidSalaryTableCommand1.sendDataToAllSalaryDetails(this, connection);
                 exportTemperaryDataToATextFileAsBankPaySheetCommand1.exportDatatoSaaryTableAndSaveAsBankPaysheetTxtFile(this, connection);
-                theFolderNameToSavePaySheet.Clear();
-
+                temperaryDataSendToPaidSalaryTableCommand1.sendDataToAllSalaryDetails(this, connection);
+                //theFolderNameToSavePaySheet.Clear();
+                dataSeeBtnClickCommand1.DataseeButtonClick(dataShowingTable, connection, this);
 
                 //add dta to permenent table
 
@@ -239,10 +241,35 @@ namespace PaySheetMenagementSystemForInterns.Views
         SearchDataGridViewDataAutoFillWhenclickOnCommand SearchDataGridViewDataAutoFillWhenclickOnCommand1 = new SearchDataGridViewDataAutoFillWhenclickOnCommand();
         ExportTemperaryDataToATextFileAsBankPaySheetCommand exportTemperaryDataToATextFileAsBankPaySheetCommand1 = new ExportTemperaryDataToATextFileAsBankPaySheetCommand();
         TemperaryDataSendToPaidSalaryTableCommand temperaryDataSendToPaidSalaryTableCommand1 = new TemperaryDataSendToPaidSalaryTableCommand();
+        FileNameNamingControlCommand fileNameNamingControlCommand1 = new FileNameNamingControlCommand();
         private void StackPanel_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
         {
 
         }
+
+        private void yy_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            fileNameNamingControlCommand1.fileNameNaming(this, sender, e);
+        }
+
+        private void yy_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null)
+            {
+                // Limit the length of the entered text to 2 characters
+                if (textBox.Text.Length == 2)
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    e.Handled = false;
+                }
+            }
+        }
+
+        
 
 
 

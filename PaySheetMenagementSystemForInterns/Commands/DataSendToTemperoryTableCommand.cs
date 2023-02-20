@@ -17,31 +17,45 @@ namespace PaySheetMenagementSystemForInterns.Commands
         {
             try
             {
-                if (emptyComboBoxCheck(obj) == 0 && emptyTextBoxCheck(obj) == 0)
+                if (emptyComboBoxCheck(obj) == 0 && emptyTextBoxCheck(obj) == 0) //empty fields check
                 {
                     try
                     {
                         connection.Open();
                         //validate - check if the data allready in the SalaryStoreTable or temperarySalaryTable
                         //check salarySotere table
-                        SqlDataAdapter sda1 = new SqlDataAdapter("SELECT count([Trainee No]) FROM [ALL_SALARY-DETAILS_TRAINEE] WHERE [Trainee No] ='" + obj.InternID.Text + "' AND Month ='" + obj.AddingMonth.Text + "' AND Year ='" + obj.AddingYear.Text + "' AND [Account No]='" + obj.InternBankAccNo.Text + "'", connection);
+                        // create a SQL query using parameterized queries
+                        string sqlQuery0 = "SELECT count([Trainee No]) FROM [ALL_SALARY-DETAILS_TRAINEE] WHERE [Trainee No] = @InternID AND Month = @AddingMonth AND Year = @AddingYear AND [Account No] = @InternBankAccNo";
+                        // create a SqlCommand object and set the parameter values
+                        SqlCommand command0 = new SqlCommand(sqlQuery0, connection);
+                        command0.Parameters.AddWithValue("@InternID", obj.InternID.Text);
+                        command0.Parameters.AddWithValue("@AddingMonth", obj.AddingMonth.Text);
+                        command0.Parameters.AddWithValue("@AddingYear", obj.AddingYear.Text);
+                        command0.Parameters.AddWithValue("@InternBankAccNo", obj.InternBankAccNo.Text);
+                        // create a SqlDataAdapter and fill the DataTable with the query result
+                        SqlDataAdapter sda1 = new SqlDataAdapter(command0);
                         DataTable dt1 = new DataTable();
-                        dt1.AcceptChanges();
                         sda1.Fill(dt1);
-
-                        //check temperary table
-                        SqlDataAdapter sda2 = new SqlDataAdapter("SELECT count([Trainee No]) FROM [TEMP_SALARY-DETAILS_TRAINEE] WHERE [Trainee No] ='" + obj.InternID.Text + "'", connection);
+                            
+                        // Create a parameterized query to check the temporary table
+                        SqlCommand cmd2 = new SqlCommand("SELECT COUNT([Trainee No]) FROM [TEMP_SALARY-DETAILS_TRAINEE] WHERE [Trainee No] = @InternID", connection);
+                        cmd2.Parameters.AddWithValue("@InternID", obj.InternID.Text);
+                        // Create a data adapter to fill the DataTable with the result of the query
+                        SqlDataAdapter sda2 = new SqlDataAdapter(cmd2);
                         DataTable dt2 = new DataTable();
-                        dt2.AcceptChanges();
                         sda2.Fill(dt2);
 
+
                         //check thet Id in the master table
-                        SqlDataAdapter sda3 = new SqlDataAdapter("SELECT count([Trainee No]) FROM [MASTER-DETAILS_TRAINEE] WHERE [Trainee No] ='" + obj.InternID.Text + "'", connection);
+                        // Create a parameterized query to check the MASTER-DETAILS_TRAINEE table
+                        SqlCommand cmd3 = new SqlCommand("SELECT COUNT([Trainee No]) FROM [MASTER-DETAILS_TRAINEE] WHERE [Trainee No] = @InternID", connection);
+                        cmd3.Parameters.AddWithValue("@InternID", obj.InternID.Text);
+                        // Create a data adapter to fill the DataTable with the result of the query
+                        SqlDataAdapter sda3 = new SqlDataAdapter(cmd3);
                         DataTable dt3 = new DataTable();
-                        dt3.AcceptChanges();
                         sda3.Fill(dt3);
 
-                        if(dt2.Rows[0][0].ToString() != "0")
+                        if (dt2.Rows[0][0].ToString() != "0")
                         {
                             MessageBox.Show("User is already added", " Error ", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                         }
@@ -56,10 +70,32 @@ namespace PaySheetMenagementSystemForInterns.Commands
                         {
 
                             //data insert query               
-                            SqlCommand c1 = new SqlCommand("INSERT INTO [TEMP_SALARY-DETAILS_TRAINEE] ([Trainee No], [Account No], Month , Year, [Bank Name], [Bank Code], [Branch Name], [Branch Code], [Work Days- FULL], [Work Days- HALF],[Work Days- Total], [Salary Amount], Name) VALUES ('" + obj.InternID.Text + "','" + obj.InternBankAccNo.Text + "','" + obj.AddingMonth.Text + "','" + int.Parse(obj.AddingYear.Text) + "','" + obj.InternBankName.Text + "','" + obj.InternBankCode.Text + "','" + obj.InternBranchName.Text + "','" + obj.InternBranchCode.Text + "','" + int.Parse(obj.AddingFullWorkDays.Text) + "','" + int.Parse(obj.AddingHalfWorkDays.Text) + "','" + float.Parse(obj.ShowTotalWorkDays.Text) + "','" + float.Parse(obj.ShowTotalSalary.Text) + "','" + obj.InternName.Text + "')", connection);
-                            c1.ExecuteNonQuery();
-                            MessageBox.Show("Successfully added to the table", "success", MessageBoxButton.OK, MessageBoxImage.Information);
+                            // create a SQL query using parameterized queries
+                            string sqlQuery = "INSERT INTO [TEMP_SALARY-DETAILS_TRAINEE] ([Trainee No], [Account No], Month , Year, [Bank Name], [Bank Code], [Branch Name], [Branch Code], [Work Days- FULL], [Work Days- HALF],[Work Days- Total], [Salary Amount], Name) " +
+                                "VALUES (@InternID, @InternBankAccNo, @AddingMonth, @AddingYear, @InternBankName, @InternBankCode, @InternBranchName, @InternBranchCode, @AddingFullWorkDays, @AddingHalfWorkDays, @ShowTotalWorkDays, @ShowTotalSalary, @InternName)";
 
+                            // create a SqlCommand object and set the parameter values
+                            using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                            {
+                                command.Parameters.AddWithValue("@InternID", obj.InternID.Text);
+                                command.Parameters.AddWithValue("@InternBankAccNo", obj.InternBankAccNo.Text);
+                                command.Parameters.AddWithValue("@AddingMonth", obj.AddingMonth.Text);
+                                command.Parameters.AddWithValue("@AddingYear", int.Parse(obj.AddingYear.Text));
+                                command.Parameters.AddWithValue("@InternBankName", obj.InternBankName.Text);
+                                command.Parameters.AddWithValue("@InternBankCode", obj.InternBankCode.Text);
+                                command.Parameters.AddWithValue("@InternBranchName", obj.InternBranchName.Text);
+                                command.Parameters.AddWithValue("@InternBranchCode", obj.InternBranchCode.Text);
+                                command.Parameters.AddWithValue("@AddingFullWorkDays", int.Parse(obj.AddingFullWorkDays.Text));
+                                command.Parameters.AddWithValue("@AddingHalfWorkDays", int.Parse(obj.AddingHalfWorkDays.Text));
+                                command.Parameters.AddWithValue("@ShowTotalWorkDays", float.Parse(obj.ShowTotalWorkDays.Text));
+                                command.Parameters.AddWithValue("@ShowTotalSalary", float.Parse(obj.ShowTotalSalary.Text));
+                                command.Parameters.AddWithValue("@InternName", obj.InternName.Text);
+
+                                // execute the query
+                                command.ExecuteNonQuery();
+                            }
+
+                            MessageBox.Show("Successfully added to the table", "success", MessageBoxButton.OK, MessageBoxImage.Information);
 
                         }
 
