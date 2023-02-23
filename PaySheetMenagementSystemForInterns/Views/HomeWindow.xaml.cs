@@ -47,6 +47,17 @@ namespace PaySheetMenagementSystemForInterns.Views
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Timer_Tick;
             timer.Start();
+
+
+     
+        }
+
+    
+
+        //method to pass username
+        public void namePass(string name)
+        {
+            showingWhoIsLoggedTextBlock.Text = name;
         }
 
         private void Timer_Tick(object sender, EventArgs e)

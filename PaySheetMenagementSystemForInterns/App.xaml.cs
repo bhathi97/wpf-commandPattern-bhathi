@@ -20,10 +20,19 @@ namespace PaySheetMenagementSystemForInterns
             set => _homeWindow = value;
         }
 
+        private LoginWindow _loginWindow;
+        public LoginWindow LoginWindow
+        {
+            get => _loginWindow;
+            set => _loginWindow = value;
+        }
+
         protected override void OnStartup(StartupEventArgs e)
         {
-            HomeWindow = new HomeWindow();
-            HomeWindow.Show();
+            /*HomeWindow = new HomeWindow();
+            HomeWindow.Show();*/
+            LoginWindow = new LoginWindow();
+            LoginWindow.Show();
             base.OnStartup(e);
         }
     }

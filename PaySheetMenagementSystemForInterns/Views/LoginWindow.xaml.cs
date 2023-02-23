@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PaySheetMenagementSystemForInterns.Commands;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,14 +26,43 @@ namespace PaySheetMenagementSystemForInterns.Views
             InitializeComponent();
         }
 
+       
+        //connect with database
+        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-KHI8921;Initial Catalog=CPC_Interns_Salary_Management_System_Database;Integrated Security=True;TrustServerCertificate=True");
+        UserLoginCommand userLoginCommand = new UserLoginCommand();
+        //login button
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            int permitted = userLoginCommand.login(this, connection);
+            if (permitted == 1)
+            {
+                //when username and pw is correct
+                HomeWindow homeWindow = new HomeWindow();
+                
+                //homeWindow.Show();
+                // display the new window modally
+                if (homeWindow.ShowDialog() == true)
+                {
+                    //pass username
+                    homeWindow.namePass(userNameForLogin.Text);
+                    // close the current window
+                    this.Close();
+                }
 
+            }
+            else
+            {
+                MessageBox.Show("Invalid Password", "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+                userPasswordForLogin.Focus();
+            }
         }
 
+        //exit button
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-
+            Application.Current.Shutdown();
         }
+
+        
     }
 }

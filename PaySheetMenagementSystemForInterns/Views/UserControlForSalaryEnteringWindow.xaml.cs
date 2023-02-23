@@ -91,7 +91,15 @@ namespace PaySheetMenagementSystemForInterns.Views
         //validate halfdays input
         private void AddingHalfWorkDays_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            dataValidationOfFullAndHalfDaysCommand1.dataValidation(sender, e);
+            try
+            {
+                dataValidationOfFullAndHalfDaysCommand1.dataValidation(sender, e);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         //auto calculate total salary

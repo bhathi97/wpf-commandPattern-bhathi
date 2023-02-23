@@ -226,7 +226,7 @@
                                HorizontalAlignment="Right"
                                FontFamily="Microsoft Sans Serif"
                                x:Name="showingWhoIsLoggedTextBlock"
-                               Text="bhathiya bandara"/>
+                               />
                 </Grid>
 
 

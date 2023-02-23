@@ -31,8 +31,13 @@ namespace PaySheetMenagementSystemForInterns.Commands
                 {
                     connection.Open();
 
+
+                    //****************updated. but not checked
+
+
                     //check is that data available
-                    SqlDataAdapter sda = new SqlDataAdapter("SELECT count([Trainee No]) FROM [TEMP_SALARY-DETAILS_TRAINEE] WHERE [Trainee No] = '" + obj.IDforSearch.Text + "'", connection);
+                    SqlDataAdapter sda = new SqlDataAdapter("SELECT count([Trainee No]) FROM [TEMP_SALARY-DETAILS_TRAINEE] WHERE [Trainee No] = @TID ", connection);
+                    sda.SelectCommand.Parameters.AddWithValue("@TID", obj.IDforSearch.Text);
                     DataTable dt = new DataTable();
                     dt.AcceptChanges();
                     sda.Fill(dt);

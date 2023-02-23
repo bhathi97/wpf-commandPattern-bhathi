@@ -283,13 +283,13 @@
 
                                     <StackPanel Orientation="Horizontal">
                                         <Label Content="Full work days" Width="100" FontFamily="Segoe UI Symbol" 
-                                       Foreground="Black"/>
+                                               Foreground="Black"/>
                                         <TextBox Height="30"
-                                         Background="white"
-                                         Margin="2" 
-                                         Name="AddingFullWorkDays"
-                                         Width="100" 
-                                         PreviewTextInput="AddingFullWorkDays_PreviewTextInput" TextChanged="TotalSalaryCalculate"/>
+                                                 Background="white"
+                                                 Margin="2" 
+                                                 Name="AddingFullWorkDays"
+                                                 Width="100" 
+                                                 PreviewTextInput="AddingFullWorkDays_PreviewTextInput" TextChanged="TotalSalaryCalculate"/>
 
                                         <f:IconImage Icon="ArrowAltCircleLeft"
                                                  Foreground="White"

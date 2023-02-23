@@ -74,19 +74,25 @@ namespace PaySheetMenagementSystemForInterns.Commands
                         conn.Open();
 
                         //let check the data is available
-                        SqlDataAdapter sda = new SqlDataAdapter("SELECT count([Trainee No]) FROM [MASTER-DETAILS_TRAINEE] WHERE [Trainee No] LIKE '" + obj.MasterTableSearchTextBox.Text + "'", conn);
+                        // create a SQL query with parameterized query
+                        string sqlQuery = "SELECT COUNT([Trainee No]) FROM [MASTER-DETAILS_TRAINEE] WHERE [Trainee No] LIKE @SearchText";
+                        // create a SqlDataAdapter object and execute the query
+                        SqlDataAdapter adapter = new SqlDataAdapter(sqlQuery, conn);
+                        adapter.SelectCommand.Parameters.AddWithValue("@SearchText", "%" + obj.MasterTableSearchTextBox.Text + "%");
+                        // create a DataTable object and fill it with the query results
                         DataTable dt = new DataTable();
-                        dt.AcceptChanges();
-                        sda.Fill(dt);
+                        adapter.Fill(dt);
 
-                        if (dt.Rows[0][0].ToString() == "0")
+                        
+                        if (dt.Rows[0][0].ToString() == "0") // get the count value from the first row and first column of the DataTable
                         {
                             MessageBox.Show("No Data available", " Error ", MessageBoxButton.OKCancel, MessageBoxImage.Error);
                             conn.Close();
                         }
                         else //if there is data available then data
                         {
-                            SqlCommand cmd = new SqlCommand("SELECT * FROM [MASTER-DETAILS_TRAINEE] WHERE [Trainee No] = '" + obj.MasterTableSearchTextBox.Text + "'", conn);
+                            SqlCommand cmd = new SqlCommand("SELECT * FROM [MASTER-DETAILS_TRAINEE] WHERE [Trainee No] LIKE @search", conn);
+                            cmd.Parameters.AddWithValue("@search", "%" + obj.MasterTableSearchTextBox.Text + "%");
                             conn.Close();
                             SqlDataAdapter sda1 = new SqlDataAdapter(cmd);
                             DataTable showdatatable = new DataTable();

@@ -54,7 +54,7 @@ namespace PaySheetMenagementSystemForInterns.Commands
                                 + "00" //Return Code ('00')
                                 + "0" //Filler('0')
                                 + "000000" //Filler ('000000')
-                                + stringAmount.PadLeft(12,'0') //Amount
+                                + stringAmount.PadLeft(12,'0') //Amount [last 2 digits are decimals]
                                 + "SLR" //Filler ('SLR')
                                 + "7010" //Originating Bank No. ('7010')
                                 + "660" //Originating Branch No. (660')
