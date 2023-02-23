@@ -33,10 +33,13 @@ namespace PaySheetMenagementSystemForInterns.Views
 
         public WindowCloseButtonCommand WindowCloseButtonCommand1 { get => windowCloseButtonCommand1; set => windowCloseButtonCommand1 = value; }
 
+        //to passname
+        public string namePass { get; set; }
 
         public HomeWindow()
         {
             InitializeComponent();
+          
             this.DataContext = this;
             ShowingDatabaseIsConennectedOrNotAtTheBeginningCommand1.showISDAtaBAseConnecetAtTheBeginning(this, connection);
             //UserControlLoader1.Content = new UserControlForSalaryEnteringWindow();
@@ -48,6 +51,9 @@ namespace PaySheetMenagementSystemForInterns.Views
             timer.Tick += Timer_Tick;
             timer.Start();
 
+            //LOAD USER NAME
+            
+            
 
      
         }
@@ -55,10 +61,10 @@ namespace PaySheetMenagementSystemForInterns.Views
     
 
         //method to pass username
-        public void namePass(string name)
+        /*public void namePass(string name)
         {
             showingWhoIsLoggedTextBlock.Text = name;
-        }
+        }*/
 
         private void Timer_Tick(object sender, EventArgs e)
         {

@@ -38,17 +38,9 @@ namespace PaySheetMenagementSystemForInterns.Views
             {
                 //when username and pw is correct
                 HomeWindow homeWindow = new HomeWindow();
-                
-                //homeWindow.Show();
-                // display the new window modally
-                if (homeWindow.ShowDialog() == true)
-                {
-                    //pass username
-                    homeWindow.namePass(userNameForLogin.Text);
-                    // close the current window
-                    this.Close();
-                }
-
+                homeWindow.namePass = userNameForLogin.Text;
+                homeWindow.Show();
+                this.Close(); 
             }
             else
             {
