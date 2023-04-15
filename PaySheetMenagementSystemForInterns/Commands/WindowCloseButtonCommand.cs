@@ -12,7 +12,13 @@ namespace PaySheetMenagementSystemForInterns.Commands
     public class WindowCloseButtonCommand
     {
         //close command
-        public void WindowClose() => Application.Current.Shutdown();
+        public void WindowClose()
+        {
+            if (MessageBox.Show("Are you sure you want to close this window?", "Confirm", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                Application.Current.Shutdown();
+            }
+        } 
 
 
         //maximuze command
