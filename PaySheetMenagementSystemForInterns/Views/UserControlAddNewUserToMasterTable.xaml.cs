@@ -25,14 +25,31 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             InitializeComponent();
         }
-        
+
+        //initialize to reuse
+        private UserControlForMasterDataShowing _ucMasterDataShowingWindow;
+        private UserControlForSalaryDetailsShowing _ucSalaryDetailShowingWindow;
+        private UserControlForPaidSalaryDetailsShowing _ucPaidSalaryDetailShowingWindow;
+        private UserControlForAddNewTraineeToTheDataBase _ucAddNewTraineeWindow;
+        private UserControlForEdidTraineeDetails _ucEditTraineeDetailsWindow;
+        private UserControlForBankAndBranchCrud _ucBankBranchDetailWindow;
+
 
         //to see table of details of all interns in a grid  
         private void seeMasterTableData_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                UserControlLoaderToAddNew.Content = new UserControlForMasterDataShowing();
+                if (_ucMasterDataShowingWindow == null)
+                {
+                    _ucMasterDataShowingWindow = new UserControlForMasterDataShowing();
+                    UserControlLoaderToAddNew.Content = _ucMasterDataShowingWindow;
+                }
+                else
+                {
+                    UserControlLoaderToAddNew.Content = _ucMasterDataShowingWindow;
+                }
+                
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -42,7 +59,16 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             try
             {
-                UserControlLoaderToAddNew.Content = new UserControlForSalaryDetailsShowing();
+                if(_ucSalaryDetailShowingWindow == null)
+                {
+                    _ucSalaryDetailShowingWindow = new UserControlForSalaryDetailsShowing();
+                    UserControlLoaderToAddNew.Content = _ucSalaryDetailShowingWindow;
+                }
+                else
+                {
+                    UserControlLoaderToAddNew.Content = _ucSalaryDetailShowingWindow;
+                }
+
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
@@ -51,7 +77,16 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             try
             {
-                UserControlLoaderToAddNew.Content = new UserControlForPaidSalaryDetailsShowing();
+                if(_ucPaidSalaryDetailShowingWindow == null)
+                {
+                    _ucPaidSalaryDetailShowingWindow = new UserControlForPaidSalaryDetailsShowing();
+                    UserControlLoaderToAddNew.Content = _ucPaidSalaryDetailShowingWindow;
+                }
+                else
+                {
+                    UserControlLoaderToAddNew.Content = _ucPaidSalaryDetailShowingWindow;
+                }
+                
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
@@ -62,7 +97,16 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             try
             {
-                UserControlLoaderToAddNew.Content = new UserControlForAddNewTraineeToTheDataBase();
+                if(_ucAddNewTraineeWindow  == null)
+                {
+                    _ucAddNewTraineeWindow = new UserControlForAddNewTraineeToTheDataBase();
+                    UserControlLoaderToAddNew.Content = _ucAddNewTraineeWindow;
+                }
+                else
+                {
+                    UserControlLoaderToAddNew.Content = _ucAddNewTraineeWindow;
+                }
+
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
@@ -73,7 +117,16 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             try
             {
-                UserControlLoaderToAddNew.Content = new UserControlForEdidTraineeDetails();
+                if(_ucEditTraineeDetailsWindow == null)
+                {
+                    _ucEditTraineeDetailsWindow = new UserControlForEdidTraineeDetails();
+                    UserControlLoaderToAddNew.Content = _ucEditTraineeDetailsWindow;
+                }
+                else
+                {
+                    UserControlLoaderToAddNew.Content = _ucEditTraineeDetailsWindow;
+                }
+               
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
@@ -83,7 +136,15 @@ namespace PaySheetMenagementSystemForInterns.Views
         {
             try
             {
-                UserControlLoaderToAddNew.Content = new UserControlForBankAndBranchCrud();
+                if(_ucBankBranchDetailWindow == null)
+                {
+                    _ucBankBranchDetailWindow = new UserControlForBankAndBranchCrud();
+                    UserControlLoaderToAddNew.Content = _ucBankBranchDetailWindow;
+                }
+                else
+                {
+                    UserControlLoaderToAddNew.Content = _ucBankBranchDetailWindow;
+                }                
             }
             catch(Exception ex) { MessageBox.Show(ex.Message); }
         }

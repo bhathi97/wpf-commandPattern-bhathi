@@ -17,6 +17,9 @@ using System.Windows.Interop;
 using System.Windows.Threading;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using System.Security.Policy;
+using Microsoft.VisualBasic;
 
 namespace PaySheetMenagementSystemForInterns.Views
 {
@@ -25,7 +28,8 @@ namespace PaySheetMenagementSystemForInterns.Views
     {
         public WindowState _state;
         DispatcherTimer timer;
-        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-KHI8921;Initial Catalog=CPC_Interns_Salary_Management_System_Database;Integrated Security=True;TrustServerCertificate=True");
+
+        SqlConnection connection = new SqlConnection(DatabaseConnectionClass.ConnectionString);
 
         //commands as objects
         WindowCloseButtonCommand windowCloseButtonCommand1 = new WindowCloseButtonCommand();
@@ -51,20 +55,23 @@ namespace PaySheetMenagementSystemForInterns.Views
             timer.Tick += Timer_Tick;
             timer.Start();
 
-            //LOAD USER NAME
-            
-            
+            if (_salaryEnteringWindow == null)
+            {
+                // Load the control if it hasn't been loaded yet
+                _salaryEnteringWindow = new UserControlForSalaryEnteringWindow();
+                UserControlLoader1.Content = _salaryEnteringWindow;
+            }
+            else
+            {
+                // Reuse the existing control
+                UserControlLoader1.Content = _salaryEnteringWindow;
+            }
 
-     
         }
 
-    
-
-        //method to pass username
-        /*public void namePass(string name)
-        {
-            showingWhoIsLoggedTextBlock.Text = name;
-        }*/
+        //define usercontrol instances to reuse
+        private UserControlForSalaryEnteringWindow _salaryEnteringWindow;
+        private UserControlAddNewUserToMasterTable _addNewUserToMasterWindow;
 
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -83,29 +90,76 @@ namespace PaySheetMenagementSystemForInterns.Views
         //menu items commands
         private void MenuItemHome_Click(object sender, RoutedEventArgs e)
         {
-            UserControlLoader1.Content = new UserControlForSalaryEnteringWindow();
-           
+            if (_salaryEnteringWindow == null)
+            {
+                // Load the control if it hasn't been loaded yet
+                _salaryEnteringWindow = new UserControlForSalaryEnteringWindow();
+                UserControlLoader1.Content = _salaryEnteringWindow;
+            }
+            else
+            {
+                // Reuse the existing control
+                UserControlLoader1.Content = _salaryEnteringWindow;
+            }
         }
+       
 
         //add new trainee command
         private void MenuItemNewbie_Click(object sender, RoutedEventArgs e)
         {
-            UserControlLoader1.Content = new UserControlAddNewUserToMasterTable();
+           
+            if(_addNewUserToMasterWindow == null)
+            {
+                //load the control if hasent been loaded yet
+                _addNewUserToMasterWindow = new UserControlAddNewUserToMasterTable();
+                UserControlLoader1.Content = _addNewUserToMasterWindow;
+            }else
+            {
+                //reuse the existing control
+                UserControlLoader1.Content = _addNewUserToMasterWindow;
+            }
+
+
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            WindowCloseButtonCommand1.WindowClose();
+            try
+            {
+                WindowCloseButtonCommand1.WindowClose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+          
         }
 
         private void MaximizeButton_Click(object sender, RoutedEventArgs e)
         {
-            WindowCloseButtonCommand1.WindowdMaximize(_state, this);
+            try
+            {
+                WindowCloseButtonCommand1.WindowdMaximize(_state, this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+            
         }
 
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
-            WindowCloseButtonCommand1.WindowMinimize(this);
+
+            try
+            {
+                WindowCloseButtonCommand1.WindowMinimize(this);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+            
         }
 
         internal void SetBinding(double actualHeight, Binding binding)
