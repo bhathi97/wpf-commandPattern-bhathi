@@ -4,3 +4,4 @@ In the project, a salary management system was being developed for trainees. The
 To code the system, a database-first approach was adopted, and a Microsoft SQL database was used for data storage. The backend of the system was written in C# and the .NET framework.
 To ensure efficient and organized development, the command pattern was used during coding. With this approach, the system commands were encapsulated as objects, making it easier to execute and manage them. Overall, the project aimed to streamline the salary payment process for trainees through an automated system.
 
+![image login](imgs/Screenshot (112).png)
